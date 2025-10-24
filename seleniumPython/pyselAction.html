@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium with Pyhton | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Selenium Python - Create Action Class</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/pysel2.png" alt="Python Selenium"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Action Class - To Perform Different Web Actions</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Create an Action Pakage</h5>
+                            <p>
+                                Right click on project --> new --> Python Package
+                            </p>
+                            <p><img src="../img/pysel10.png" alt="Python Selenium" class="img-responsive"></p>
+
+                            <p>
+                                Give Pakage name --> Click Enter --> Python Package is created successfully.
+                            </p>
+                            <p><img src="../img/pysel11.png" alt="Python Selenium" class="img-responsive"></p>
+
+                            <p>
+                                Right click on Python Package --> new --> Python File
+                            </p>
+                            <p><img src="../img/pysel12.png" alt="Python Selenium" class="img-responsive"></p>
+
+                            <p>
+                                Give File name --> Click Enter --> Python File is created successfully.
+                            </p>
+                            <p><img src="../img/pysel13.png" alt="Python Selenium" class="img-responsive"></p>
+
+
+        <h5># Create Global Instance and Initialize WebDriver</h5>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#808080;"># Created on Oct 24, 2019
+                </span><span style="color:#808080;"># @author: MITHUN ROY
+                </span><span style="color:#808080;">
+                </span><span style="color:#cc7832;">from </span>selenium <span style="color:#cc7832;">import </span>webdriver 
+                
+                Instance = <span style="color:#cc7832;">None
+                </span><span style="color:#cc7832;">
+                </span><span style="color:#cc7832;">
+                </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">Initialize</span>():
+                
+                    <span style="color:#cc7832;">global </span>Instance
+                    Instance = webdriver.Chrome(<span style="color:#6a8759;">&quot;/Users/mkroy/Downloads/chromedriver&quot;</span>)
+                    Instance.implicitly_wait(<span style="color:#6897bb;">10</span>)
+                    <span style="color:#cc7832;">return </span>Instance
+                
+                </pre>
+
+        <h5># Check For Web Element Present Or Not?</h5>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#808080;"># CHECK FOR ELEMENT
+            </span><span style="color:#808080;">
+            </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">is_web_element_displayed</span>(element):
+                <span style="color:#cc7832;">try</span>:
+                    timeout = <span style="color:#6897bb;">3
+            </span><span style="color:#6897bb;">        </span>wait = ui.WebDriverWait(Instance<span style="color:#cc7832;">, </span>timeout)
+                    wait.until(
+                        <span style="color:#cc7832;">lambda </span>driver: driver.find_element_by_xpath(element).is_displayed())
+                    <span style="color:#8888c6;">print </span>(<span style="color:#6a8759;">&quot;Element  available&quot;</span>)
+                    <span style="color:#cc7832;">return True
+            </span><span style="color:#cc7832;">    except</span>:
+                    <span style="color:#8888c6;">print</span>(<span style="color:#6a8759;">&quot;Element not available&quot;</span>)
+                <span style="color:#cc7832;">return False</span>
+        </pre>
+
+        <h5># Web Element Click and Implicit Wait?</h5>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">click_and_implicit_wait</span>(element):
+
+    <span style="color:#cc7832;">try</span>:
+        <span style="color:#cc7832;">if </span>Instance.find_element_by_xpath(element).is_displayed():
+            Instance.find_element_by_xpath(element).click()
+            Instance.implicitly_wait(<span style="color:#6897bb;">30</span>)
+            <span style="color:#cc7832;">return True
+</span><span style="color:#cc7832;">        else</span>:
+            <span style="color:#cc7832;">return False
+</span><span style="color:#cc7832;">    except</span>:
+        <span style="color:#cc7832;">return False</span>
+
+</pre>
+
+
+<h5># Web Element Click and Explicit Wait?</h5>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#808080;"># CLICK AND EXPLICIT WAIT
+        </span><span style="color:#808080;">
+        </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">click_and_explicit_wait</span>(element<span style="color:#cc7832;">, </span>time):
+            <span style="color:#cc7832;">try</span>:
+                <span style="color:#cc7832;">if </span>Instance.find_element_by_xpath(element).is_displayed():
+                    Instance.find_element_by_xpath(element).click()
+                    sleep(time)
+                    <span style="color:#cc7832;">return True
+        </span><span style="color:#cc7832;">        else</span>:
+                    <span style="color:#cc7832;">return False
+        </span><span style="color:#cc7832;">    except</span>:
+                <span style="color:#cc7832;">return False</span>
+        
+        </pre>
+
+
+        <h5># To Compare Expected Web Element Count</h5>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">expected_web_element</span>(element<span style="color:#cc7832;">, </span>expected_number):
+                    <span style="color:#cc7832;">try</span>:
+                        <span style="color:#cc7832;">if </span><span style="color:#8888c6;">len</span>(Instance.find_elements_by_xpath(element)) == expected_number:
+                            <span style="color:#cc7832;">return True
+                </span><span style="color:#cc7832;">        else</span>:
+                            <span style="color:#cc7832;">return False
+                </span><span style="color:#cc7832;">    except</span>:
+                        <span style="color:#cc7832;">return False</span>
+                
+                </pre>
+
+        <h5># To Check Web Element Count Is > 0</h5>
+            
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;"> </span>
+            <span style="color:#cc7832;"> def </span><span style="color:#ffc66d;">web_element_count</span>(element):
+                    <span style="color:#cc7832;">try</span>:
+                        <span style="color:#cc7832;">if </span><span style="color:#8888c6;">len</span>(Instance.find_elements_by_xpath(element)) &gt; <span style="color:#6897bb;">0</span>:
+                            <span style="color:#cc7832;">return </span><span style="color:#8888c6;">len</span>(Instance.find_elements_by_xpath(element))
+                        <span style="color:#cc7832;">else</span>:
+                            <span style="color:#cc7832;">return </span><span style="color:#6897bb;">0
+            </span><span style="color:#6897bb;">        </span><span style="color:#cc7832;">except</span>:
+                        <span style="color:#cc7832;">return </span><span style="color:#6897bb;">0</span>
+            
+            </pre>   
+
+            <h5># Type a Text Box Using Selenium Python</h5>
+            
+            <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                    <span style="color:#cc7832;"> def </span><span style="color:#ffc66d;">type_text</span>(element<span style="color:#cc7832;">, </span>text):
+                        <span style="color:#cc7832;">try</span>:
+                            <span style="color:#cc7832;">if </span>Instance.find_element_by_xpath(element).is_displayed():
+                                Instance.find_element_by_xpath(element).clear()
+                                Instance.find_element_by_xpath(element).send_keys(text)
+                                <span style="color:#cc7832;">return True
+                    </span><span style="color:#cc7832;">        else</span>:
+                                <span style="color:#cc7832;">return False
+                    </span><span style="color:#cc7832;">    except</span>:
+                            <span style="color:#cc7832;">return False</span>
+                    
+                    </pre>
+                    
+                    <h5># Select A Drop Down Using Selenium Python</h5>          
+            <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;"> </span>
+                <span style="color:#cc7832;"> def </span><span style="color:#ffc66d;">select_drop_down</span>(element<span style="color:#cc7832;">, </span>option):
+                    <span style="color:#cc7832;">try</span>:
+                        <span style="color:#cc7832;">if </span>Instance.find_element_by_xpath(element).is_displayed():
+                            select = Select(Instance.find_element_by_xpath(element))
+                            select.select_by_visible_text(option)
+                            <span style="color:#cc7832;">return True
+                </span><span style="color:#cc7832;">    except</span>:
+                        <span style="color:#cc7832;">return False</span>
+                
+                </pre>
+                <h5># Read a Text/LinkText Using Selenium Python</h5>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">get_element_text</span>(element):
+            <span style="color:#cc7832;">try</span>:
+                <span style="color:#cc7832;">if </span>Instance.find_element_by_xpath(element).is_displayed():
+                    <span style="color:#cc7832;">return </span>Instance.find_element_by_xpath(element).text
+            <span style="color:#cc7832;">except</span>:
+                <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;NO TEXT&quot;</span></pre>
+                <h5># Implicit Wait : Selenium Python</h5>
+                <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">implicit_wait</span>(t):
+                    Instance.implicitly_wait(t)</pre>
+
+        <h5># Explicit Wait : Selenium Python</h5>
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">explicit_wait</span>(t):
+            sleep(t)</pre>
+        <h5># Navigate Back :  Selenium Python</h5>
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">go_back</span>(t):
+                    Instance.back()
+                    sleep(t) </pre>
+        <h5># Close the Instance : Selenium Python</h5>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">close_driver</span>():
+                    <span style="color:#cc7832;">global </span>Instance
+                    Instance.quit()</pre>
+
+
+            </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outer">
+            <div class="inner"><a href="../seleniumPython/objectIdentification.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumPython/pyselPOM.html" class="previous">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

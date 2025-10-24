@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Page Object Model | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: gray;
+                font-size: 25px;
+            }
+
+            img {
+                     border: 1px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Page Object Model</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/js1.png" alt="Page Object Model " 
+      style="text-align:center;widows: 400;height:400;border: white;">
+      <h2 style="text-align:center; margin-top: 40px;">Page Object Model</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <h3>Page Object Model is type of implementation where we can store Web page locators in a structural way.</h3>
+                <br><br><h4><strong>Page Object Model : Using "String" return type</strong> </h4>
+                <p> Below picture presents a page object model with below informations. </p>
+                <p>package pageobjectmodel;
+                    <br>Under this package we have 3 class files represents 3 different pages.
+                    <br>homepage
+                    <br>loginpage
+                    <br>registrationpage
+                    <br>homepage details with 3 web locators are given below.
+                <br><img src=".././img/sv001.png" alt="Page Object Model - Selenium" class="img-responsive"><br></p><br><br>
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            
+            <span style="color:#cc7832;">package </span>pageobjectmodel<span style="color:#cc7832;">;</span>
+            <span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">public class </span>homepage {
+            
+            
+                <span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">google_logo</span>()
+                {
+                    <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;hplogo&quot;</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">google_searchTextBox</span>()
+                {
+                    <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;q&quot;</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">google_search_button</span>()
+                {
+                    <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;btnK&quot;</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+            
+            }
+            
+            
+            </pre>
+            <p><br></p>
+    
+                <p> 3 Web loactors are represents with 3 methods having String return type.
+                    <br> <font color="red">google_logo</font>
+                    <br> <font color="red">google_searchTextBox</font>
+                    <br> <font color="red">google_search_button</font>
+                </p>  <br>
+
+                <p> We can use these locators as below, where we are creating object of the page class and calling the methods </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>SelJava<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>pageobjectmodel.homepage<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testScripts1 {
+    
+    
+    
+        <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+    </span><span style="color:#cc7832;">    private static </span>homepage <span style="color:#9876aa;font-style:italic;">HPobj</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+    
+        {
+            <span style="color:#9876aa;font-style:italic;">HPobj </span>= <span style="color:#cc7832;">new </span>homepage()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mrath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Check for Google logo
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if </span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#9876aa;font-style:italic;">HPobj</span>.google_logo())).isDisplayed())
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google logo is displayed&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+            <span style="color:#808080;">// Type text in google search text box.
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">name</span>(<span style="color:#9876aa;font-style:italic;">HPobj</span>.google_searchTextBox())).sendKeys(<span style="color:#6a8759;">&quot;Technology&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Click on google search button
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">name</span>(<span style="color:#9876aa;font-style:italic;">HPobj</span>.google_search_button())).click()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+    
+    }</pre>
+    <p><br></p>
+
+    <br><br><h4><strong>Page Object Model : Using "By" return type</strong> </h4>
+
+    <p> 3 Web loactors are represents with 3 methods having By return type.
+            <br> <font color="red">google_logo</font>
+            <br> <font color="red">google_searchTextBox</font>
+            <br> <font color="red">google_search_button</font>
+        </p>  <br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>pageobjectmodel<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>homepage {
+        
+        
+            <span style="color:#cc7832;">public </span>By <span style="color:#ffc66d;">google_logo</span>()
+            {
+                <span style="color:#cc7832;">return </span>By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public </span>By <span style="color:#ffc66d;">google_searchTextBox</span>()
+            {
+                <span style="color:#cc7832;">return </span>By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;q&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public </span>By <span style="color:#ffc66d;">google_search_button</span>()
+            {
+                <span style="color:#cc7832;">return </span>By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;btnK&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        
+        }</pre>
+        <p><br></p>
+
+        <p> We can use these locators as below, where we are creating object of the page class and calling the methods </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>SelJava<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>pageobjectmodel.homepage<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testScripts1 {
+    
+    
+    
+        <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+    </span><span style="color:#cc7832;">    private static </span>homepage <span style="color:#9876aa;font-style:italic;">HPobj</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+    
+        {
+            <span style="color:#9876aa;font-style:italic;">HPobj </span>= <span style="color:#cc7832;">new </span>homepage()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/fpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Check for Google logo
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if </span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(<span style="color:#9876aa;font-style:italic;">HPobj</span>.google_logo()).isDisplayed())
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google logo is displayed&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+            <span style="color:#808080;">// Type text in google search text box.
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.findElement(<span style="color:#9876aa;font-style:italic;">HPobj</span>.google_searchTextBox()).sendKeys(<span style="color:#6a8759;">&quot;Technology&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Click on google search button
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.findElement(<span style="color:#9876aa;font-style:italic;">HPobj</span>.google_search_button()).click()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }
+    
+    </pre>
+    <p><br></p>
+    <p><br></p>
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../SeleniumJava/selactionclass.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../SeleniumJava/xmlsel.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

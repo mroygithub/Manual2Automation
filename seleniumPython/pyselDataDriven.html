@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium with Pyhton | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Selenium Python - Data Driven Concept</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/pysel2.png" alt="Python Selenium"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">How To Achieve Data Driven Concept In Python Selenium Framework</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Read Automation Test Data From XML File</h5>
+                            <p>
+                                Right click on project --> new --> Python Package
+                            </p>
+                            <p><img src="../img/pysel10.png" alt="Python XML" class="img-responsive"></p>
+
+                            <p>
+                                Give Pakage name --> Click Enter --> Python Package is created successfully.
+                            </p>
+                            <p><img src="../img/pysel23.png" alt="Python XML" class="img-responsive"></p>
+                            <p>
+                                Right click on Python Package --> new -->  File --> AnyXmlFile.xml --> Click Enter --> XML File is created successfully.
+                            </p>
+                            <p><img src="../img/pysel24.png" alt="Python XML" class="img-responsive"></p>
+                            <p><img src="../img/pysel25.png" alt="Python XML" class="img-responsive"></p>
+                            <p><img src="../img/pysel27.png" alt="Python XML" class="img-responsive"></p>
+                            
+                            <p>Now We can Add Automation Test Data as below. As an Example : Test URL , user name , email , Password.</p>
+            
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#e8bf6a;">&lt;testdata&gt;
+            </span><span style="color:#e8bf6a;">        &lt;applicationurl&gt;</span>https://www.manual2Automation.com<span style="color:#e8bf6a;">&lt;/applicationurl&gt;
+            </span><span style="color:#e8bf6a;">        &lt;useid&gt;</span>testUser<span style="color:#e8bf6a;">&lt;/useid&gt;
+            </span><span style="color:#e8bf6a;">        &lt;password&gt;</span>Password$$#1<span style="color:#e8bf6a;">&lt;/password&gt;
+            </span><span style="color:#e8bf6a;">        &lt;chrome_path&gt;</span>/Users/mkroy/Downloads/chromedriver<span style="color:#e8bf6a;">&lt;/chrome_path&gt;
+            </span><span style="color:#e8bf6a;">        &lt;email&gt;</span>mithunroy.ee@gmail.com<span style="color:#e8bf6a;">&lt;/email&gt;
+            </span><span style="color:#e8bf6a;">&lt;/testdata&gt;</span>
+            </pre>
+
+                <p>Code to read XML file using Python:</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#bbb529;">@classmethod
+        </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">read_xml</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">, </span>node_name):
+            <span style="color:#808080;"># parse an xml file by name
+        </span><span style="color:#808080;">    </span>my_doc = minidom.parse(<span style="color:#6a8759;">&apos;/Users/MR/PythonAppium/TestDataTable/ApplicationTestData.xml&apos;</span>)
+            <span style="color:#808080;"># items = mydoc.getElementsByTagName(&apos;testdata&apos;)
+        </span><span style="color:#808080;">    </span>data = my_doc.getElementsByTagName(node_name)[<span style="color:#6897bb;">0</span>]
+            <span style="color:#cc7832;">return </span>data.firstChild.data</pre>
+
+            <p>
+                    <span
+                    style='color: #FF0000;'>read_xml("applicationurl")</span> will return 
+                    <span
+                    style='color: #FF0000;'>'https://www.manual2Automation.com'</span>
+            </p>
+
+            <p>
+                    <span
+                    style='color: #FF0000;'>read_xml("chrome_path")</span> will return 
+                    <span
+                    style='color: #FF0000;'>'Users/mkroy/Downloads/chromedriver'</span>
+            </p>
+
+            <p>
+                    <span
+                    style='color: #FF0000;'>read_xml("email")</span> will return 
+                    <span
+                    style='color: #FF0000;'>'mithunroy.ee@gmail.com'</span>
+            </p>
+            
+                        </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outer">
+            <div class="inner"><a href="../seleniumPython/pyselPOM.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumPython/pyselUnitTestCall.html" class="previous">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

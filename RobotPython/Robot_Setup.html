@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Robot Framework Set Up On Windows/MAC | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>How To Set Up Robot Framework On Windows/Mac Machine?</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">Python Robot Framework Prerequisite</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+                  <div class="blog_details">
+                     <h1>Se Up Robot Framework On MAC Machine:</h1>
+                     <p>
+
+                        <br>Download Python 3 from here :
+                        <a href="https://www.python.org/downloads/"><u>Download Python</u></a>
+                        <br>Download Pycharm from here :
+                        <a href="https://www.jetbrains.com/pycharm/download/#section=mac"><u>Download Pycharm</u></a>
+
+                        <strong><br>1. After download Python from above link first install it.
+                           <br>2. Then download the .dmg file. Double click to open and install it.
+                        </strong>
+
+                     </p>
+
+                     <h5>How to check whether Python installed successfully or not?:</h5>
+                     <p>Open Command Prompt/Terminal ==> Type python3 ==> We should see Python version as below.</p>
+                     <p> <br><img src="../img/pythonversion.png" alt="Python install" class="img-responsive"><br> </p>
+
+
+                     <h5>How to install Selenium Python</h5>
+                     <p>Open Command Prompt/Terminal ==> Type <span style='color: #FF0000;'>pip install -U
+                           selenium</span> ==> Press Enter</p>
+                     <p> <br><img src="../img/pysel4.png" alt="Python Install" class="img-responsive"><br> </p>
+
+                     <h5>How to set Python class path on MAC?</h5>
+                     <p>Open Command Prompt/Terminal ==> Type <span style='color: #FF0000;'>which python3</span> ==>
+                        Press Enter</p>
+                     <p> <br><img src="../img/getpythonpath.png" alt="Python class path" class="img-responsive"><br>
+                     </p>
+                     <p>Copy this path and Open Command Prompt/Terminal ==> Type </p><span style='color: #FF0000;'>open
+                        ~/.bash_profile</span> ==> Press Enter</p>
+                     <p>This will open a .bash_profile window to add your Pyhton class path.</p>
+                     <p>Now use your copied python path to set PYTHON_HOME as below.</p>
+                     <p>
+                        <span style='color: #FF0000;'>export
+                           PYTHON_HOME="/Library/Frameworks/Python.framework/Versions/3.10"</span>
+                        <br><span style='color: #FF0000;'>PATH="${PYTHON_HOME}/bin:${PATH}"</span>
+                        <br><span style='color: #FF0000;'>export PATH</span>
+                     </p>
+                     <p> <br><img src="../img/setpythonhome.png" alt="Python class path" class="img-responsive"><br>
+                     </p>
+
+
+                     <h5>How to check Selenium Python installed or not?</h5>
+                     <p>Open Command Prompt/Terminal ==> Type <span style='color: #FF0000;'>pip show selenium</span> ==>
+                        Press Enter</p>
+                     <p> <br><img src="../img/pysel5.png" alt="Python installed" class="img-responsive"><br> </p>
+
+                     <h5>Install Robot Framework using MAC Terminal</h5>
+                     <p>OpenTerminal ==> Type <span style='color: #FF0000;'>pip3 install robotframework</span> ==> Press
+                        Enter</p>
+                     <p> <br><img src="../img/robinstall.png" alt="Robot installed" class="img-responsive"><br> </p>
+
+                     <h5>Install Selenium Library</h5>
+                     <p>OpenTerminal ==> Type <span style='color: #FF0000;'>pip3 install
+                           robotframework-seleniumlibrary</span> ==> Press Enter</p>
+                     <p> <br><img src="../img/sellibrary.png" alt="Robot set up" class="img-responsive"><br> </p>
+
+                     <h5>Install IntelliBot</h5>
+                     <p>Open Pycharm <span style='color: #FF0000;'>Go to Plugins, Search and then install it</span> ==>
+                        The IntelliBot plugin adds smart editing features to support the Robot Framework.</p>
+                     <p> <br><img src="../img/intellibot.png" alt="Robot set up" class="img-responsive"><br> </p>
+
+                     <h5>Install Browser Drivers and update their paths in .bash_profile</h5>
+                     <p>1.Download Chromedriver as per your Chrome Browser version from here ==> <span
+                           style='color: #FF0000;'><a
+                              href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a></span>
+                     </p>
+                     <p>2.Download MAC 64 version of ZIP file and unzip it in Download folder.Copy the Chromedriver</p>
+                     <p>3.Now from Terminal go to path : /Library/Frameworks/Python.framework/Versions/3.10</p>
+                     <p>4.Paste your Chromedriver here as shown in below screenshot
+                     <p> <br><img src="../img/chromedriver.png" alt="Robot set up" class="img-responsive"><br> </p>
+
+                     <p>
+                     <h3>Now we are all set to create our first test scripts on Robot Framework ,
+                        will see it in our next topic.
+                     </h3>
+                     </p>
+
+                     <p>
+                     <h1>Se Up Robot Framework On Windows Machine:</h1>
+                     </p>
+
+                     <p>
+
+                        <br>Download Python 3 from here :
+                        <a href="https://www.python.org/downloads/"><u>Download Python</u></a>
+                        <br>Download Pycharm from here :
+                        <a href="https://www.jetbrains.com/pycharm/download/#section=mac"><u>Download Pycharm</u></a>
+
+                        <strong><br>1. After download Python from above link first install it.
+                           <br>2. Then download the community version .exe file. Double click to open and install it.
+                        </strong>
+
+                     </p>
+
+                     <h5>How to check whether Python installed successfully or not?:</h5>
+                     <p>Open Command Prompt/Terminal ==> Type python3 ==> We should see Python version as below.</p>
+                     <p> <br><img src="../img/pythonversion.png" alt="Python install" class="img-responsive"><br> </p>
+
+
+                     <h5>How to install Selenium Python</h5>
+                     <p>Open Command Prompt/Terminal ==> Type <span style='color: #FF0000;'>pip install -U
+                           selenium</span> ==> Press Enter</p>
+                     <p> <br><img src="../img/pysel4.png" alt="Python Install" class="img-responsive"><br> </p>
+
+                     <h5>How to set Python class path on WINDOWS?</h5>
+                     <p>1. Open Command Prompt ==> Type <span style='color: #FF0000;'>where python3</span> ==> Press
+                        Enter</p>
+                     <p> <br><img src="../img/wherepython.png" alt="Python class path" class="img-responsive"><br> </p>
+                     <p>2. Copy this path from Command Prompt</p>
+                     <p>3. Now from My Computer go to Environment Variables</p>
+                     <p>4. Now use your copied python path to set PYTHON_HOME as below.</p>
+                     <p><br><img src="../img/pythonpath.png" alt="Python Install" class="img-responsive"><br> </p>
+                     <p>5. Click on edit button after selecting path and add python installation path up to /bin as
+                        shown in below.</p>
+                     <p> <br><img src="../img/path_python.png" alt="Python Install" class="img-responsive"><br> </p>
+
+                     <h5>How to check Selenium Python installed or not?</h5>
+                     <p>Open Command Prompt/Terminal ==> Type <span style='color: #FF0000;'>pip show selenium</span> ==>
+                        Press Enter</p>
+                     <p> <br><img src="../img/pysel5.png" alt="Python installed" class="img-responsive"><br> </p>
+
+                     <h5>Install Robot Framework using Windows Command Prompt</h5>
+                     <p>OpenTerminal ==> Type <span style='color: #FF0000;'>pip3 install robotframework</span> ==> Press
+                        Enter</p>
+                     <p> <br><img src="../img/robinstall.png" alt="Robot installed" class="img-responsive"><br> </p>
+
+                     <h5>Install Selenium Library</h5>
+                     <p>OpenTerminal ==> Type <span style='color: #FF0000;'>pip3 install
+                           robotframework-seleniumlibrary</span> ==> Press Enter</p>
+                     <p> <br><img src="../img/sellibrary.png" alt="Robot set up" class="img-responsive"><br> </p>
+
+                     <h5>Install IntelliBot</h5>
+                     <p>Open Pycharm <span style='color: #FF0000;'>Go to Plugins, Search and then install it</span> ==>
+                        The IntelliBot plugin adds smart editing features to support the Robot Framework.</p>
+                     <p> <br><img src="../img/intellibot.png" alt="Robot set up" class="img-responsive"><br> </p>
+
+                     <h5>Install Browser Drivers and update their paths in .bash_profile</h5>
+                     <p>1.Download Chromedriver as per your Chrome Browser version from here ==> <span
+                           style='color: #FF0000;'><a
+                              href="https://chromedriver.chromium.org/downloads">https://chromedriver.chromium.org/downloads</a></span>
+                     </p>
+                     <p>2.Download Windows 64 version of ZIP file and unzip it in Download folder,Copy the Chromedriver
+                     </p>
+                     <p>3.Now go to python folder path : C:\Users\Mithun\AppData\Local\Programs\Python\Python36</p>
+                     <p>4.Paste your Chromedriver here as shown in below screenshot
+                     <p> <br><img src="../img/chdriverpath.png" alt="Robot set up" class="img-responsive"><br> </p>
+
+                     <p>
+                     <h3>Now we are all set to create our first test scripts on Robot Framework ,
+                        will see it in our next topic.
+                     </h3>
+                     </p>
+
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython.html" class="previous">&laquo; Previous   </a></div>
+         <div class="inner"><a href="../RobotPython/MyFirstRobotScripts.html" class="previous">   Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

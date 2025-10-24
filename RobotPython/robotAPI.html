@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>API Automation Using Robot Framework | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>API Automation Using Robot Framework</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">GET , POST call.... in Robot Framework</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+                  <div class="blog_details">
+                     <h1>Robot : Perform GET API CALL </h1>
+                     <p><strong>Step 1:</strong> Install 'RESTinstance' using 'pip install --upgrade RESTinstance'</p>
+                     <p><strong>Step 2:</strong> Install 'RESTinstance' in Pycharm as shown in below</p>
+                     <p><img src="../img/RestIns.png" alt="Robot API" class="img-responsive"></p>
+
+                     <h2>Now below example shows how to hit Google GET API CALL?</h2>
+                     <p>
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">REST
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Do a GET Request For Google
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">GET   </span><span style="color:#9876aa;font-style:italic;">https://www.google.com
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Integer     </span><span style="color:#9876aa;font-style:italic;">response status           200
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Output schema   </span><span style="color:#9876aa;font-style:italic;">response body
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">String  </span><span style="color:#9876aa;font-style:italic;">response body
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Output    </span><span style="color:#9876aa;font-style:italic;">response  Headers
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Output    </span><span style="color:#9876aa;font-style:italic;">response  Cookies
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Output    </span><span style="color:#9876aa;font-style:italic;">response  Timing</span>
+   
+   
+   
+   </pre>
+
+                     </p>
+
+                     <p>Explaining above command below --
+
+                        <br><strong>GET</strong> Keyword To Do A GET CALL
+                        <br><strong>https://www.google.com</strong> Request URL
+                        <br><strong>Integer</strong> Keyword To check Integer value
+                        <br><strong>response</strong> response for the GET call
+                        <br><strong>status</strong> This is to check status code.
+                        <br><strong>200</strong> Expected response status code
+                        <br><strong>Output schema   response body</strong> To get Response body schema. Either String/JSON/XML/HTML
+                        <br><strong>Output    response  Headers</strong> To get response header
+                        <br><strong>Output    response  Cookies</strong> To get response Cookies
+                        <br><strong>Output    response  Timing</strong> To get response Timing
+                        
+                     </p>
+
+                     <h2>Another below example shows how to validate response value using Robot?</h2>
+
+                     <p><strong>Open Google Chrome Browser and navigate to ==></strong> https://jsonplaceholder.typicode.com/posts/4</p>
+                     <p>You can see below screenshot output.
+                     <p><img src="../img/RESTapi2.png" alt="Robot API" class="img-responsive"></p>
+                     <p> Below Robot scripts can validate userId = 1 , id = 4 , title = 'eum et est occaecati'</p>
+                     <p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">REST
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Do a GET Request For jsonplaceholder
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">GET   </span><span style="color:#9876aa;font-style:italic;">https://jsonplaceholder.typicode.com/posts/4
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Integer     </span><span style="color:#9876aa;font-style:italic;">response status           200
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Integer    </span><span style="color:#9876aa;font-style:italic;">response body id    4
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Integer    </span><span style="color:#9876aa;font-style:italic;">response body userId    1
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">String </span><span style="color:#9876aa;font-style:italic;">response body title    eum et est occaecati
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span></pre>
+
+                     </p>
+                     <p>Explaining above code below --
+
+                        <br><strong>GET</strong> Keyword To Do A GET CALL
+                        <br><strong>https://jsonplaceholder.typicode.com/posts/4</strong> Request URL
+                        <br><strong>Integer</strong> Keyword To check Integer value
+                        <br><strong>response</strong> response for the GET call
+                        <br><strong>status</strong> This is to check status code.
+                        <br><strong>200</strong> Expected response status code
+                        <br><strong>Integer	response body id    4</strong> To validate id=4 and it is Integer
+                        <br><strong>Integer	response body userId    1</strong> To validate userId=4 and it is Integer
+                        <br><strong>String	response body title    eum et est occaecati</strong> To validate title='eum et est occaecati' and it is String
+                        
+                     </p>   
+
+                     <h1>Robot : Perform POST API CALL </h1>
+                     <p><strong>Step 1:</strong> Using postman do a post API call as below</p>
+                     <p><img src="../img/postman.png" alt="Robot API" class="img-responsive"></p>
+                     <p>From POSTMAN screenshot we can say:
+                        <br><strong>Request URL:</strong> http://dummy.restapiexample.com/api/v1/create
+                        <br><strong>Request Body:</strong>  {"name":"name_001","salary":"53001","age":"23"}
+                        <br><strong>Response Body status:</strong>  {
+                           "status": "success",
+                           "data": {
+                               "name": "name_001",
+                               "salary": "53001",
+                               "age": "23",
+                               "id": 5379
+                           },
+                           "message": "Successfully! Record has been added."
+                       }
+                     </p>
+
+                     <p> Same POSTMAN POST operation can be perform through Robot Framework as below-</p>
+
+                     <p>
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">REST
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span>${testBody}     <span style="color:#9876aa;font-style:italic;">{&quot;name&quot;:&quot;name_001&quot;,&quot;salary&quot;:&quot;53001&quot;,&quot;age&quot;:&quot;23&quot;}
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Do a GET Request For jsonplaceholder
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#808080;">#POST   http://dummy.restapiexample.com/api/v1/create    ${CURDIR}/apijson.json
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">POST   </span><span style="color:#9876aa;font-style:italic;">http://dummy.restapiexample.com/api/v1/create    </span><span style="color:#77b767;">${testBody}
+   </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Integer     </span><span style="color:#9876aa;font-style:italic;">response status           200
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Output    </span><span style="color:#9876aa;font-style:italic;">response      body
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">String </span><span style="color:#9876aa;font-style:italic;">response body status    success
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">String </span><span style="color:#9876aa;font-style:italic;">response body message    Successfully! Record has been added.
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span></pre>
+                     </p>
+
+
+                     <p>Explaining above code below --
+
+                        <br><strong>PO${testBody}ST</strong> Variable to store request JSON body
+                        <br><strong>{"name":"name_001","salary":"53001","age":"23"}</strong> request JSON body
+                        <br><strong>POST</strong> Keyword To Do A POST CALL
+                        <br><strong>http://dummy.restapiexample.com/api/v1/create</strong> Request URL
+                        <br><strong>#POST   http://dummy.restapiexample.com/api/v1/create    ${CURDIR}/apijson.json</strong> This is commented line , showing to pass .JSON file from project Directory.
+                        <br><strong>POST   http://dummy.restapiexample.com/api/v1/create    ${testBody}</strong> POST call with request BODY
+                        <br><strong>response</strong> response for the GET call
+                        <br><strong>status</strong> This is to check status code.
+                        <br><strong>200</strong> Expected response status code
+                        <br><strong>String response body status    success</strong> To validate status='success' and it is String
+                        <br><strong>String response body message    Successfully! Record has been added.</strong> To validate umessageserId='Successfully! Record has been added.' and it is String
+                        
+                     </p>  
+                     <p><img src="../img/postres_robot.png" alt="Robot API" class="img-responsive"></p>
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython/parallelExeRobot.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../RobotPython/robotObjectIdenti.html" class="previous">Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

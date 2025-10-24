@@ -1,0 +1,234 @@
+<html>
+
+<body>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>BrokenLinkAndImage<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebElement<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.io.BufferedWriter<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.io.FileWriter<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.io.IOException<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.List<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeOptions<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.net.HttpURLConnection<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.net.URL<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>checkForBrokenImage {
+    
+    
+        <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public int </span><span style="color:#9876aa;">TotalLinkSize</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    private static </span>WebElement <span style="color:#9876aa;font-style:italic;">ele</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public static int </span><span style="color:#9876aa;font-style:italic;">TotalImageCount</span>=<span style="color:#6897bb;">0 </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">linkCount</span>=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public static </span>String <span style="color:#9876aa;font-style:italic;">ResponseCode</span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">Type</span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">PassResult</span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">Category</span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">FailResult</span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">WarningResult </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">LinkURL</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public static </span>StringBuilder <span style="color:#9876aa;font-style:italic;">myStringBuilDer</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public static int </span><span style="color:#9876aa;font-style:italic;">z </span>= <span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public static int </span><span style="color:#9876aa;font-style:italic;">ImageCount</span>=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+        {
+    
+            <span style="color:#9876aa;font-style:italic;">myStringBuilDer </span>= <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try </span>{
+                checkForBrokenImage obj = <span style="color:#cc7832;">new </span>checkForBrokenImage()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>obj.launApplication()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>obj.checksOnlyImages(<span style="color:#6a8759;">&quot;HomePage&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span><span style="font-style:italic;">saveTestReport</span>(<span style="font-style:italic;">myHTMLTable</span>(<span style="color:#6a8759;">&quot;AmazonHome&quot;</span>)<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;LinkAndImageChecker&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#cc7832;">catch </span>(Exception e)
+            {e.printStackTrace()<span style="color:#cc7832;">;</span>}
+            <span style="color:#cc7832;">finally </span>{
+                <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+        }
+    
+    
+    
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">launApplication</span>()
+        {
+            System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;http://amazon.in/&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#808080;">// Images
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">checksOnlyImages</span>(String pagetype) <span style="color:#cc7832;">throws </span>Exception
+        {
+            List&lt;WebElement&gt; Images=<span style="color:#9876aa;font-style:italic;">driver</span>.findElements(By.<span style="font-style:italic;">tagName</span>(<span style="color:#6a8759;">&quot;img&quot;</span>))<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">ImageCount </span>= Images.size()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// System.out.println(&quot;Total links are &quot;+Images.size());
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#cc7832;">for</span>(<span style="color:#cc7832;">int </span>a=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;</span>a&lt;<span style="color:#9876aa;font-style:italic;">ImageCount</span><span style="color:#cc7832;">;</span>a++)
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;####################&quot;</span>+a)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            try </span>{
+    
+                    <span style="color:#9876aa;font-style:italic;">ele</span>= Images.get(a)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>String url = <span style="color:#9876aa;font-style:italic;">ele</span>.getAttribute(<span style="color:#6a8759;">&quot;src&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">                if</span>(url.contains(<span style="color:#6a8759;">&quot;https://&quot;</span>) &amp;&amp; url.contains(<span style="color:#6a8759;">&quot;.jpg&quot;</span>) ||
+                            url.contains(<span style="color:#6a8759;">&quot;https://&quot;</span>) &amp;&amp; url.contains(<span style="color:#6a8759;">&quot;.png&quot;</span>) ||
+                                    url.contains(<span style="color:#6a8759;">&quot;https://&quot;</span>) &amp;&amp; url.contains(<span style="color:#6a8759;">&quot;.jpeg&quot;</span>) ||
+                                            url.contains(<span style="color:#6a8759;">&quot;https://&quot;</span>) &amp;&amp; url.contains(<span style="color:#6a8759;">&quot;.gif&quot;</span>))
+                    {
+                        <span style="font-style:italic;">verifyImageActive</span>(url <span style="color:#cc7832;">, </span>a <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;MenuPage.png&quot; </span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">ImageCount </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Image&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>}
+    
+    
+                }<span style="color:#cc7832;">catch</span>(Exception e) {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Image is Blank&quot;</span>)<span style="color:#cc7832;">;</span>}
+            }
+    
+        }
+    
+        <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">verifyImageActive</span>(String linkUrl <span style="color:#cc7832;">, int </span>a <span style="color:#cc7832;">, </span>String ScreenName <span style="color:#cc7832;">, int </span>ImageCount <span style="color:#cc7832;">, </span>String type)
+        {
+    
+            <span style="color:#cc7832;">boolean </span>TAG = <span style="color:#cc7832;">false;
+    </span><span style="color:#cc7832;">        try
+    </span><span style="color:#cc7832;">        </span>{
+                URL url = <span style="color:#cc7832;">new </span>URL(linkUrl)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>HttpURLConnection httpURLConnect=(HttpURLConnection)url.openConnection()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>httpURLConnect.setConnectTimeout(<span style="color:#6897bb;">3000</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>httpURLConnect.connect()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            if</span>(httpURLConnect.getResponseCode()==<span style="color:#6897bb;">200 </span>|| httpURLConnect.getResponseCode()==<span style="color:#6897bb;">204</span>)
+                {
+    
+                    <span style="color:#9876aa;font-style:italic;">ResponseCode </span>= String.<span style="font-style:italic;">valueOf</span>(httpURLConnect.getResponseCode())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">PassResult</span>=linkUrl+<span style="color:#6a8759;">&quot; - &quot;</span>+httpURLConnect.getResponseMessage()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">Type</span>=type<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="font-style:italic;">resultoutput_pass</span>()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            </span>}
+                <span style="color:#cc7832;">if</span>(httpURLConnect.getResponseCode()==HttpURLConnection.<span style="color:#9876aa;font-style:italic;">HTTP_NOT_FOUND</span>)
+                {
+                    <span style="color:#9876aa;font-style:italic;">FailResult</span>=linkUrl+<span style="color:#6a8759;">&quot; &lt;=========ISSUE&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">ResponseCode </span>= String.<span style="font-style:italic;">valueOf</span>(httpURLConnect.getResponseCode())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">Type</span>=type<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="font-style:italic;">resultoutput_fail</span>()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+                TAG = <span style="color:#cc7832;">true;
+    </span><span style="color:#cc7832;">            </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This is pass====&gt;&quot;</span>+linkUrl)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(Exception e) {System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This is FAIL====&gt;&quot;</span>+linkUrl)<span style="color:#cc7832;">;</span>}
+    
+        }
+    
+        <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">resultoutput_fail</span>() <span style="color:#cc7832;">throws </span>Exception {
+    
+            <span style="color:#808080;">// Creating HTML Page...
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">z</span>) <span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=width:300px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">FailResult</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">Type</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">ResponseCode</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Fail&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;RED&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">resultoutput_pass</span>() <span style="color:#cc7832;">throws </span>Exception {
+    
+            <span style="color:#808080;">// Creating HTML Page...
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">z</span>) <span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=width:300px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">PassResult</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">Type</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">ResponseCode</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Pass&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Green&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">resultoutput_warning</span>() <span style="color:#cc7832;">throws </span>Exception {
+    
+            <span style="color:#808080;">// Creating HTML Page...
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">z</span>) <span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=width:300px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">WarningResult</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">Type</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FEF9E7 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#9876aa;font-style:italic;">ResponseCode</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;black&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#273746 style=text-align:center;width:50px&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Warning&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;yellow&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">myHTMLTable</span>(String pageName)
+        {
+    
+    
+            <span style="color:#cc7832;">return
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">                </span><span style="color:#6a8759;">&quot;&lt;html&gt;&lt;head&gt;&lt;p&gt;&lt;/p&gt;&lt;/head&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;style&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;table&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;{&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;table-layout: fixed;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;width: 1000px;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;}&quot;
+    </span><span style="color:#6a8759;">
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;td&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot; {&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot; border: 1px solid green;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;    overflow: hidden;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;    word-wrap: break-word;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot; }&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;/style&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/title &lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&amp;nbsp;&lt;/background&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;tr&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td colspan=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">5</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bgcolor=#0A0801 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(pageName<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;tr&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td colspan=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">2</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bgcolor=#0A0801 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Image Count&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td colspan=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">3</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bgcolor=#0A0801 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">ImageCount</span>)<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;/table&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;tr&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#66ffcc style=text-align:center;width:50px&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Sl No.&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#66ffcc style=text-align:center;width:300px&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Service URL&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#66ffcc style=text-align:center;width:50px&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;TYPE&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#66ffcc style=text-align:center;width:50px&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Response Code&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#66ffcc style=text-align:center;width:50px&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Status&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#9876aa;font-style:italic;">myStringBuilDer</span>.toString()
+                            + <span style="color:#6a8759;">&quot;&lt;/table&gt;&lt;/body&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+    </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/html&gt;&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">textcolor</span>(String text <span style="color:#cc7832;">, </span>String colorOfText)
+        {
+            StringBuilder s = <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>s.append(String.<span style="font-style:italic;">format</span>(<span style="color:#6a8759;">&quot;&lt;font color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">%s</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;%s&lt;/font&gt;&quot;</span><span style="color:#cc7832;">,</span>colorOfText<span style="color:#cc7832;">,</span>text))<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>String output = s.toString()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        return </span>output<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">saveTestReport</span>(String report <span style="color:#cc7832;">, </span>String LinkAndImageChecker)
+        {
+            File file = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/delete/&quot;</span>+LinkAndImageChecker+<span style="color:#6a8759;">&quot;.html&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try </span>(BufferedWriter writer = <span style="color:#cc7832;">new </span>BufferedWriter(<span style="color:#cc7832;">new </span>FileWriter(file))) {
+                writer.write(report)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated catch block
+    </span><span style="color:#a8c023;font-style:italic;">            </span>e.printStackTrace()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+        }
+    
+    
+    
+    }
+    
+    </pre>
+               
+</body>
+
+</html>

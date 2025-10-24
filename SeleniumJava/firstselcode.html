@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My First Selenium Code | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: plum;
+                font-size: 25px;
+            }
+
+            img {
+            border: 2px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>My First Selenium Code</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+        <br><br><img class="centerimg" src="../img/js1.png" alt="Import Selenium Jar" 
+        style="text-align:center;widows: 400;height:400;border: white;">
+              <h2 style="text-align:center; margin-top: 40px;">My First Selenium Code</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <h3>My First Selenium Scripts</h3>
+
+                <p><br>1. Below scenario will launch Google Chrome then hit https://www.google.com , then will
+                    validate
+                    Google logo , search text bar , I'm feeling Lucky button.
+                    Finally Close Chrome Browser<br></p>
+
+                 <p><br>2. We already have explained up to create Class during
+                    <a href="../SeleniumJava/seleniumjavasetup.html">Selenium Java Set Up</a>Section.
+                    <br></p>
+
+                 <p><br>3. Once Class is created write main() method which is written below.<br></p>
+                 <div id="scrollable-content-inside">
+                    <div class="code-bg" id="divClipboard1">
+                       <h5 style="color: whitesmoke;"><span style="color:yellow;">public </span> static void
+                          <span style="color: tomato;">main</span>(String[] args)throws Exception</h5>
+                       <h5 style="color: whitesmoke;">{</h5>
+                       <h5 style="color: whitesmoke;">}</h5>
+                    </div>
+                 </div>
+                 <button style="background: greenyellow;" onclick="copyClipboard('divClipboard1')">Copy
+                    Code</button><br>
+
+                 <p><br>4. Now create an object of the class , that is
+                    classname anyobjectName = new classname();<br></p>
+
+                 <div id="scrollable-content-inside">
+                    <div class="code-bg" id="divClipboard2">
+                       <h5 style="color: whitesmoke;"><span style="color:yellow;">public </span> static void
+                          <span style="color: tomato;">main</span>(String[] args)throws Exception</h5>
+                       <h5 style="color: whitesmoke;">{</h5>
+                       <h5 style="color: whitesmoke;">mM2Aclass objOfClass = new mM2Aclass(); // object</h5>
+                       <h5 style="color: whitesmoke;">}</h5>
+                    </div>
+                 </div>
+                 <button style="background: greenyellow;" onclick="copyClipboard('divClipboard2')">Copy
+                    Code</button><br>
+
+
+                 <p><br>5. Now we are creating 3 methods within the class. launchApplication() ,
+                    validateTestWithinGoogle() , closeApplication().<br></p>
+
+                 <p><br>6. Once method creation is done then we are calling thesese methods from
+                    main() method. Check below screenshot.<br></p>
+                 <br><img src="../img/javamethods.png" alt="Selenium Java Code" class="responsive"><br>
+
+                 <p><br>7. Download chromedriver from <a href="https://chromedriver.chromium.org/">here</a>
+                    . Remember chromedriver path , which would Required below.<br></p>
+                 <p><br>8. Now launchApplication() method is having code to initialize the Chrome WebDriver
+                    and launch Google application.<br></p>
+                 <p><br>9. Now validateTestWithinGoogle() method is having code to validate Google logo ,
+                    Search bar and I'm feeling lucky button<br></p>
+                 <p><br>10. And closeApplication() method is Closing Google Chrome after validation<br></p>
+                 <p><br>11. Full code and screenshot is given below<br></p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>m2apackage<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>mM2Aclass {
+    
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception <span style="color:#808080;">// This is main function
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span>{
+            mM2Aclass objOfClass = <span style="color:#cc7832;">new </span>mM2Aclass()<span style="color:#cc7832;">;     </span><span style="color:#808080;">// Object
+    </span><span style="color:#808080;">        </span>objOfClass.launchApplication()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>objOfClass.validateTestWithinGoogle()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>objOfClass.closeApplication()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#808080;">// Method to Launch Google Chrome
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">launchApplication</span>() {
+    
+            <span style="color:#808080;">// System Property for Chrome Driver
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Instantiate a ChromeDriver class.
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>=<span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#808080;">// Method to test scenarios
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">validateTestWithinGoogle</span>() {
+    
+            <span style="color:#cc7832;">if </span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed()){
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Logo is present&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+            <span style="color:#cc7832;">if </span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;q&quot;</span>)).isDisplayed()){
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Search Text Box is present&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+            <span style="color:#cc7832;">if </span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;btnI&quot;</span>)).isDisplayed()){
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;I am Feeling lucky button is available&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+        }
+    
+        <span style="color:#808080;">// Method to close the application
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">closeApplication</span>() {
+            <span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    }
+    
+    
+    </pre>
+                    <p><br></p>
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../SeleniumJava/importjar.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../SeleniumJava/selactionclass.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

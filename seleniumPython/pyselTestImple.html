@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium with Pyhton | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Selenium Python - Test Scripts Implementation</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/pysel2.png" alt="Python Selenium"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Implement Selenium Python - From unittest</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Package and Python File Creation Before Code Development</h5>
+                            <p>
+                                Creating 2 python packages TestScenarios and TestScenarioImplementation
+                            </p>
+                            <p><img src="../img/pysel36.png" alt="Python Imple" class="img-responsive"></p>
+
+                            <p>
+                                Now Let's take an example of HomeTest.py which is an UnitTestClass where we are calling the primary 
+                                scenarios. Scenario implementations are described in HomeTestDef.py file.
+                            </p>
+
+                                <h5>Below example shows how we are calling scenarios from HomeTest.py</h5>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#808080;"># Developed By MITHUN ROY
+        </span><span style="color:#808080;"># https://manual2Automation.com
+        </span><span style="color:#808080;">
+            <span style="color:#cc7832;">import </span>unittest
+            <span style="color:#cc7832;">from </span>pathlib <span style="color:#cc7832;">import </span>Path
+            <span style="color:#cc7832;">from </span>Reusable.reusable_methods <span style="color:#cc7832;">import </span>ReusableTest
+            <span style="color:#cc7832;">from </span>Reusable <span style="color:#cc7832;">import </span>Driver
+            <span style="color:#cc7832;">from </span>TestScenarioImplementation.HomeTestDef <span style="color:#cc7832;">import </span>HomeTestDef
+            
+            
+            <span style="color:#cc7832;">class </span>HomeTestClass(unittest.TestCase):
+            
+                <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">setUp</span>(<span style="color:#94558d;">self</span>):
+            
+                    Driver.Initialize()
+            
+                <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">test_scenarios_execution</span>(<span style="color:#94558d;">self</span>):
+            
+                    pro_path = Path(__file__).parent
+                    x = <span style="color:#8888c6;">str</span>(pro_path).split(<span style="color:#6a8759;">&quot;TestScenarios&quot;</span>)[<span style="color:#6897bb;">0</span>] + <span style="color:#8888c6;">str</span>(<span style="color:#6a8759;">&quot;TestReport/&quot;</span>)
+                    <span style="color:#cc7832;">with </span><span style="color:#8888c6;">open</span>(x + <span style="color:#6a8759;">&apos;HomeTestScenario.html&apos;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&apos;w&apos;</span>) <span style="color:#cc7832;">as </span>html_file:
+            
+                        <span style="color:#808080;"># Create initial test report
+            </span><span style="color:#808080;">            </span>ReusableTest.initial_html(html_file<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Test Scenarios&quot;</span>)
+            
+                        <span style="color:#808080;"># Starting execution
+            </span><span style="color:#808080;">            </span>HomeTestDef.go_to_url(ReusableTest.read_xml(<span style="color:#6a8759;">&quot;applicationurl&quot;</span>))  <span style="color:#808080;"># Launch The Application
+            </span><span style="color:#808080;">            </span>HomeTestDef.header_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Header section validation
+            </span><span style="color:#808080;">            </span>HomeTestDef.footer_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Footer section validation
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">            # Final report
+            </span><span style="color:#808080;">            </span>ReusableTest.final_html(html_file)
+            
+                <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">tearDown</span>(<span style="color:#94558d;">self</span>):
+                    Driver.close_driver()
+            
+            
+            <span style="color:#cc7832;">if </span>__name__ == <span style="color:#6a8759;">&apos;__main__&apos;</span>:
+                unittest.main()</pre>
+
+                <p><span
+                    style='color: #FF0000;'>from TestScenarioImplementation.HomeTestDef import HomeTestDef</span> 
+                To import HomeTestDef class file. Here TestScenarioImplementation.HomeTestDef = Package name.className
+                </p>
+
+                <p><span
+                    style='color: #FF0000;'>Driver.Initialize()</span> 
+                To Initialize Selenium WebDriver
+                </p>
+
+                <p><span
+                    style='color: #FF0000;'>html_file</span> 
+                To declare customize HTML report name as per test scenario name.
+                </p>
+
+                <p><span
+                    style='color: #FF0000;'>ReusableTest.initial_html(html_file, "Home Test Scenarios")</span> 
+                To Initialize customize HTML report name as per test scenario name.
+                </p>
+
+           
+
+            <h5>Below example shows how implemented class file has calling scenario definitions, HomeTestDef.py</h5>
+
+            <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#808080;"># Developed By MITHUN ROY
+                </span><span style="color:#808080;"># https://manual2Automation.com
+                </span><span style="color:#808080;">
+                    </span><span style="color:#808080;"># use of class method and static method.
+                    </span><span style="color:#808080;">
+                    </span><span style="color:#cc7832;">from </span>Reusable <span style="color:#cc7832;">import </span>Driver
+                    <span style="color:#cc7832;">from </span>PageObject.Home <span style="color:#cc7832;">import </span>HomePage
+                    <span style="color:#cc7832;">from </span>Reusable.reusable_methods <span style="color:#cc7832;">import </span>ReusableTest
+                    
+                    
+                    <span style="color:#cc7832;">class </span>HomeTestDef:
+                    
+                        <span style="color:#bbb529;">@staticmethod
+                    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">go_to_url</span>(url):
+                    
+                            Driver.Instance.maximize_window()
+                            Driver.Instance.get(url)
+                    
+                        <span style="color:#bbb529;">@staticmethod
+                    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">header_options_validation</span>(self<span style="color:#cc7832;">, </span>html_report):
+                            <span style="color:#cc7832;">try</span>:
+                                self.assertTrue(Driver.is_web_element_displayed(HomePage.applicationLogo()))
+                                self.assertTrue(Driver.is_web_element_displayed(HomePage.loginLink()))
+                                self.assertTrue(Driver.is_web_element_displayed(HomePage.training_option()))
+                                Driver.click_and_implicit_wait(HomePage.loginLink())
+                                Driver.go_back(<span style="color:#6897bb;">5</span>)
+                                ReusableTest.when_test_is_pass(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-001&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Logo is available&quot;</span>)
+                                ReusableTest.when_test_is_pass(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-002&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Sign In is available&quot;</span>)
+                    
+                            <span style="color:#cc7832;">except</span>:
+                    
+                                ReusableTest.when_test_is_fail(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-001&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Logo is not available&quot;</span>)
+                                ReusableTest.when_test_is_fail(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-002&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Sign In is not available&quot;</span>)
+                    
+                        <span style="color:#bbb529;">@staticmethod
+                    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">footer_options_validation</span>(self<span style="color:#cc7832;">, </span>htmlreport):
+                            <span style="color:#cc7832;">try</span>:
+                                self.assertEquals(<span style="color:#6a8759;">&quot;Training Option&quot;</span><span style="color:#cc7832;">, </span>Driver.get_element_text(HomePage.training_option()))
+                                ReusableTest.when_test_is_pass(htmlreport<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-003&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Footer Training Option is available&quot;</span>)
+                    
+                            <span style="color:#cc7832;">except</span>:
+                    
+                                ReusableTest.when_test_is_fail(htmlreport<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-003&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Footer Training Option is not available&quot;</span>)
+                            </pre>
+
+                            <p>
+                                After successful execution HTML Test report looks like below.
+                            </p>
+                            <p><img src="../img/pysel37.png" alt="Python HTML Report" class="img-responsive"></p>
+                 
+            
+                        </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outer">
+            <div class="inner"><a href="../seleniumPython/pyselUnitTestCall.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumPython/pyselHTMLReport.html" class="previous">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

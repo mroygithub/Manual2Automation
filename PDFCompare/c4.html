@@ -1,0 +1,105 @@
+<html>
+<body>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>pdfcompare<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.io.MemoryUsageSetting<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.multipdf.PDFMergerUtility<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.multipdf.Splitter<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.pdmodel.PDDocument<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.io.FileNotFoundException<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.io.IOException<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.Iterator<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.List<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>PDFMergeByPage {
+    
+    
+        <span style="color:#cc7832;">public static </span>String <span style="color:#9876aa;font-style:italic;">mergePDFPages </span>= <span style="color:#6a8759;">&quot;3,4&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+        {
+            PDFMergeByPage obj = <span style="color:#cc7832;">new </span>PDFMergeByPage()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>obj.Spli_PDF_Then_Merge()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Spli_PDF_Then_Merge</span>()
+        {
+    
+            <span style="color:#808080;">// Below Code is Splitting
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span><span style="color:#cc7832;">try </span>{
+    
+                File file =<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+<span style="color:#6a8759;">&quot;MITHUN_PDF.pdf&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span><span style="color:#808080;">//Loading an existing PDF document
+    </span><span style="color:#808080;">            </span>PDDocument document = PDDocument.<span style="font-style:italic;">load</span>(file)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Create a Splitter object
+    </span><span style="color:#808080;">            </span>Splitter splitter = <span style="color:#cc7832;">new </span>Splitter()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            </span><span style="color:#808080;">//splitting the pages of a PDF document
+    </span><span style="color:#808080;">            </span>List&lt;PDDocument&gt; Pages = splitter.split(document)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            </span><span style="color:#808080;">//Creating an iterator object
+    </span><span style="color:#808080;">            </span>Iterator&lt;PDDocument&gt; iterator = Pages.listIterator()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            </span><span style="color:#808080;">//saving splits as individual PDF document
+    </span><span style="color:#808080;">            </span><span style="color:#cc7832;">int </span>pdfPageNumber = <span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            while</span>(iterator.hasNext()) {
+                    PDDocument pd = iterator.next()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>pd.save(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+ pdfPageNumber++ +<span style="color:#6a8759;">&quot;.pdf&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;PDF File Split is Done&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>document.close()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#cc7832;">catch</span>(Exception e) {System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;PDF Split is Fail&quot;</span>)<span style="color:#cc7832;">; </span>}
+    
+    
+    
+            <span style="color:#808080;">// Runtime Merge PDF Files.....
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span>PDFMergerUtility   mergePdf = <span style="color:#cc7832;">new </span>PDFMergerUtility()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>mergePdf.setDestinationFileName(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+<span style="color:#6a8759;">&quot;Merged.pdf&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span>String pageToMerge = <span style="color:#9876aa;font-style:italic;">mergePDFPages</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Split Page As Per Page Number
+    </span><span style="color:#808080;">        </span>String[] pageToMergeSplit = pageToMerge.split(<span style="color:#6a8759;">&quot;,&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        for</span>(<span style="color:#cc7832;">int </span>k=<span style="color:#6897bb;">0 </span><span style="color:#cc7832;">; </span>k&lt;pageToMergeSplit.<span style="color:#9876aa;">length</span><span style="color:#cc7832;">;</span>k++) {
+                File folder = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// loop through all files in the folder
+    </span><span style="color:#808080;">            </span><span style="color:#cc7832;">for </span>(File file : folder.listFiles())
+                {
+                    <span style="color:#808080;">// if it is a PDF file
+    </span><span style="color:#808080;">                </span><span style="color:#cc7832;">if </span>(file.getName().equals(pageToMergeSplit[k].trim()+<span style="color:#6a8759;">&quot;.pdf&quot;</span>))
+                    {
+                        File readpdf = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+file.getName())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                    try </span>{
+                            mergePdf.addSource(readpdf)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                    </span>} <span style="color:#cc7832;">catch </span>(FileNotFoundException e) {
+                        }
+                    }
+                }
+            }
+            <span style="color:#cc7832;">try </span>{
+                mergePdf.mergeDocuments(MemoryUsageSetting.<span style="font-style:italic;">setupMainMemoryOnly</span>())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated catch block
+    </span><span style="color:#a8c023;font-style:italic;">            </span>e.printStackTrace()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#cc7832;">finally </span>{}
+    
+    
+    
+    
+        }
+    
+    }</pre>
+                
+</body>
+</html>

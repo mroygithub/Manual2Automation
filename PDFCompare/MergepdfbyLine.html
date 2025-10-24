@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Merge PDF | manual2Automation</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+
+        p {
+            color: black;
+            font-size: 20px;
+            word-wrap: break-word;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        h5 {
+            color: Blue;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 25px;
+            word-wrap: break-word;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+            $("#code1").load("../PDFCompare/c5.html");
+        });
+    </script>
+    <style>
+        .right {
+            float: center;
+            width: 110px;
+            padding: 10px;
+        }
+
+        .left {
+            float: center;
+            width: 120px;
+            padding: 6px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Merge Multiple PDF Files Into Single PDF[By Line]</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+       <br><br> <img class="centerimg" src="../img/pdf5.jpg" alt="Merge Multiple PDF Files Into Single PDF"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Merge Multiple PDF Files Into Single PDF[By Line]</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Example : Runtime Break And Merge PDF By Line as a Parameter
+                            </h5>
+
+                            <P><strong>Where We Can Implement This Logic?</strong></P>
+                            <p>We are generating PDF form for all the stated in USA , may be for any Banking or Insurance
+                                document. Now for testing purpose we need 4-5 pages of a perticular section , not
+                                the entire PDF. And these section can very based on states. Now every time we are downloading the PDF
+                                and manually have to Scroll where my PDF is starting for each states. To avoid that , if we know 'Heading' / 'Any Initial Line 
+                                of the perticular section' , then runtime our scripts can find that PDF then then start trimming it form
+                                that page.
+                            </p>
+
+                            <p><strong>Let's take an example</strong> of a PDF file which has 30 pages. Now if we split it , we will
+                                create 30 PDF files , where runtime after split we want to Merge
+                            pages using our string which would be the first page of the newly merged PDF. How to do that???</p>
+
+
+                           <p>Below example is showing :
+                               <br> We have a PDF with 5 pages.
+                               <br> Splitting the PDF with All 5 Pages.
+                               <br> Passsing a runtime parameter as "THIS IS DUMMI PDF PAGE 3",1
+                               <br> This is nothing but creating a new merged PDF where my starting PDF has Sentence which 
+                               is my input string as parameter.
+                               <br> Here '1' is my end page. So total two pages of document will be generated.
+                               <br> If we give "Any Line,5" .... then 6 pages of newly merged document will be generated. Make Sure the 
+                               Line as a String parameter which we are passing must be Unique. And we must know length of our required PDF section.
+                               <br> Full end to end flow is happening runtime.
+                           </p>    
+                           
+                           <p>See below , one of my PDF has sentense as "THIS IS DUMMI PDF PAGE 3". Now we are adding 
+                               one more parameter means end page. So if this sentence is found in page number '3' then it will create a 
+                               new PDF with page number 3,4. In Example "Line Text" , 1 means starting page + 1.
+                           </p><br>
+
+                           <p> Below method can return the page number where your input veriable string page line is 
+                               present. In this case my string 'THIS IS DUMMI PDF PAGE 3' in present in Page number 3. So 
+                               onve you execute below method , 'StartPage' value would be 3. </p>
+
+                               <br><img src=".././img/pdf7.png" alt="PDF Merge by PDFBox" class="img-responsive"> <br>
+
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">getRuntimePageNumbers</span>() <span style="color:#cc7832;">throws </span>IOException
+    {
+    
+        <span style="color:#808080;">// public static String pageToMerge = &quot;THIS IS DUMMI PDF PAGE 3,1&quot;;
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span>String lineText= <span style="color:#9876aa;font-style:italic;">pageToMerge</span>.split(<span style="color:#6a8759;">&quot;,&quot;</span>)[<span style="color:#6897bb;">0</span>]<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>File folder = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/MithunPDF&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#808080;">// loop through all files in the folder
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">for </span>(File file : folder.listFiles())
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(file.getName())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        if </span>(file.getName().contains(<span style="color:#6a8759;">&quot;.pdf&quot;</span>)) {
+                <span style="color:#cc7832;">try </span>{
+                    <span style="color:#9876aa;font-style:italic;">rundoc </span>= PDDocument.<span style="font-style:italic;">load</span>(<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/MithunPDF/&quot; </span>+ file.getName()))<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                if </span>(file.getName().length() &lt; <span style="color:#6897bb;">10</span>) {
+                        <span style="color:#cc7832;">if </span>(!<span style="color:#9876aa;font-style:italic;">rundoc</span>.isEncrypted()) {
+                            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(file.getName())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                        </span>PDFTextStripperByArea stripper = <span style="color:#cc7832;">new </span>PDFTextStripperByArea()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                        </span>stripper.setSortByPosition(<span style="color:#cc7832;">true</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                        </span>PDFTextStripper Tstripper = <span style="color:#cc7832;">new </span>PDFTextStripper()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                        </span>String stActual = Tstripper.getText(<span style="color:#9876aa;font-style:italic;">rundoc</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                        </span>String[] LineBreak = stActual.split(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">r?</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">n&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">                        for </span>(<span style="color:#cc7832;">int </span>i = <span style="color:#6897bb;">0</span><span style="color:#cc7832;">; </span>i &lt; <span style="color:#6897bb;">5</span><span style="color:#cc7832;">; </span>i++) {
+                                <span style="color:#cc7832;">if </span>(LineBreak[i] != <span style="color:#cc7832;">null</span>) {
+                                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Page Number is :&quot; </span>+ file.getName() + <span style="color:#6a8759;">&quot;:::&quot; </span>+ LineBreak[i])<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                                if </span>(LineBreak[i].contains(lineText)) {
+                                        <span style="color:#9876aa;font-style:italic;">StartPage </span>= Integer.<span style="font-style:italic;">valueOf</span>(file.getName().replaceAll(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">D&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;&quot;</span>))<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                                    break;
+    </span><span style="color:#cc7832;">                                </span>}
+                                }
+                            }
+                            <span style="color:#cc7832;">if </span>(<span style="color:#9876aa;font-style:italic;">StartPage </span>!= <span style="color:#6897bb;">0</span>) {
+                                <span style="color:#cc7832;">break;
+    </span><span style="color:#cc7832;">                        </span>}
+                        }
+                    }
+    
+                    <span style="color:#9876aa;font-style:italic;">rundoc</span>.close()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>} <span style="color:#cc7832;">catch </span>(Exception e) {
+                    e.printStackTrace()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">rundoc</span>.close()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+        }
+    
+    }</pre>
+
+    <p> Now Complete Code can be written as below : </p>
+
+
+    <div id="code1"></div>
+
+
+
+        <p>After PDF Split and Merge</p><br>
+
+        <br><img src=".././img/pdf8.png" alt="PDF Merge by PDFBox" class="img-responsive">
+
+        <br><br>
+
+
+                        </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <div id="outer">
+            <div class="inner"><a href="../PDFCompare/MergePDFByPage.html " class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../PDFCompare/pdfTopdfcompareVisually.html" class="previous">Next &raquo;</a></div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

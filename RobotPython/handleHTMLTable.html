@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Robot Framework : Handle HTML Table | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Robot Framework : Handle HTML Table</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">HTML Table row/column/cell/header.... in Robot Framework</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+                  <div class="blog_details">
+                     <h1>Robot : How To Read HTML Table ? </h1>
+                    
+                     <p>Consider The Below HTML Table</p>
+                     <p><img src="../img/robot_htmlTable.png" alt="Robot HTML TABLE" class="img-responsive"></p>
+                     <p>How to get all row count?</p>
+                     <p><strong>${rows}=    get element count   xpath://table[@name='BookTable']/tbody/tr</strong></p>
+                     <p>How to get all column count?</p>
+                     <p><strong>${cols}=    get element count  xpath://table[@name='BookTable']/tbody/tr[1]/th</strong></p>
+                     <p>Read HTML Data By Xpath: Second Row and First Column</p>
+                     <p><strong>${dataRead}=    get text   xpath://table[@name='BookTable']/tbody/tr[2]/td[1]</strong></p>
+                     <p>4 th Column should have value as 3000</p>
+                     <p><strong>table column should contain     xpath://table[@name='BookTable']    4   3000</strong></p>
+                     <p>5 th row should have value as 'Master In Selenium'</p>
+                     <p><strong>table row should contain    xpath://table[@name='BookTable']    5   Master In Selenium</strong></p>
+                     <p>3 rd row and 2nd column should have value as 'Mukesh'</p>
+                     <p><strong>table cell should contain   xpath://table[@name='BookTable']    3       2        Mukesh</strong></p>
+                     <p>Table Header should have column name as 'Subject'</p>
+                     <p><strong>table header should contain     xpath://table[@name='BookTable']    Subject</strong></p>
+
+                     <p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span>${Browser}  <span style="color:#9876aa;font-style:italic;">Chrome
+   </span>${url}  <span style="color:#9876aa;font-style:italic;">https://testautomationpractice.blogspot.com/
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Verify HTML TABLE 
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#77b767;">${url}  ${Browser}
+   </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    </span>${rows}=    <span style="color:#ffc66d;">get element count   </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]/tbody/tr
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">log to console  </span><span style="color:#77b767;">${rows}
+   </span><span style="color:#77b767;">    </span>${cols}=    <span style="color:#ffc66d;">get element count  </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]/tbody/tr[1]/th
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">log to console  </span><span style="color:#77b767;">${cols}
+   </span><span style="color:#77b767;">    </span>${dataRead}=    <span style="color:#ffc66d;">get text   </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]/tbody/tr[2]/td[1]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">log to console  </span><span style="color:#77b767;">${dataRead}
+   </span><span style="color:#77b767;">    </span><span style="color:#808080;">#column
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">table column should contain     </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]    4   3000
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#808080;">#row
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">table row should contain    </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]    5   Master In Selenium
+   </span><span style="color:#9876aa;font-style:italic;">     </span><span style="color:#808080;">#cell
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">table cell should contain   </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]    3       2        Mukesh
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#808080;">#header
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">table header should contain     </span><span style="color:#9876aa;font-style:italic;">xpath://table[@name=&apos;BookTable&apos;]    Subject
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span></pre>
+
+
+
+                     </p>
+        
+                     
+
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython/runRobotUsingTAG.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../RobotPython/parallelExeRobot.html" class="previous">Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

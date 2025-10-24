@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Class and XML | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+    <style>
+            
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG Class and XML</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Class and XML" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Class and XML </h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+        <div class="blog_details">
+            <h5>TestNG Class using Eclipse</h5>
+            <p>Create a Java Project in Eclipse ==>
+                    Create a package ==> Right Click on Package ==> TestNG ==> Create TestNG Class<br></p>
+                    <br><img src="../img/fjtng1.png" alt="TestNG in Eclipse" class="responsive"><br>
+                    <p><br>Give Class name , check the check boxes for @BeforeClass and @AfterClass
+                    <br>Click on Finish button.</p>
+                    <br><img src="../img/fjtng2.png" alt="TestNG in Eclipse" class="responsive"><br>
+                    <p><br>Now TestNG project is Created. Place cursor on org.testng error and click on ‘Add TestNG library’.<br></p>
+                    <br><img src="../img/fjtng3.png" alt="TestNG in Eclipse" class="responsive"><br>
+                    <p><br>Now place @Test method in between @BeforeClass and @AfterClass , as shown in below.<br></p>
+                    <br><img src="../img/fjtng4.png" alt="TestNG in Eclipse" class="responsive"><br>
+                    <p><br>Now making @BeforeClass to launch my application to test. @Test to test one scenario and @AfterClass to quit my browser.
+                    <br>Changing @Test method name to testMyApplication.
+                    <br>Below code will launch ‘https://www.wikipedia.org/’ , validate Wikipedia logo and close the Browser.<br></p>
+                    <br><img src="../img/fjtng5.png" alt="TestNG in Eclipse" class="responsive"><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>testNGClass {
+        
+        
+            WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@BeforeClass
+        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">beforeClass</span>()
+            {
+                System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mychromedriverpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.wikipedia.org/&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#bbb529;">@Test
+        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testMyApplication</span>()
+            {
+                <span style="color:#808080;">// To validate &#39;wikipedia&#39; Logo
+        </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;//div[@class=&#39;central-textlogo__image sprite svg-Wikipedia_wordmark&#39;]&quot;</span>)).isDisplayed())
+                {System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Wikipedia Logo is available&quot;</span>)<span style="color:#cc7832;">;</span>}
+            }
+        
+            <span style="color:#bbb529;">@AfterClass
+        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">afterClass</span>()
+            {
+                <span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// To Close the Application....
+        </span><span style="color:#808080;">    </span>}
+        }
+    
+    
+    
+    </pre><br><br><br><br>
+
+
+    <h5>Create Maven Project Using TestNG Eclipse</h5>
+    <p>1. Install TestNG in Eclipse from Help --> Eclipse Marketplace ,
+        Which is already explained in previous section.
+        <br>2. Open Eclipse , Select any eclipse project path. Check below image.</p>
+        <br><img src="../img/sj1.jpg" alt="Maven TestNG Project" class="responsive"><br>
+        <p>3. It should navigate to Eclipse landing screen. If you see 'Workbench' image then
+           click on it.
+        <br>4. We should see below screen.</p>
+        <br><img src="../img/sj2.jpg" alt="Maven TestNG Project" class="responsive"><br>
+        <br><img src="../img/sj3.png" alt="Maven TestNG Project" class="responsive"><br>
+        <p>5. Select new button from left top section as shown in below image.</p>
+        <br><img src="../img/new.png" alt="Maven TestNG Project" class="responsive"><br>
+        <p><br>6. Select Maven project. Click next button<br></p>
+        <br><img src="../img/selectmavenpro.png" alt="Maven TestNG Project" class="responsive"><br>
+        <p><br>7. Select create a simple project checkbox and click next.<br></p>
+        <br><img src="../img/checksimplepro.png" alt="Maven TestNG Project" class="responsive"><br>
+        <p><br>8. Fill Group id and Artifact Id , it can be same. Here we are giving as
+           "com.testautomation.mavenprojects"
+           . Click on Finish button.<br></p>
+        <br><img src="../img/mavenproname.png" alt="Maven TestNG Project" class="responsive"><br>
+        <p><br>9. Once Maven Project is created then wait for sometime to auto build the project.
+           Once project is build then we can see pom.xml file created inside the project.<br></p>
+        <br><img src="../img/finalmavenpro.png" alt="Maven TestNG Project" class="responsive"><br>
+        <p><br>10. Once Maven Project is created then wait for sometime to auto build the project.
+           Once project is build then we can see pom.xml file created inside the project.<br></p>
+           <p><br>11. Right Click on src/text/java --> new --> Package. Create a new TestNG class inside the package.<br></p>
+           <p><br>12. Once TestNG class is created then import TestNG library by hovering your mouse on 
+              class level any error. Check below images.<br></p>
+           <p><br><img src="../img/maventestng_3.png" alt="Maven TestNG Project" class="responsive"><br>
+           <br><img src="../img/maventestng_1.png" alt="Maven TestNG Project" class="responsive"><br>
+           <br><img src="../img/maventestng_2.png" alt="Maven TestNG Project" class="responsive"><br>  
+           <br><img src="../img/maventestng_4.png" alt="Maven TestNG Project" class="responsive"></p><br><br><br>
+            
+            
+           <br><br><br> <h5>Create TestNG Class in IntelliJ</h5>
+            <p>2.Create a maven project in IntelliJ
+                <br>3.Add testNG dependency in POM.XML
+                <br>4.Create a package under java folder [src/test/java]
+                <br>5.Create a class file under package
+                <br>6.Now create test methods using TestNG annotations and import the packages.
+            </p>
+            <br><img src="../img/tg10.png" alt="Maven TestNG Project" class="responsive"><br>
+
+
+            <br><br><br> <h5>Create TestNG XML in IntelliJ</h5>
+            <p>2.Create a maven project in IntelliJ
+                <br>3.Add testNG dependency in POM.XML
+                <br>4.Create a XML file under resources folder [src/main/resources]
+                <br>5.Give XML file name as anyname.xml</p>
+                
+            
+            <br><img src="../img/tg11.png" alt="Maven TestNG XML" class="responsive"><br>
+            <br><img src="../img/tg12.png" alt="Maven TestNG XML" class="responsive"><br>
+            <p><br>6.Paste below code once xml file is created.</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;Suite1&quot; </span><span style="color:#bababa;">verbose=</span><span style="color:#6a8759;">&quot;1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGnew&quot; </span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+
+</pre>
+
+<p>TestNGPKG = Package name under [src/test/java]</p>
+<p>testNGnew = Class name under TestNGPKG
+    <br> Now Right click on XML file and run it. This will execute all test present in the xml file.
+</p>
+
+
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testngAnnotations.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngxmldatadriven.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

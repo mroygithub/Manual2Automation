@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium with Pyhton | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Selenium Python - Customize HTML Reporting</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/pysel2.png" alt="Python Selenium"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Implement Selenium Python - HTML Reporting</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>To create stringbuilder instance to append the HTML file</h5>
+                <pre 
+                
+                style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                    pro_path = Path(__file__).parent
+                    x = <span style="color:#8888c6;">str</span>(pro_path).split(<span style="color:#6a8759;">&quot;TestScenarios&quot;</span>)[<span style="color:#6897bb;">0</span>] + <span style="color:#8888c6;">str</span>(<span style="color:#6a8759;">&quot;TestReport/&quot;</span>)
+                    <span style="color:#cc7832;">with </span><span style="color:#8888c6;">open</span>(x + <span style="color:#6a8759;">&apos;HomeTestScenario.html&apos;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&apos;w&apos;</span>) <span style="color:#cc7832;">as </span>html_file:
+                </pre>
+                            
+
+                <p><span
+                    style='color: #FF0000;'>TestReport/</span> 
+                This HTML test report will save under this folder in Framework as below.
+                </p>
+                <p><span
+                    style='color: #FF0000;'>html_file</span> 
+                Initializing HTML stringbuilder.
+                </p>
+
+                <p><img src="../img/pysel38.png" alt="Python HTML Folder" class="img-responsive"></p>
+
+                <h5>Before Test Execution creating initial test report</h5>
+
+                <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">test_scenarios_execution</span>(<span style="color:#94558d;">self</span>):
+
+                    pro_path = Path(__file__).parent
+                    x = <span style="color:#8888c6;">str</span>(pro_path).split(<span style="color:#6a8759;">&quot;TestScenarios&quot;</span>)[<span style="color:#6897bb;">0</span>] + <span style="color:#8888c6;">str</span>(<span style="color:#6a8759;">&quot;TestReport/&quot;</span>)
+                    <span style="color:#cc7832;">with </span><span style="color:#8888c6;">open</span>(x + <span style="color:#6a8759;">&apos;HomeTestScenario.html&apos;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&apos;w&apos;</span>) <span style="color:#cc7832;">as </span>html_file:
+                
+                        <span style="color:#808080;"># Create initial test report
+                </span><span style="color:#808080;">        </span>ReusableTest.initial_html(html_file<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Test Scenarios&quot;</span>)
+                
+                        <span style="color:#808080;"># Starting execution
+                </span><span style="color:#808080;">        </span>HomeTestDef.go_to_url(ReusableTest.read_xml(<span style="color:#6a8759;">&quot;applicationurl&quot;</span>))  <span style="color:#808080;"># Launch The Application
+                </span><span style="color:#808080;">        </span>HomeTestDef.header_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Header section validation
+                </span><span style="color:#808080;">        </span>HomeTestDef.footer_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Footer section validation
+                </span><span style="color:#808080;">
+                </span><span style="color:#808080;">        # Final report
+                </span><span style="color:#808080;">        </span>ReusableTest.final_html(html_file)</pre>
+
+                <p><span
+                    style='color: #FF0000;'>ReusableTest.initial_html(html_file, "Home Test Scenarios")
+                </span> 
+                This line will create initial HTML report to append test execution steps. Code for initial test report is given as
+                below.
+                </p>
+
+                <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#bbb529;">@classmethod
+                </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">initial_html</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">, </span>html_file<span style="color:#cc7832;">, </span>title):
+                
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;html style=&quot;background-color:powderblue;&quot;&gt;&apos;</span>)
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;body padding-top: &quot;100px&quot;;&gt;&apos;</span>)
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;h1 align=&quot;center&quot;&gt;Test Automation Report: :&apos;</span>+title+<span style="color:#6a8759;">&apos;&lt;/h1&gt;&apos;</span>)
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;p align=&quot;center&quot;&gt;Date and Time :&apos; </span>+ <span style="color:#8888c6;">str</span>(datetime.now()) + <span style="color:#6a8759;">&apos;&lt;/p&gt;&apos;</span>)
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;table align=&quot;center&quot; border=&quot;1&quot; bordercolor = &quot;#003300&quot;&apos;</span>)
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;/table&gt;&apos;</span>)
+                    html_file.write(<span style="color:#6a8759;">&apos;&lt;tr style=&quot;background-color:#ffe6ff&quot;&gt;&apos; </span>+
+                                   <span style="color:#6a8759;">&apos;&lt;th&gt;&lt;center&gt;Test Case ID&lt;/center&gt;&lt;/th&gt;&apos; </span>+
+                                   <span style="color:#6a8759;">&apos;&lt;th&gt;&lt;center&gt;Test Case Description&lt;/center&gt;&lt;/th&gt;&apos; </span>+
+                                   <span style="color:#6a8759;">&apos;&lt;th&gt;&lt;center&gt;Execution Status&lt;/center&gt;&lt;/th&gt;&apos; </span>+
+                                   <span style="color:#6a8759;">&apos;&lt;/tr&gt;&apos;</span>)</pre>
+
+
+
+                 <h5>To append PASS/FAIL steps we can call test as below.</h5>
+
+                 <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#bbb529;">@staticmethod
+                </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">footer_options_validation</span>(self<span style="color:#cc7832;">, </span>htmlreport):
+                    <span style="color:#cc7832;">try</span>:
+                        self.assertEquals(<span style="color:#6a8759;">&quot;Training Option&quot;</span><span style="color:#cc7832;">, </span>Driver.get_element_text(HomePage.training_option()))
+                        ReusableTest.when_test_is_pass(htmlreport<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-003&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Footer Training Option is available&quot;</span>)
+                
+                    <span style="color:#cc7832;">except</span>:
+                
+                        ReusableTest.when_test_is_fail(htmlreport<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-003&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Footer Training Option is not available&quot;</span>)</pre>
+
+                        <p><span
+                            style='color: #FF0000;'>when_test_is_pass")
+                        </span> 
+                        This method will get call when test is PASS
+                        </p>
+
+                        <p><span
+                            style='color: #FF0000;'>when_test_is_fail")
+                        </span> 
+                        This method will get call when test is FAIL
+                        </p>
+
+                        <p>This PASS and FAIL methods are written under reusable class as below.</p>
+
+                        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#bbb529;">@classmethod
+                        </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">when_test_is_pass</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">, </span>html_string<span style="color:#cc7832;">, </span>test_id<span style="color:#cc7832;">, </span>test_description):
+                            html_string.write(<span style="color:#6a8759;">&apos;&lt;tr style=&quot;background-color:#f2f2f2&quot;&gt;&apos;</span>+
+                           <span style="color:#6a8759;">&apos;&lt;td&gt;&lt;center&gt;&apos;</span>+test_id+<span style="color:#6a8759;">&apos;&lt;/center&gt;&lt;/td&gt;&apos; </span>+
+                           <span style="color:#6a8759;">&apos;&lt;td&gt;&lt;center&gt;&apos;</span>+test_description+<span style="color:#6a8759;">&apos;&lt;/center&gt;&lt;/td&gt;&apos; </span>+
+                           <span style="color:#6a8759;">&apos;&lt;td style=&quot;background-color:#b3ffcc&quot;&gt;&lt;center&gt;PASS&lt;/center&gt;&lt;/td&gt;&apos; </span>+
+                           <span style="color:#6a8759;">&apos;&lt;/tr&gt;&apos;</span>)
+                        
+                        <span style="color:#bbb529;">@classmethod
+                        </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">when_test_is_fail</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">,</span>html_string<span style="color:#cc7832;">, </span>test_id<span style="color:#cc7832;">, </span>test_description):
+                            html_string.write(<span style="color:#6a8759;">&apos;&lt;tr style=&quot;background-color:#f2f2f2&quot;&gt;&apos; </span>+
+                            <span style="color:#6a8759;">&apos;&lt;td&gt;&lt;center&gt;&apos; </span>+ test_id + <span style="color:#6a8759;">&apos;&lt;/center&gt;&lt;/td&gt;&apos; </span>+
+                            <span style="color:#6a8759;">&apos;&lt;td&gt;&lt;center&gt;&apos; </span>+ test_description + <span style="color:#6a8759;">&apos;&lt;/center&gt;&lt;/td&gt;&apos; </span>+
+                           <span style="color:#6a8759;">&apos;&lt;td style=&quot;background-color:#ffb3b3&quot;&gt;&lt;center&gt;FAIL&lt;/center&gt;&lt;/td&gt;&apos; </span>+
+                           <span style="color:#6a8759;">&apos;&lt;/tr&gt;&apos;</span>)</pre>
+
+                           <h5>Finally we need to call HTML closure method as below.</h5>
+
+                           <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#808080;">
+                        </span><span style="color:#808080;">        # Final report
+                        </span><span style="color:#808080;">        </span>ReusableTest.final_html(html_file)
+                        
+                        </pre>
+
+                        <p>This closure method is written under reusable class as below.</p>
+
+                        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                            <span style="color:#bbb529;">@classmethod
+                            </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">final_html</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">, </span>html_file):
+                            
+                                html_file.write(<span style="color:#6a8759;">&apos;&lt;/body&gt;&apos;</span>)
+                                html_file.write(<span style="color:#6a8759;">&apos;&lt;/html&gt;&apos;</span>)
+                                html_file.close()
+                            
+                            </pre>
+
+                            <p>
+                                After successful execution HTML Test report looks like below.
+                            </p>
+                            <p><img src="../img/pysel37.png" alt="Python HTML Report" class="img-responsive"></p>
+
+            
+                        </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outer">
+            <div class="inner"><a href="../seleniumPython/pyselTestImple.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumPython/pyselSingleClassToAllTest.html" class="previous">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

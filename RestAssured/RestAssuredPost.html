@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rest Assured POST Request| manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+
+        p{
+         color: black;
+         font-size: 20px;
+         word-wrap: break-word;
+         font-family: "Times New Roman", Times, serif;
+         }
+
+         h5{
+         color: Blue;
+         font-family: "Times New Roman", Times, serif;
+         font-size: 25px;
+         word-wrap: break-word;
+         }
+
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: center;
+         width: 110px;
+         padding: 10px;
+      }
+        .left {
+          float: center;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Rest Assured POST Request</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <section class="sectionList">
+        <img class="centerimg" src="../img/api1.png" alt="Rest Assured POST Request" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">Rest Assured POST Request</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+                  <div class="blog_details">
+                        
+                        <p><br>1. Go to Website<a href="http://dummy.restapiexample.com/">SampleAPI,</a>Where we can get dummy service to test Web Service POST.
+                            <br></p>
+                         <br><img src="../img/samplewebsite.png" alt="Rest Assured POST Request" style="width: 75%;"><br>
+                         <p><br>2. Click on details button corresponding to POST Method.<br></p>
+                         <br><img src="../img/postbody.png" alt="postbody" style="width: 75%;"><br>
+                         <p><br>3. Always remember that post request need request body. This can be in the
+                            form of JSON/XML/gZIP. Copy request URL and JSON body from website.<br></p>
+                         <p><br>4. Check below screenshot where
+                            Request URL: http://dummy.restapiexample.com/api/v1/create
+                            Request Method: POST
+                            Request Body: {"name":"test","salary":"123","age":"23"}
+                            <br></p>
+                         <br><img src="../img/eclipsepost.png" alt="Rest Assured POST Request" style="width: 75%;"><br><br>
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+     <span style="color:#cc7832;">package </span>RestAssured<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>io.restassured.RestAssured.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>io.restassured.matcher.RestAssuredMatchers.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.hamcrest.Matchers.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>io.restassured.RestAssured<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>io.restassured.response.Response<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>RestTest {
+    
+    
+        <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">main</span>(String[] args) {
+    
+    
+            RestAssured.<span style="color:#9876aa;font-style:italic;">baseURI</span>=<span style="color:#6a8759;">&quot;http://dummy.restapiexample.com/api/v1/create&quot;</span><span style="color:#cc7832;">; </span><span style="color:#808080;">// To initiate the service...
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">        </span>Response res = RestAssured
+                    .<span style="font-style:italic;">given</span>()
+                    .body(<span style="color:#6a8759;">&quot;{</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">name</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">:</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">name_001</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">,</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">salary</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">:</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">53001</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">,</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">age</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">:</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">23</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">}&quot; </span>+ <span style="color:#6a8759;">&quot;&quot;</span>).post()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Status Code is ==&quot;</span>+ res.getStatusCode())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Status Code is ==&quot;</span>+ res.getBody().asString())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }
+    </pre>
+
+    <p> The Test Result Would Look Like Below : </p>
+
+    <p>Status Code is ==200</p>
+<p>Status Code is =={&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;name&quot;:&quot;name_001&quot;,&quot;salary&quot;:&quot;53001&quot;,&quot;age&quot;:&quot;23&quot;,&quot;id&quot;:31}}</p>
+<p>Process finished with exit code 0</p>
+<p><br></p>
+                         
+                      </div><br><br><br>
+
+          
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+            <div class="inner"><a href="../RestAssured/RestAssuredGET.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../RestAssured/RestAssuredPUT.html" class="previous">Next &raquo;</a></div>
+            </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

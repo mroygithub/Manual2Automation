@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cucumber Hooks | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: right;
+         width: 83px;
+         padding: 5px;
+      }
+        .left {
+          float: left;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Cucumber Hooks</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+      <img class="centerimg" src="../img/cmm1.png" alt="Cucumber Hooks" style="text-align:center;widows: 400;height:400">
+      <img class="centerimg" src="../img/ccm001.png" alt="Cucumber Hooks" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Cucumber Hooks</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                    <!-- Run Cucumber using Jenkins -->
+
+
+              
+               <div class="blog_details">
+                  <p>When we want to perform specific actions for every scenario or step like:
+                     <br> Launch Application
+                     <br> Initializa Test Data Table
+                     <br> Initializa Test Report
+                     <br> Close Application
+                     <br> But we don't write these steps in Feature file are called Hooks.
+                  </p><br>
+                  <p><strong>As an Examples :</strong>
+                     <br><font color="red">@Before</font>
+                     <br><font color="red">@After</font>
+                     <br><font color="red">@BeforeStep</font>
+                     <br><font color="red">@AfterStep</font>
+                  </p>
+
+                 <br><br> <p>Consider below feature file scenario , where no steps are written for 
+                    launching and closing the application.
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+      <span style="color:#cc7832;font-weight:bold;">
+      
+      Feature: </span>Scenarios to validate Google With Hooks
+      
+      
+         <span style="color:#bbb529;">@Smoke
+      </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>validate Google
+            <span style="color:#cc7832;font-weight:bold;">When </span>application launched validate Google logo
+            <span style="color:#cc7832;font-weight:bold;">Then </span>Validate google page title
+            </pre>
+
+            <br> Step definition file as :
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>stepDefinition<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.<span style="color:#bbb529;">After</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.<span style="color:#bbb529;">Before</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Then</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">When</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>StepDeftest1 {
+   
+   
+         WebDriver <span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Before
+   </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">launchApplication</span>()
+         {
+            <span style="color:#808080;">// Launching Google Application
+   </span><span style="color:#808080;">        </span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/hellouser/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   
+         <span style="color:#bbb529;">@When</span>(<span style="color:#6a8759;">&quot;application launched validate Google logo&quot;</span>)
+         <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">application_launched_validate_Google_logo</span>() {
+   
+            <span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+         <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;Validate google page title&quot;</span>)
+         <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Validate_google_page_title</span>() {
+   
+   
+            <span style="color:#808080;">// Checking for page title..
+   </span><span style="color:#808080;">
+   </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.getTitle().equals(<span style="color:#6a8759;">&quot;Google&quot;</span>))
+            {
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application Pge Title is Pass&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+   
+         }
+   
+         <span style="color:#bbb529;">@After
+   </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">close_Application</span>() {
+   
+            <span style="color:#808080;">// Close the application
+   </span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+   }</pre>
+
+   <br> Test Report is :
+
+
+
+                     <br><img src="../img/ccmhoooks.png" alt="Cucumber Hooks" class="img-responsive">
+                 </p>
+
+                  <br>
+               </div>
+               <!--##################################################################-->
+
+               </div>
+            </div>
+         </div>  
+      </div>
+
+      <div id="outer">
+            <div class="inner"><a href="../cucumber/ccb_tags.html" class="previous">&laquo; Previous</a></div>
+      </div>
+      
+      
+     
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

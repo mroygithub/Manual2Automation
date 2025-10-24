@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Karate POM.XML | manual2Automation</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+            p {
+                color: black;
+                font-size: 20px;
+                word-wrap: break-word;
+                font-family: "Times New Roman", Times, serif;
+            }
+    
+            h5 {
+                color: Blue;
+                font-family: "Times New Roman", Times, serif;
+                font-size: 25px;
+                word-wrap: break-word;
+            }
+    
+            h3 {
+                color: plum;
+                font-size: 25px;
+            }
+        </style>
+
+   
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+     
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Karate With POM.XML</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+        <img class="centerimg" src="../img/kr2.png" alt="Karate maven run" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Run Karate With POM.XML</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                    <!-- Run Cucumber using POM.XML -->
+
+               <div class="blog_details">
+                  <h5>First we need to set up Maven in our system :
+                     <br>  <strong>Windows:</strong> Download maven from <a href="../https://maven.apache.org/download.cgi"> Here</a>
+                     <br> Unzip it, set MAVEN_HOME as 'maven unzip path/bin'. Same in windows PATH as well.
+                     <br> <strong>MAC:</strong>Install maven from Terminal : <font color="red">brew install maven</font></h5>
+                     <p>Using Terminal check maven version as below:</p>
+                  
+                     <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><meta charset="utf-8"><span style='color: rgb(248, 248, 242); font-family: "Source Code Pro", "Liberation Mono", "Courier New", Courier, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(68, 71, 90); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>mvn -v</span>
+                  </pre>
+                  <strong><p>Add below code in your pom.xml</strong></p>
+
+                  <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+   <span style="color:#e8bf6a;">&lt;properties&gt;
+      </span><span style="color:#e8bf6a;">    &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+      </span><span style="color:#e8bf6a;">    &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+   </span><span style="color:#e8bf6a;">&lt;/properties&gt;</span>
+
+</pre>
+<strong><p>My complete pom.xml now looks like below:</strong></p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#e8bf6a;">&lt;?</span><span style="color:#bababa;">xml version=</span><span style="color:#6a8759;">&quot;1.0&quot; </span><span style="color:#bababa;">encoding=</span><span style="color:#6a8759;">&quot;UTF-8&quot;</span><span style="color:#e8bf6a;">?&gt;
+    </span><span style="color:#e8bf6a;">&lt;project </span><span style="color:#bababa;">xmlns=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0&quot;
+    </span><span style="color:#6a8759;">         </span><span style="color:#bababa;">xmlns:</span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">=</span><span style="color:#6a8759;">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    </span><span style="color:#6a8759;">         </span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">:schemaLocation=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">    &lt;modelVersion&gt;</span>4.0.0<span style="color:#e8bf6a;">&lt;/modelVersion&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>com.maven.Karate<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>com.maven.Karate<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;properties&gt;
+    </span><span style="color:#e8bf6a;">        &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+    </span><span style="color:#e8bf6a;">        &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+    </span><span style="color:#e8bf6a;">        &lt;karate.version&gt;</span>0.9.4<span style="color:#e8bf6a;">&lt;/karate.version&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/properties&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;build&gt;
+    </span><span style="color:#e8bf6a;">        &lt;testResources&gt;
+    </span><span style="color:#e8bf6a;">            &lt;testResource&gt;
+    </span><span style="color:#e8bf6a;">                &lt;directory&gt;</span>src/test/java<span style="color:#e8bf6a;">&lt;/directory&gt;
+    </span><span style="color:#e8bf6a;">                &lt;excludes&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;exclude&gt;</span>**/*.java<span style="color:#e8bf6a;">&lt;/exclude&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/excludes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/testResource&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/testResources&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/build&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;dependencies&gt;
+    </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>com.intuit.karate<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>karate-apache<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>0.9.5<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>com.intuit.karate<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>karate-junit4<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>0.9.5<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/dependencies&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/project&gt;</span>
+
+</pre>
+
+<p>Now testRunner file will look like below : </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+<span style="color:#cc7832;">package </span>testRunner.com<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">import </span>com.intuit.karate.junit4.Karate<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>com.intuit.karate.<span style="color:#bbb529;">KarateOptions</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.junit.<span style="color:#bbb529;">BeforeClass</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">
+</span><span style="color:#bbb529;">@RunWith</span>(Karate.<span style="color:#cc7832;">class</span>)
+<span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;classpath:FeatureFiles/FeatureJava.feature&quot;</span>)
+<span style="color:#cc7832;">public class </span>TestRunner {
+
+    <span style="color:#bbb529;">@BeforeClass
+</span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">before</span>() {
+        System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;karate.env&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;STG&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">    </span>}
+
+}</pre>
+
+<br><img src=".././img/kar29.png" alt="KARATE maven run" class="img-responsive"><br><br><br>
+
+<p>Below command would execute all feature files [as per above image 7 feature files] present under 'FeatureFiles'package having @Regression tag.</p>
+
+<p> Open cmd/terminal
+        <br> cd 'karate project path'
+        <font color="red"> <strong><br>mvn test -Dkarate.options="--tags @Regression classpath:FeatureFiles"</strong></font></p>
+
+       <br><img src=".././img/kar5.png" alt="KARATE TAGS" class="img-responsive"><br><br><br>
+
+
+<p>Below command would execute 'test.feature' feature file present under 'FeatureFiles'package having @Smoke tag.</p>
+
+<p> Open cmd/terminal
+        <br> cd 'karate project path'
+        <font color="red"> <strong><br>mvn test -Dkarate.options="--tags @Smoke classpath:FeatureFiles/test.feature"</strong></font></p>
+
+        <p>Below command would execute 'test.feature' feature file present under 'FeatureFiles'package not having @Smoke tag.</p>
+
+<p> Open cmd/terminal
+        <br> cd 'karate project path'
+        <font color="red"> <strong><br>mvn test -Dkarate.options="--tags ~@Smoke classpath:FeatureFiles/test.feature"</strong></font></p>
+                  
+              
+                </div>
+                <!--##################################################################-->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="outer">
+    <div class="inner"><a href="../Karate/karateDELETE.html" class="previous">&laquo; Previous</a></div>
+    <div class="inner"><a href="../Karate/karateJenkins.html" class="previous">Next &raquo;</a></div>
+</div>
+
+</section>
+   <!--================Blog Area end =================-->
+
+  <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+  
+     <!-- jquery plugins here-->
+     <!-- jquery -->
+     <script src="../js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="../js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../js/bootstrap.min.js"></script>
+     <!-- easing js -->
+     <script src="../js/jquery.magnific-popup.js"></script>
+     <!-- swiper js -->
+     <script src="../js/swiper.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/masonry.pkgd.js"></script>
+     <!-- particles js -->
+     <script src="../js/owl.carousel.min.js"></script>
+     <script src="../js/jquery.nice-select.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/slick.min.js"></script>
+     <script src="../js/jquery.counterup.min.js"></script>
+     <script src="../js/waypoints.min.js"></script>
+     <!-- custom js -->
+     <script src="../js/custom.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+  </body>
+  
+  </html>

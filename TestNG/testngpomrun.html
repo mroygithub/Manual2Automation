@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Maven Run | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: plum;
+                font-size: 25px;
+            }
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Run TestNG Using POM.XML</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Maven Run" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">Run TestNG Using POM.XML</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+            <h5>How To Run  TestNG.XML By Maven POM.XML</h5>
+
+
+            <br><br><h3>First we need to set up Maven in our system :</h3>
+                <p> <br>  <strong>Windows:</strong> Download maven from <a href="../https://maven.apache.org/download.cgi"> Here</a>
+                    <br> Unzip it, set MAVEN_HOME as 'maven unzip path/bin'. Same in windows PATH as well.
+                    <br> <strong>MAC:</strong>Install maven from Terminal : <font color="red">brew install maven</font></p>
+                    <p>Using Terminal check maven version as below:</p>
+                 <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><meta charset="utf-8"><span style='color: rgb(248, 248, 242); font-family: "Source Code Pro", "Liberation Mono", "Courier New", Courier, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(68, 71, 90); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>mvn -v</span>
+                 </pre>
+                 <strong><p>Add below code in your pom.xml</strong></p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+  
+  <span style="color:#e8bf6a;">&lt;properties&gt;
+     </span><span style="color:#e8bf6a;">    &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+     </span><span style="color:#e8bf6a;">    &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+  </span><span style="color:#e8bf6a;">&lt;/properties&gt;</span>
+
+</pre>
+
+
+
+            <p>After adding above code our basic POM.XML is look like :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+<span style="color:#e8bf6a;">&lt;?</span><span style="color:#bababa;">xml version=</span><span style="color:#6a8759;">&quot;1.0&quot; </span><span style="color:#bababa;">encoding=</span><span style="color:#6a8759;">&quot;UTF-8&quot;</span><span style="color:#e8bf6a;">?&gt;
+</span><span style="color:#e8bf6a;">&lt;project </span><span style="color:#bababa;">xmlns=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0&quot;
+</span><span style="color:#6a8759;">         </span><span style="color:#bababa;">xmlns:</span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">=</span><span style="color:#6a8759;">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+</span><span style="color:#6a8759;">         </span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">:schemaLocation=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#e8bf6a;">&gt;
+</span><span style="color:#e8bf6a;">    &lt;modelVersion&gt;</span>4.0.0<span style="color:#e8bf6a;">&lt;/modelVersion&gt;
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>con.IntelliJ.TestNG<span style="color:#e8bf6a;">&lt;/groupId&gt;
+</span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>con.IntelliJ.TestNG<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+</span><span style="color:#e8bf6a;">    &lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#e8bf6a;">&lt;/version&gt;
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">    &lt;properties&gt;
+</span><span style="color:#e8bf6a;">        &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+</span><span style="color:#e8bf6a;">        &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+</span><span style="color:#e8bf6a;">    &lt;/properties&gt;
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">    &lt;dependencies&gt;
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+</span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.testng<span style="color:#e8bf6a;">&lt;/groupId&gt;
+</span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>testng<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+</span><span style="color:#e8bf6a;">            &lt;version&gt;</span>6.9.8<span style="color:#e8bf6a;">&lt;/version&gt;
+</span><span style="color:#e8bf6a;">            &lt;scope&gt;</span>test<span style="color:#e8bf6a;">&lt;/scope&gt;
+</span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+</span><span style="color:#e8bf6a;">        </span><span style="color:#808080;">&lt;!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java --&gt;
+</span><span style="color:#808080;">        </span><span style="color:#e8bf6a;">&lt;dependency&gt;
+</span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.seleniumhq.selenium<span style="color:#e8bf6a;">&lt;/groupId&gt;
+</span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>selenium-java<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+</span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.141.59<span style="color:#e8bf6a;">&lt;/version&gt;
+</span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+</span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+</span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.directory.studio<span style="color:#e8bf6a;">&lt;/groupId&gt;
+</span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>org.apache.commons.io<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+</span><span style="color:#e8bf6a;">            &lt;version&gt;</span>2.4<span style="color:#e8bf6a;">&lt;/version&gt;
+</span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">    &lt;/dependencies&gt;
+</span><span style="color:#e8bf6a;">
+</span><span style="color:#e8bf6a;">&lt;/project&gt;</span>
+
+</pre>
+                <p><br></p>
+
+        <p>Our TestNG.XML is look like :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;false&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;1&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;listeners&gt;
+    </span><span style="color:#e8bf6a;">        &lt;listener </span><span style="color:#bababa;">class-name=</span><span style="color:#6a8759;">&quot;listeners.ItestListeners&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/listeners&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGnew&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+</pre>
+            <p><br></p>
+
+            <p>Now we need to call above TestNG.xml from POM.xml</p>
+            <p> Adding 'maven-surefire-plugin' code as below:
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#e8bf6a;">&lt;build&gt;
+        </span><span style="color:#e8bf6a;">    &lt;plugins&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+        </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+        </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+        </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+        </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+        </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+        </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>src/pathToYour/TestNG.xml<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+        </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+        </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+        </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;</span>
+        
+        <span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+        
+        </pre>
+        <p><br></p>
+
+        <p>Now my complete POM.xml looks like below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;?</span><span style="color:#bababa;">xml version=</span><span style="color:#6a8759;">&quot;1.0&quot; </span><span style="color:#bababa;">encoding=</span><span style="color:#6a8759;">&quot;UTF-8&quot;</span><span style="color:#e8bf6a;">?&gt;
+    </span><span style="color:#e8bf6a;">&lt;project </span><span style="color:#bababa;">xmlns=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0&quot;
+    </span><span style="color:#6a8759;">         </span><span style="color:#bababa;">xmlns:</span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">=</span><span style="color:#6a8759;">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    </span><span style="color:#6a8759;">         </span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">:schemaLocation=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">    &lt;modelVersion&gt;</span>4.0.0<span style="color:#e8bf6a;">&lt;/modelVersion&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>con.IntelliJ.TestNG<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>con.IntelliJ.TestNG<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;properties&gt;
+    </span><span style="color:#e8bf6a;">        &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+    </span><span style="color:#e8bf6a;">        &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/properties&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;build&gt;
+    </span><span style="color:#e8bf6a;">        &lt;plugins&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">            &lt;plugin&gt;
+    </span><span style="color:#e8bf6a;">                &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">                &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">                &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">                &lt;configuration&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                        &lt;suiteXmlFile&gt;</span>src/main/resources/myTestNG.xml<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;/suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/configuration&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/plugin&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;/plugins&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/build&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;dependencies&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.testng<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>testng<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>6.9.8<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">            &lt;scope&gt;</span>test<span style="color:#e8bf6a;">&lt;/scope&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">        </span><span style="color:#808080;">&lt;!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java --&gt;
+    </span><span style="color:#808080;">        </span><span style="color:#e8bf6a;">&lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.seleniumhq.selenium<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>selenium-java<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.141.59<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.directory.studio<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>org.apache.commons.io<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>2.4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;/dependencies&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/project&gt;</span>
+
+</pre>
+    <p><br></p>
+
+
+    <strong><p>Open Terminal or cmd --> go to your project path pom.xml file-->type 'mvn test'</strong>
+        <br> This will start your execution and Terminal/cmd output will be as below:</p>
+        <p><img src=".././img/tg14.png" alt="How To Run TestNG using Maven" class="img-responsive"></p>
+        
+        <p>This will execute all test inside 'myTestNG.xml' file</p>
+
+        <br><br><h3>How To Add Multiple TestNG.XML Inside POM.xml?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;build&gt;
+    </span><span style="color:#e8bf6a;">    &lt;plugins&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+    </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>src/main/resources/smoke.xml<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>src/main/resources/regression.xml<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>src/main/resources/staging.xml<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>src/main/resources/sanity.xml<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;
+    </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+
+</pre>
+
+<br><br><h3>How To Pass TestNG.XML As A Parameter Through POM.xml?</h3><br><br>
+
+<p>This time in my POM.XML file, TestNG.xml can't be hard coded. So it can be written as:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;build&gt;
+    </span><span style="color:#e8bf6a;">    &lt;plugins&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+    </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>${suiteXmlFile}<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;
+    </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+
+</pre>
+
+<p>Open Terminal or cmd --> go to your project path pom.xml file-->type <strong>'mvn clean test -Dsurefire.suiteXmlFiles=src/main/resources/myTestNG.xml'</strong>
+    <br> This will start your execution.</p>
+    <p><img src=".././img/tg15.png" alt="How To Run TestNG using Maven" class="img-responsive"></p>
+
+
+    <br><br><h3>Pass Application URL As A Parameter Through POM.xml?</h3><br><br>
+
+    <p>Add below line in TestNG.XML
+        <br>applicationurl = parameter name
+        <br>AppUrlValue = parameter value
+    </p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        
+        <span style="color:#e8bf6a;">&lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;applicationurl&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;${AppUrlValue}&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;</span>     
+    </pre>
+
+    <p>Complete TestNG.XML can be written as:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;false&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;1&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;listeners&gt;
+    </span><span style="color:#e8bf6a;">        &lt;listener </span><span style="color:#bababa;">class-name=</span><span style="color:#6a8759;">&quot;listeners.ItestListeners&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/listeners&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;applicationurl&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;${AppUrlValue}&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGnew&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;</span>
+        
+        </pre>
+        <p><span style="color:#e8bf6a;"><br></span></p>
+
+        <p>My testclass can be written as:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Parameters</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGnew {
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;applicationurl&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>(String appurl)
+    
+        {
+            System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(appurl)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        
+    }
+
+</pre>
+
+<p>Now Build section under POM.xml can be written as:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#e8bf6a;">&lt;build&gt;
+    </span><span style="color:#e8bf6a;">    &lt;plugins&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+    </span><span style="color:#e8bf6a;">                &lt;systemPropertyVariables&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;AppUrlValue&gt;</span>${AppUrlValue}}<span style="color:#e8bf6a;">&lt;/AppUrlValue&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/systemPropertyVariables&gt;
+    </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>${suiteXmlFile}<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;
+    </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+        
+        </pre>
+
+        <p>Open Terminal or cmd --> go to your project path pom.xml file-->type <strong>'mvn clean test -DsuiteXmlFile=src/main/resources/myTestNG.xml -DAppUrlValue=https://www.google.com'</strong>
+            <br> This will start your execution.</p>
+            <p><img src=".././img/tg16.png" alt="How To Run TestNG using Maven" class="img-responsive"></p>
+
+
+            <br><br><h3>Pass Multiple Parameters Through POM.xml?</h3><br><br>
+            <p>Below Example Shows passing 4 parameters along with TestNG.xml
+                <br>4 parameters are:
+                <br> URL
+                <br> Browser name
+                <br> Release name
+                <br> Environment Details
+            </p>
+
+            <p>POM.xml build section can be written as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;build&gt;
+    </span><span style="color:#e8bf6a;">   </span>
+    <span style="color:#e8bf6a;"> &lt;plugins&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+    </span><span style="color:#e8bf6a;">                &lt;systemPropertyVariables&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;AppUrlValue&gt;</span>${AppUrlValue}}<span style="color:#e8bf6a;">&lt;/AppUrlValue&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;BrowserName&gt;</span>${BrowserName}}<span style="color:#e8bf6a;">&lt;/BrowserName&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;ReleaseName&gt;</span>${ReleaseName}}<span style="color:#e8bf6a;">&lt;/ReleaseName&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;EnvironmentName&gt;</span>${EnvironmentName}}<span style="color:#e8bf6a;">&lt;/EnvironmentName&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/systemPropertyVariables&gt;
+    </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>${suiteXmlFile}<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;
+    </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+    
+    </pre>
+
+    <p>TestNG.xml section can be written as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;false&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;1&quot;</span><span style="color:#e8bf6a;">&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+        </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;applicationurl&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;${AppUrlValue}&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;browsername&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;${BrowserName}&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;releasename&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;${ReleaseName}&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;environmentname&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;${EnvironmentName}&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+        </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGnew&quot;</span><span style="color:#e8bf6a;">/&gt;
+        </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+        </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">&lt;/suite&gt;</span>
+        
+        </pre>
+        <p><span style="color:#e8bf6a;"><br></span></p>
+
+
+        <p>Test Class file can be written as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Parameters</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGnew {
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;applicationurl&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;browsername&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;releasename&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;environmentname&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>(String appurl <span style="color:#cc7832;">, </span>String brName <span style="color:#cc7832;">, </span>String RelName <span style="color:#cc7832;">, </span>String envName)
+    
+        {
+    
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application URL Is:==&gt;&quot;</span>+appurl)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Browser Name Is:==&gt;&quot;</span>+brName)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Environment Name Is:==&gt;&quot;</span>+envName)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Release Name Is:==&gt;&quot;</span>+RelName)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(appurl)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }
+
+</pre>
+
+<p>Open Terminal or cmd --> go to your project path pom.xml file-->type <strong>'mvn clean test -DsuiteXmlFile=src/main/resources/myTestNG.xml -DAppUrlValue=https://www.google.com -DBrowserName=Chrome -DReleaseName=V0.001 -DEnvironmentName=QAEnvironment'</strong>
+    <br> This will start your execution.</p>
+    <p><img src=".././img/tg17.png" alt="How To Run TestNG using Maven" class="img-responsive"></p>
+
+
+    <br><br><h3>Pass Multiple Parameters Through POM.xml to TestNG Class</h3><br><br>
+            <p>Below Example Shows passing 4 parameters along with TestNG.xml
+                <br>4 parameters are:
+                <br> URL
+                <br> Browser name
+                <br> Release name
+                <br> Environment Details
+            </p>
+
+            <p>POM.xml build section can be written as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;build&gt;
+    </span><span style="color:#e8bf6a;">   </span>
+    <span style="color:#e8bf6a;"> &lt;plugins&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+    </span><span style="color:#e8bf6a;">                &lt;systemPropertyVariables&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;AppUrlValue&gt;</span>${AppUrlValue}}<span style="color:#e8bf6a;">&lt;/AppUrlValue&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;BrowserName&gt;</span>${BrowserName}}<span style="color:#e8bf6a;">&lt;/BrowserName&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;ReleaseName&gt;</span>${ReleaseName}}<span style="color:#e8bf6a;">&lt;/ReleaseName&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;EnvironmentName&gt;</span>${EnvironmentName}}<span style="color:#e8bf6a;">&lt;/EnvironmentName&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/systemPropertyVariables&gt;
+    </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;suiteXmlFile&gt;</span>${suiteXmlFile}<span style="color:#e8bf6a;">&lt;/suiteXmlFile&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;
+    </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+    
+    </pre>
+
+    <p>TestNG.xml section can be written as :
+        <br> This time it is without parameters
+    </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;false&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;1&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGnew&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+
+</pre>
+        <p><span style="color:#e8bf6a;"><br></span></p>
+
+
+        <p>Test Class file can be written as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Parameters</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGnew {
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    public </span>String <span style="color:#9876aa;">appurl </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;">brName </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;">envName </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;">RelName</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>()
+    
+        {
+            <span style="color:#9876aa;">appurl </span>= System.<span style="font-style:italic;">getProperty</span>(<span style="color:#6a8759;">&quot;AppUrlValue&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">brName </span>= System.<span style="font-style:italic;">getProperty</span>(<span style="color:#6a8759;">&quot;BrowserName&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">envName </span>= System.<span style="font-style:italic;">getProperty</span>(<span style="color:#6a8759;">&quot;EnvironmentName&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">RelName </span>= System.<span style="font-style:italic;">getProperty</span>(<span style="color:#6a8759;">&quot;ReleaseName&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application URL Is:==&gt;&quot;</span>+<span style="color:#9876aa;">appurl</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Browser Name Is:==&gt;&quot;</span>+<span style="color:#9876aa;">brName</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Environment Name Is:==&gt;&quot;</span>+<span style="color:#9876aa;">envName</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Release Name Is:==&gt;&quot;</span>+<span style="color:#9876aa;">RelName</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#9876aa;">appurl</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }
+
+</pre>
+
+<p>Open Terminal or cmd --> go to your project path pom.xml file-->type <strong>'mvn clean test -DsuiteXmlFile=src/main/resources/myTestNG.xml -DAppUrlValue=https://www.google.com -DBrowserName=Chrome -DReleaseName=V0.001 -DEnvironmentName=QAEnvironment'</strong>
+    <br> This will start your execution.</p>
+    <p><img src=".././img/tg18.png" alt="How To Run TestNG using Maven" class="img-responsive"></p>
+
+ 
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testnglisteners.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngJenkins.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<html>
+<body>
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>CognizantCC<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">import </span>org.json.simple.JSONArray<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.json.simple.JSONObject<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.json.simple.parser.JSONParser<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.io.FileReader<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.util.Iterator<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.util.*<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.text.DateFormat<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.io.*<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>java.text.*<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">public class </span>doCSSSelenium {
+            
+                <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    public static </span>Object <span style="color:#9876aa;font-style:italic;">obj</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    public static </span>JSONObject <span style="color:#9876aa;font-style:italic;">jo</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    public static </span>JSONArray <span style="color:#9876aa;font-style:italic;">ja</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    public static </span>StringBuilder <span style="color:#9876aa;font-style:italic;">SB </span>= <span style="color:#cc7832;">null;
+            </span><span style="color:#cc7832;">    public static </span>String <span style="color:#9876aa;font-style:italic;">xpath </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">elementType </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">elementName </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">bgcolor </span>= <span style="color:#cc7832;">null ,
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">fontFamily </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">fontsize </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">color </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">testCaseName </span>= <span style="color:#cc7832;">null , </span><span style="color:#9876aa;font-style:italic;">fontweight</span>=<span style="color:#cc7832;">null;
+            </span><span style="color:#cc7832;">    public static boolean </span><span style="color:#9876aa;font-style:italic;">CL </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">BGCL </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">FF </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">FW </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">FS</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    public static int </span><span style="color:#9876aa;font-style:italic;">SlNO </span>= <span style="color:#6897bb;">0</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+                {
+                    <span style="color:#cc7832;">try </span>{
+            
+                        <span style="color:#9876aa;font-style:italic;">SB </span>= <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">; </span><span style="color:#808080;">// This is For Test Reporting ....
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">            // Launch Web Application
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">            </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.hiroad.com&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Application launched Successfully , now reading JSON CSS values to Compare with Application
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">            </span><span style="color:#9876aa;font-style:italic;">obj </span>= <span style="color:#cc7832;">new </span>JSONParser().parse(<span style="color:#cc7832;">new </span>FileReader(<span style="color:#6a8759;">&quot;/Users/mithunroy/IdeaProjects/conIntelliJTestNG/cssObject.json&quot;</span>))<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// typecasting obj to JSONObject
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">            </span><span style="color:#9876aa;font-style:italic;">jo </span>= (JSONObject) <span style="color:#9876aa;font-style:italic;">obj</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">ja </span>= (JSONArray) <span style="color:#9876aa;font-style:italic;">jo</span>.get(<span style="color:#6a8759;">&quot;HomePage&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">            </span>Iterator itr2 = <span style="color:#9876aa;font-style:italic;">ja</span>.iterator()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">            while </span>(itr2.hasNext())
+                        {
+                            Iterator&lt;Map.Entry&gt; itr1  = ((Map) itr2.next()).entrySet().iterator()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                while </span>(itr1.hasNext()) {
+                                Map.Entry pair = itr1.next()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                    </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(pair.getKey() + <span style="color:#6a8759;">&quot; : &quot; </span>+ pair.getValue())<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                    </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(pair.getKey())<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                    </span><span style="font-style:italic;">validateMyApplicationHomePageCSS</span>(pair.getKey().toString() <span style="color:#cc7832;">, </span>pair.getValue().toString())<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">                </span>}
+                        }
+            
+                    }
+                    <span style="color:#cc7832;">catch </span>(Exception e ){}
+                    <span style="color:#cc7832;">finally </span>{
+                        <span style="font-style:italic;">saveTestReport</span>(<span style="font-style:italic;">createFinalTable</span>(<span style="color:#6a8759;">&quot;CSS Properties Validation&quot;</span>))<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>}
+                }
+            
+                <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">validateMyApplicationHomePageCSS</span>(String TC <span style="color:#cc7832;">, </span>String testCaseValues)
+                {
+                    String[] allCssval = testCaseValues.split(<span style="color:#6a8759;">&quot;,&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">testCaseName </span>= TC<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">        for</span>(<span style="color:#cc7832;">int </span>k=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;</span>k&lt;allCssval.<span style="color:#9876aa;">length</span><span style="color:#cc7832;">;</span>k++)
+                    {
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;xpath&quot;</span>)){<span style="color:#9876aa;font-style:italic;">xpath </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;elementType&quot;</span>)){<span style="color:#9876aa;font-style:italic;">elementType </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;elementName&quot;</span>)){<span style="color:#9876aa;font-style:italic;">elementName </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;bgcolor&quot;</span>)){<span style="color:#9876aa;font-style:italic;">bgcolor </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;fontFamily&quot;</span>)){<span style="color:#9876aa;font-style:italic;">fontFamily </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;fontsize&quot;</span>)){<span style="color:#9876aa;font-style:italic;">fontsize </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;color&quot;</span>)){<span style="color:#9876aa;font-style:italic;">color </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                        <span style="color:#cc7832;">if</span>(allCssval[k].contains(<span style="color:#6a8759;">&quot;fontweight&quot;</span>)){<span style="color:#9876aa;font-style:italic;">fontweight </span>= <span style="font-style:italic;">trimExtraCharacter</span>(allCssval[k])<span style="color:#cc7832;">;</span>}
+                    }
+            
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">xpath</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">elementName</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">elementType</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">fontFamily</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">fontsize</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">fontweight</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">color</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">bgcolor</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">CL </span>= <span style="font-style:italic;">validateElementColor</span>(<span style="color:#9876aa;font-style:italic;">xpath </span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">color </span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">BGCL </span>= <span style="font-style:italic;">validateElementBGColor</span>(<span style="color:#9876aa;font-style:italic;">xpath </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">bgcolor</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">FF </span>= <span style="font-style:italic;">validateFontFamily</span>(<span style="color:#9876aa;font-style:italic;">xpath </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">fontFamily</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">FS </span>= <span style="font-style:italic;">validateFontSize</span>(<span style="color:#9876aa;font-style:italic;">xpath </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">fontsize</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">FW </span>= <span style="font-style:italic;">validateFontWeight</span>(<span style="color:#9876aa;font-style:italic;">xpath </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">fontweight</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">SlNO </span>= <span style="color:#9876aa;font-style:italic;">SlNO</span>+<span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="font-style:italic;">TestReportForEachElement</span>(<span style="color:#9876aa;font-style:italic;">SlNO </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">elementName </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">elementType </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">xpath </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">color </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">bgcolor </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">fontsize </span><span style="color:#cc7832;">,
+            </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">fontweight </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">fontFamily </span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">trimExtraCharacter</span>(String str)
+                {
+                    <span style="color:#cc7832;">return </span>str.replaceAll(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;&quot;</span>)
+                            .replaceAll(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">{&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;&quot;</span>)
+                            .replaceAll(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">}&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;&quot;</span>)
+                            .replaceAll(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\\\\</span><span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;&quot;</span>)
+                            .split(<span style="color:#6a8759;">&quot;:&quot;</span>)[<span style="color:#6897bb;">1</span>]<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#808080;">// This method will compare Web Element Color
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">validateElementColor</span>(String xpath <span style="color:#cc7832;">, </span>String expetedColor)
+                {
+                    <span style="color:#cc7832;">boolean </span>ecolor = <span style="color:#cc7832;">false;
+            </span><span style="color:#cc7832;">        try</span>{
+                        <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).isDisplayed())
+                        {
+                            String color = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).getCssValue(<span style="color:#6a8759;">&quot;color&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>String[] hexValue = color.replace(<span style="color:#6a8759;">&quot;rgba(&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;&quot;</span>).replace(<span style="color:#6a8759;">&quot;)&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;&quot;</span>).split(<span style="color:#6a8759;">&quot;,&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                int </span>hexValue1=Integer.<span style="font-style:italic;">parseInt</span>(hexValue[<span style="color:#6897bb;">0</span>])<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>hexValue[<span style="color:#6897bb;">1</span>] = hexValue[<span style="color:#6897bb;">1</span>].trim()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                int </span>hexValue2=Integer.<span style="font-style:italic;">parseInt</span>(hexValue[<span style="color:#6897bb;">1</span>])<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>hexValue[<span style="color:#6897bb;">2</span>] = hexValue[<span style="color:#6897bb;">2</span>].trim()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                int </span>hexValue3=Integer.<span style="font-style:italic;">parseInt</span>(hexValue[<span style="color:#6897bb;">2</span>])<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>String actualColor = String.<span style="font-style:italic;">format</span>(<span style="color:#6a8759;">&quot;#%02x%02x%02x&quot;</span><span style="color:#cc7832;">, </span>hexValue1<span style="color:#cc7832;">, </span>hexValue2<span style="color:#cc7832;">, </span>hexValue3)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">               if</span>(actualColor.equals(expetedColor)){ecolor=<span style="color:#cc7832;">true;</span>}<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span>}
+                    }
+                    <span style="color:#cc7832;">catch</span>(Exception e) { }
+                    <span style="color:#cc7832;">return </span>ecolor<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#808080;">// This method will compare Web Element Background Color
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">validateElementBGColor</span>(String xpath <span style="color:#cc7832;">, </span>String expetedColor)
+                {
+                    <span style="color:#cc7832;">boolean </span>ecolor = <span style="color:#cc7832;">false;
+            </span><span style="color:#cc7832;">        try</span>{
+                        <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).isDisplayed())
+                        {
+                            String bcolor = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).getCssValue(<span style="color:#6a8759;">&quot;background-color&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>String[] hexValue = bcolor.replace(<span style="color:#6a8759;">&quot;rgba(&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;&quot;</span>).replace(<span style="color:#6a8759;">&quot;)&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;&quot;</span>).split(<span style="color:#6a8759;">&quot;,&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                int </span>hexValue1=Integer.<span style="font-style:italic;">parseInt</span>(hexValue[<span style="color:#6897bb;">0</span>])<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>hexValue[<span style="color:#6897bb;">1</span>] = hexValue[<span style="color:#6897bb;">1</span>].trim()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                int </span>hexValue2=Integer.<span style="font-style:italic;">parseInt</span>(hexValue[<span style="color:#6897bb;">1</span>])<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>hexValue[<span style="color:#6897bb;">2</span>] = hexValue[<span style="color:#6897bb;">2</span>].trim()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                int </span>hexValue3=Integer.<span style="font-style:italic;">parseInt</span>(hexValue[<span style="color:#6897bb;">2</span>])<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                </span>String bactualColor = String.<span style="font-style:italic;">format</span>(<span style="color:#6a8759;">&quot;#%02x%02x%02x&quot;</span><span style="color:#cc7832;">, </span>hexValue1<span style="color:#cc7832;">, </span>hexValue2<span style="color:#cc7832;">, </span>hexValue3)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                if</span>(bactualColor.equals(expetedColor)){ecolor=<span style="color:#cc7832;">true;</span>}<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span>}
+                    }
+                    <span style="color:#cc7832;">catch</span>(Exception e) {}
+                    <span style="color:#cc7832;">return </span>ecolor<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#808080;">// This method will compare css font size
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">validateFontSize</span>(String xpath <span style="color:#cc7832;">, </span>String expectedFont)
+                {
+                    <span style="color:#cc7832;">boolean </span>font = <span style="color:#cc7832;">false;
+            </span><span style="color:#cc7832;">        try</span>{
+                        <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).isDisplayed())
+                        {
+                            String actualFont = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).getCssValue(<span style="color:#6a8759;">&quot;font-size&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                if</span>(actualFont.equals(expectedFont)){font=<span style="color:#cc7832;">true;</span>}<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span>}
+                    }
+                    <span style="color:#cc7832;">catch</span>(Exception e) { }
+                    <span style="color:#cc7832;">return </span>font<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#808080;">// This method will compare css font weight
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">validateFontWeight</span>(String xpath <span style="color:#cc7832;">, </span>String expectedFontweight)
+                {
+                    <span style="color:#cc7832;">boolean </span>font = <span style="color:#cc7832;">false;
+            </span><span style="color:#cc7832;">        try</span>{
+                        <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).isDisplayed())
+                        {
+                            String actualFont = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).getCssValue(<span style="color:#6a8759;">&quot;font-weight&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                if</span>(actualFont.equals(expectedFontweight)){font=<span style="color:#cc7832;">true;</span>}<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span>}
+                    }
+                    <span style="color:#cc7832;">catch</span>(Exception e) { }
+                    <span style="color:#cc7832;">return </span>font<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#808080;">// This method will compare css font family
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">validateFontFamily</span>(String xpath <span style="color:#cc7832;">, </span>String Exfontfamily)
+                {
+                    <span style="color:#cc7832;">boolean </span>font = <span style="color:#cc7832;">false;
+            </span><span style="color:#cc7832;">        try</span>{
+                        <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).isDisplayed())
+                        {
+                            String AFF = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(xpath)).getCssValue(<span style="color:#6a8759;">&quot;font-family&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">                if</span>(AFF.equals(Exfontfamily)){font=<span style="color:#cc7832;">true;</span>}<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span>}
+                    }
+                    <span style="color:#cc7832;">catch</span>(Exception e) { }
+                    <span style="color:#cc7832;">return </span>font<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+            
+            
+                <span style="color:#808080;">// Test report creation for every Web Element
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static  void </span><span style="color:#ffc66d;">TestReportForEachElement</span>(<span style="color:#cc7832;">int </span>slno <span style="color:#cc7832;">, </span>String Ena<span style="color:#cc7832;">, </span>String Ety<span style="color:#cc7832;">, </span>String Eex <span style="color:#cc7832;">, </span>String Ec <span style="color:#cc7832;">, </span>String Ebgc
+                                                   <span style="color:#cc7832;">, </span>String Efsiz <span style="color:#cc7832;">, </span>String EfW <span style="color:#cc7832;">, </span>String Eff)
+                {
+                    String CLtext = <span style="color:#6a8759;">&quot;Green&quot; </span><span style="color:#cc7832;">, </span>BGCLtext = <span style="color:#6a8759;">&quot;Green&quot; </span><span style="color:#cc7832;">, </span>FFtext = <span style="color:#6a8759;">&quot;Green&quot; </span><span style="color:#cc7832;">, </span>FStext = <span style="color:#6a8759;">&quot;Green&quot; </span><span style="color:#cc7832;">, </span>FWtext = <span style="color:#6a8759;">&quot;Green&quot;</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        if </span>(!<span style="color:#9876aa;font-style:italic;">CL</span>) { CLtext = <span style="color:#6a8759;">&quot;RED&quot;</span><span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">if </span>(!<span style="color:#9876aa;font-style:italic;">BGCL</span>) { BGCLtext = <span style="color:#6a8759;">&quot;RED&quot;</span><span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">if </span>(!<span style="color:#9876aa;font-style:italic;">FF</span>) { FFtext = <span style="color:#6a8759;">&quot;RED&quot;</span><span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">if </span>(!<span style="color:#9876aa;font-style:italic;">FW</span>) { FWtext = <span style="color:#6a8759;">&quot;RED&quot;</span><span style="color:#cc7832;">;</span>}
+                    <span style="color:#cc7832;">if </span>(!<span style="color:#9876aa;font-style:italic;">FS</span>) { FStext = <span style="color:#6a8759;">&quot;RED&quot;</span><span style="color:#cc7832;">;</span>}
+            
+                    <span style="color:#cc7832;">try</span>{
+                        <span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(String.<span style="font-style:italic;">valueOf</span>(slno)<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Ena<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Ety<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Eex<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Ec<span style="color:#cc7832;">,</span>CLtext)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Ebgc<span style="color:#cc7832;">,</span>BGCLtext)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Efsiz<span style="color:#cc7832;">,</span>FStext)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(EfW<span style="color:#cc7832;">,</span>FWtext)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">SB</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(Eff<span style="color:#cc7832;">,</span>FFtext)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>}
+                    <span style="color:#cc7832;">catch</span>(Exception e){
+                        System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Unable to create Fail Test Report&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>}}
+            
+                <span style="color:#808080;">// Test Method to read Date AND Time.
+            </span><span style="color:#808080;">
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">dateNTime</span>()
+                {
+                    DateFormat df = <span style="color:#cc7832;">new </span>SimpleDateFormat(<span style="color:#6a8759;">&quot;dd/MM/yy HH:mm:ss&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>Calendar calobj = Calendar.<span style="font-style:italic;">getInstance</span>()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#808080;">//System.out.println(df.format(calobj.getTime()));
+            </span><span style="color:#808080;">        </span><span style="color:#cc7832;">return </span>df.format(calobj.getTime())<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+            
+                <span style="color:#629755;font-style:italic;">/**
+            </span><span style="color:#629755;font-style:italic;">     * Method which can Change color of HTML Text
+            </span><span style="color:#629755;font-style:italic;">     * </span><span style="color:#629755;font-weight:bold;font-style:italic;">@param </span><span style="color:#8a653b;font-style:italic;">text
+            </span><span style="color:#8a653b;font-style:italic;">     </span><span style="color:#629755;font-style:italic;">* </span><span style="color:#629755;font-weight:bold;font-style:italic;">@param </span><span style="color:#8a653b;font-style:italic;">colorOfText
+            </span><span style="color:#8a653b;font-style:italic;">     </span><span style="color:#629755;font-style:italic;">* </span><span style="color:#629755;font-weight:bold;font-style:italic;">@return
+            </span><span style="color:#629755;font-weight:bold;font-style:italic;">     </span><span style="color:#629755;font-style:italic;">*/
+            </span><span style="color:#629755;font-style:italic;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">textcolor</span>(String text <span style="color:#cc7832;">, </span>String colorOfText)
+                {
+                    StringBuilder s = <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>s.append(String.<span style="font-style:italic;">format</span>(<span style="color:#6a8759;">&quot;&lt;font color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">%s</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;%s&lt;/font&gt;&quot;</span><span style="color:#cc7832;">,</span>colorOfText<span style="color:#cc7832;">,</span>text))<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>String output = s.toString()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        return </span>output<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#629755;font-style:italic;">/**
+            </span><span style="color:#629755;font-style:italic;">     *  This Method is useful to Create Final Test Report
+            </span><span style="color:#629755;font-style:italic;">     */
+            </span><span style="color:#629755;font-style:italic;">
+            </span><span style="color:#629755;font-style:italic;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">createFinalTable</span>(String functionality)
+                {
+                    <span style="color:#cc7832;">return
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">                </span><span style="color:#6a8759;">&quot;&lt;html&gt;&lt;head&gt;&lt;p&gt;&lt;/p&gt;&lt;/head&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;p&gt;&lt;/title &lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&amp;nbsp;&lt;/background&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Type of Testing&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+functionality+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Date and Time&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">dateNTime</span>()+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;/table&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;tr&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Sl.No&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Element Name&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Element Type&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Xpath&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Color&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Background Color&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Font Size&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Font Weight&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Font Type&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/tr&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#9876aa;font-style:italic;">SB</span>.toString()
+                                    + <span style="color:#6a8759;">&quot;&lt;/table&gt;&lt;/body&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+            </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/html&gt;&quot;</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+                <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">saveTestReport</span>(String report)
+                {
+                    File file = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/delete/AA.html&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        try </span>(BufferedWriter writer = <span style="color:#cc7832;">new </span>BufferedWriter(<span style="color:#cc7832;">new </span>FileWriter(file))) {
+                        writer.write(report)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                        <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated catch block
+            </span><span style="color:#a8c023;font-style:italic;">            </span>e.printStackTrace()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>}
+                }
+            
+            }
+            
+            </pre>
+<p><br></p>
+
+
+                        <br><br>
+                        <br>
+
+                        <br><br>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Data Driven Testing Using Robot Framework | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Data Driven Testing Using Robot Framework</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">How to make test data as parameterized instead of hard coded</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+                  <div class="blog_details">
+                     <h1>Robot : Data Driven Testing from .robot file.</h1>
+                     <p>Consider The Below Code ...</p>
+
+                     <p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Data Driven Testing From .robot file
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Data Driven Testing From .robot file
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://techedtrainings.com/    Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+   </span><span style="color:#9876aa;font-style:italic;">    </span>${count} =  <span style="color:#ffc66d;">Get Element Count   </span><span style="color:#9876aa;font-style:italic;">xpath://h4[@class=&apos;infobox_title&apos;]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Should Be True  </span><span style="color:#77b767;">${count}</span><span style="color:#9876aa;font-style:italic;">==10
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+<div class="page" title="Page 19">&nbsp;</div>
+                     </p>
+                  </p>  
+
+                  <p>In above example it is given --
+
+                     <br><strong>https://techedtrainings.com/</strong> This is Test URL which can be stored under ***Variables*** section and call it from *** Test Cases *** section 
+                     <br><strong>Chrome</strong> This is Test Browser Name which can be stored under ***Variables*** section and call it from *** Test Cases *** section 
+                     <br><strong>"TechEd Trainings – IT Corporate Trainings"</strong> This is Page Title which can be stored under ***Variables*** section and call it from *** Test Cases *** section  
+                  </p>
+
+                  <p><strong>So modified code can be written as below...</strong>
+
+                     <p>
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Data Driven Testing From .robot file
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span>${Browser}  <span style="color:#9876aa;font-style:italic;">Chrome
+   </span>${url}  <span style="color:#9876aa;font-style:italic;">https://techedtrainings.com/
+   </span>${pageTitle}    <span style="color:#9876aa;font-style:italic;">&quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Data Driven Testing From .robot file
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#77b767;">${url}     ${Browser}
+   </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == </span><span style="color:#77b767;">${pageTitle}
+   </span><span style="color:#77b767;">    </span>${count} =  <span style="color:#ffc66d;">Get Element Count   </span><span style="color:#9876aa;font-style:italic;">xpath://h4[@class=&apos;infobox_title&apos;]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Should Be True  </span><span style="color:#77b767;">${count}</span><span style="color:#9876aa;font-style:italic;">==10
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+
+                     </p>
+
+                     <p>In above example it is given --
+
+                        <br><strong>${Browser}</strong> Variable name of 'Chrome' browser
+                        <br><strong>${url}</strong> Variable name of 'https://techedtrainings.com/' Test URL.
+                        <br><strong>${pageTitle}</strong> Variable name of "TechEd Trainings – IT Corporate Trainings" Page Title.
+                     </p>
+
+                     <p><strong>Note:</strong>Now test URL , Browser Name , Page Title are not herd coded and 
+                     we can call these variables from multiple tests as below... </p>
+
+                     <p>
+
+      <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+      </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Data Driven Testing From .robot file
+      </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+      </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+      </span><span style="color:#6a8759;">*** Variables ***
+      </span>${Browser}  <span style="color:#9876aa;font-style:italic;">Chrome
+      </span>${url}  <span style="color:#9876aa;font-style:italic;">https://techedtrainings.com/
+      </span>${pageTitle}    <span style="color:#9876aa;font-style:italic;">&quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+      </span><span style="color:#9876aa;font-style:italic;">
+      </span><span style="color:#6a8759;">*** Test Cases ***
+      </span><span style="color:#cc7832;">TestCase_1
+      </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#77b767;">${url}     ${Browser}
+      </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+      </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == </span><span style="color:#77b767;">${pageTitle}
+      </span><span style="color:#77b767;">    </span>${count} =  <span style="color:#ffc66d;">Get Element Count   </span><span style="color:#9876aa;font-style:italic;">xpath://h4[@class=&apos;infobox_title&apos;]
+      </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Should Be True  </span><span style="color:#77b767;">${count}</span><span style="color:#9876aa;font-style:italic;">==10
+      </span><span style="color:#9876aa;font-style:italic;">
+      </span><span style="color:#cc7832;">TestCase_2
+      </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#77b767;">${url}     ${Browser}
+      </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+      </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == </span><span style="color:#77b767;">${pageTitle}
+      </span><span style="color:#77b767;">    </span><span style="color:#808080;"># DO SOME VALIDATION
+      </span><span style="color:#808080;">
+      </span><span style="color:#cc7832;">TestCase_3
+      </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#77b767;">${url}     ${Browser}
+      </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+      </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == </span><span style="color:#77b767;">${pageTitle}
+      </span><span style="color:#77b767;">   </span><span style="color:#808080;"># DO SOME VALIDATIONS
+      </span><span style="color:#808080;">
+      </span><span style="color:#808080;">
+      </span><span style="color:#6a8759;">*** Keywords ***
+      </span><span style="color:#cc7832;">Suite shutdown
+      </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+      
+      
+      </pre>
+
+                     </p>
+
+                     <h1>Robot : Data Driven Testing from XML file</h1>
+                     <p>Consider The Below XML File To Read</p>
+
+                     <p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;">
+<span style="color:#e8bf6a;">&lt;testdata&gt;
+</span><span style="color:#e8bf6a;">   &lt;applicationurl&gt;</span>https://techedtrainings.com/ <span style="color:#e8bf6a;">&lt;/applicationurl&gt;
+</span><span style="color:#e8bf6a;">   &lt;useid&gt;</span>testUser<span style="color:#e8bf6a;">&lt;/useid&gt;
+</span><span style="color:#e8bf6a;">   &lt;password&gt;</span>Password$$#1<span style="color:#e8bf6a;">&lt;/password&gt;
+</span><span style="color:#e8bf6a;">   &lt;chrome_path&gt;</span>/Users/mkroy/Downloads/chromedriver<span style="color:#e8bf6a;">&lt;/chrome_path&gt;
+</span><span style="color:#e8bf6a;">   &lt;email&gt;</span>mithunroy.ee@gmail.com<span style="color:#e8bf6a;">&lt;/email&gt;
+</span><span style="color:#e8bf6a;">&lt;/testdata&gt;</span>
+
+</pre>
+<div class="page" title="Page 19">&nbsp;</div>
+                     </p>
+
+                     <p>To make 'applicationurl' as data driven, we can write below code. How to read XML file this concept is already written in our previous acticle page </p>
+
+            <p>
+               <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+               </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">XML Data Driven Testing
+               </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+               </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">../Library/readXML.py
+               </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+               </span><span style="color:#6a8759;">*** Variables ***
+               </span><span style="color:#6a8759;">
+               </span>${Browser}  <span style="color:#9876aa;font-style:italic;">Chrome
+               </span>${pageTitle}    <span style="color:#9876aa;font-style:italic;">&quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+               </span><span style="color:#9876aa;font-style:italic;">
+               </span><span style="color:#6a8759;">*** Test Cases ***
+               </span><span style="color:#cc7832;">XML Data Driven Testing
+               </span><span style="color:#cc7832;">    </span>${url}=   <span style="color:#ffc66d;">readXML.read_xml   </span><span style="color:#9876aa;font-style:italic;">applicationurl
+               </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#77b767;">${url}     ${Browser}
+               </span><span style="color:#77b767;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+               </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == </span><span style="color:#77b767;">${pageTitle}
+               </span><span style="color:#77b767;">    </span>${count} =  <span style="color:#ffc66d;">Get Element Count   </span><span style="color:#9876aa;font-style:italic;">xpath://h4[@class=&apos;infobox_title&apos;]
+               </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Should Be True  </span><span style="color:#77b767;">${count}</span><span style="color:#9876aa;font-style:italic;">==10
+               </span><span style="color:#9876aa;font-style:italic;">
+               </span><span style="color:#6a8759;">*** Keywords ***
+               </span><span style="color:#cc7832;">Suite shutdown
+               </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+               
+               </pre>
+            </p> 
+            
+            <p>In above example it is given --
+
+               <br><strong>Library     ../Library/readXML.py</strong> To import readXML.py python file.
+               <br><strong>${url}</strong> variable to capture applicationurl
+               <br><strong>readXML.read_xml</strong> Calling read_xml method present in readXML python File.
+               <br><strong>applicationurl</strong> XML node name as Parameter value
+            </p>
+                     
+
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython/ReadxmlJson.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../RobotPython/conditionalstatement.html" class="previous">Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

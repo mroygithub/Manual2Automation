@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+
+      <head>
+
+            <script data-ad-client="ca-pub-7221125548747047" async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Required meta tags -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <script src="https://code.jquery.com/jquery-3.3.1.js"
+                integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+                </script>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="QA Automation Testing tutorials|Selenium">
+            <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+             <meta name="author" content="MITHUN ROY">
+             <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7221125548747047"
+     crossorigin="anonymous"></script>
+            <title>TestNG | manual2Automation</title>
+            <link rel="icon" href="img/favicon.png">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <!-- animate CSS -->
+            <link rel="stylesheet" href="css/animate.css">
+            <!-- owl carousel CSS -->
+            <link rel="stylesheet" href="css/owl.carousel.min.css">
+            <!-- themify CSS -->
+            <link rel="stylesheet" href="css/themify-icons.css">
+            <!-- flaticon CSS -->
+            <link rel="stylesheet" href="css/flaticon.css">
+            <!-- font awesome CSS -->
+            <link rel="stylesheet" href="css/magnific-popup.css">
+            <!-- swiper CSS -->
+            <link rel="stylesheet" href="css/slick.css">
+            <!-- style CSS -->
+            <link rel="stylesheet" href="css/style.css">
+        
+            <style>
+                .buttonbtnnew {
+                    background-color: blueviolet;
+                    /* Green */
+                    border: none;
+                    color: white;
+                    padding: 20px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                }
+        
+                .button5 {
+                    border-radius: 50%;
+                }
+            </style>
+        
+            <script>
+                $(function () {
+                    $("#header").load("header.html");
+                    $("#footer").load("foot.html");
+                });
+            </script>
+        
+        
+        
+        
+        </head>
+
+<body>
+
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+         <div id="header"></div>
+     </header>
+     <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Selenium Interview Question and Answers</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-8 posts-list">
+                  <div class="single-post">
+                     <div class="feature-img">
+                        <img class="img-fluid" src="img/blog/eclipsejavaselenium.jpg" alt="">
+                     </div>
+
+   
+    <!--##################################################################-->
+
+    <br><br><br><div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">1.How to Print 'href' value of a Link??</h3>
+   </div>
+
+      <div class="blog_details">
+         <h4><br>We are taking example of Linkedin Sign up link href value print. See below image.. <br></h4>
+         <br><img src="./img/hreflink.png" alt="href" style="width: 75%;"><br><br>
+
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+String hrefvale = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;//a[contains(.,&#39;Sign Up&#39;)]&quot;</span>)).getAttribute(<span style="color:#6a8759;">&quot;href&quot;</span>)<span style="color:#cc7832;">;
+</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;The href value of sign up link is ==&gt;&quot;</span>+ hrefvale)<span style="color:#cc7832;">;</span>
+
+</pre>
+         
+         </div><br><br>
+      <!--##################################################################-->
+      <!--##################################################################-->
+
+
+         <div id="mwrad" style="background-color:white;">
+               <h3 style="background: greenyellow; text-align:center;">2.Count All Links Present In a Web Page</h3>
+            </div>
+
+            <div class="blog_details">
+               <h4><br>1. In Google Chrome navigate to any URL. Here we are giving example of 
+                  https://www.javatpoint.com and printing all links present in the Home page. <br></h4>
+                  
+                  <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">
+               
+   package </span>Ershad<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>TestAndDelete {
+
+         <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span>=<span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+
+         {
+            System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/20020t/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>=<span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.javatpoint.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().timeouts().implicitlyWait(<span style="color:#6897bb;">10</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Count number of links....
+   </span><span style="color:#808080;">
+   </span><span style="color:#808080;">        </span><span style="color:#cc7832;">int </span>numberofLinks = <span style="color:#9876aa;font-style:italic;">driver</span>.findElements(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;//a&quot;</span>)).size()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        for</span>(<span style="color:#cc7832;">int </span>x = <span style="color:#6897bb;">1</span><span style="color:#cc7832;">;</span>x&lt;=numberofLinks<span style="color:#cc7832;">;</span>x++) {
+
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;(//a)[&quot;</span>+x+<span style="color:#6a8759;">&quot;]&quot;</span>)).getText())<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   }
+                           
+                     
+                              </pre><br><br></div>
+      <!--##################################################################-->
+     <!--##################################################################-->
+
+
+         <div id="mwrad" style="background-color:white;">
+               <h3 style="background: greenyellow; text-align:center;">3.Count All 'Images' Present In a Web Page</h3>
+            </div>
+
+            <div class="blog_details">
+               <h4><br>1. In Google Chrome navigate to any URL. Here we are giving example of 
+                  https://www.javatpoint.com and printing all images present in the Home page. <br></h4>
+                  
+                  <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">
+               
+   package </span>Ershad<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>TestAndDelete {
+
+         <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span>=<span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+
+         {
+            System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/20020t/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>=<span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.javatpoint.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().timeouts().implicitlyWait(<span style="color:#6897bb;">10</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Count number of links....
+   </span><span style="color:#808080;">
+   </span><span style="color:#808080;">        </span><span style="color:#cc7832;">int </span>numberofLinks = <span style="color:#9876aa;font-style:italic;">driver</span>.findElements(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;//img&quot;</span>)).size()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        for</span>(<span style="color:#cc7832;">int </span>x = <span style="color:#6897bb;">1</span><span style="color:#cc7832;">;</span>x&lt;=numberofLinks<span style="color:#cc7832;">;</span>x++) {
+
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;(//img)[&quot;</span>+x+<span style="color:#6a8759;">&quot;]&quot;</span>)).getText())<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   }
+                           
+                     
+                              </pre><br><br></div>
+                     <!--##################################################################-->
+   
+   
+                      <!--##################################################################-->
+
+    <!--How to scroll to element using Selenium-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">4.How to scroll to an element using Selenium??</h3><br><br>
+
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+   WebElement element = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;any Xpath&quot;</span>))<span style="color:#cc7832;">;
+   </span>((JavascriptExecutor)<span style="color:#9876aa;font-style:italic;">driver</span>).executeScript(<span style="color:#6a8759;">&quot;arguments[0].scrollIntoView();&quot;</span><span style="color:#cc7832;">, </span>element)<span style="color:#cc7832;">;
+   </span><span style="color:#808080;">// Wait for sometime&hellip;...Explicit Wait is fine...</span>
+   
+</pre><br><br></div>
+
+   <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">5.How to print ALL DROP DOWN OPTIONS??</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+      <span style="color:#cc7832;">package </span>Ershad<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>org.openqa.selenium.support.ui.Select<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>java.util.List<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#cc7832;">public class </span>DEMO {
+      
+      
+            <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#cc7832;">    </span><span style="color:#808080;">// Example ....
+      </span><span style="color:#808080;">    // select id=&quot;country&quot; class=&quot;custom-select&quot; name=&quot;vehicleTypeName&quot;
+      </span><span style="color:#808080;">    // option value=&quot;&quot;&gt;-Select Style-/option&gt;
+      </span><span style="color:#808080;">    // option value=&quot;IND&quot;&gt;INDIA/option&gt;
+      </span><span style="color:#808080;">    // option value=&quot;CHN&quot;&gt;CHINA/option&gt;
+      </span><span style="color:#808080;">    // option value=&quot;BGD&quot;&gt;BANGADESH/option&gt;
+      </span><span style="color:#808080;">    // /select
+      </span><span style="color:#808080;">
+      </span><span style="color:#808080;">
+      </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception {
+      
+      
+               System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mr/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span>Select dropDown = <span style="color:#cc7832;">new </span>Select(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;Drop down element xpath&quot;</span>)))<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span>List&lt;WebElement&gt; e = dropDown.getOptions()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        int </span>itemCount = e.size()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#cc7832;">        for</span>(<span style="color:#cc7832;">int </span>l = <span style="color:#6897bb;">0</span><span style="color:#cc7832;">; </span>l &lt; itemCount<span style="color:#cc7832;">; </span>l++)
+               {
+                  System.<span style="color:#9876aa;font-style:italic;">out</span>.println(e.get(l).getText())<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span>}
+            }
+            
+      }
+      
+   </pre><br><br></div>
+
+   <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">6.How to print default drop down value??</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">Select select = <span style="color:#cc7832;">new </span>Select(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;Country&quot;</span>)))<span style="color:#cc7832;">;
+</span>WebElement option = select.getFirstSelectedOption()<span style="color:#cc7832;">;
+</span>String defaultItem = option.getText()<span style="color:#cc7832;">;</span>
+</pre><br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">7.How to validate font size of an element by Selenium??<h3><br><br>
+   <pre style="box-sizing: border-box; font-family: Menlo; font-size: 9pt; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(169, 183, 198); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(43, 43, 43);"> <span style="box-sizing: border-box; color: rgb(128, 128, 128);">// This method will compare css font size
+      </span><span style="box-sizing: border-box; color: rgb(128, 128, 128);">
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">public static boolean </span><span style="box-sizing: border-box; color: rgb(255, 198, 109);">validateFontSize</span>(String xpath <span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>String expectedFont)
+      {
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">boolean </span>font = <span style="box-sizing: border-box; color: rgb(204, 120, 50);">false;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">    try</span>{
+               <span style="box-sizing: border-box; color: rgb(204, 120, 50);">if</span>(<span style="box-sizing: border-box; color: rgb(152, 118, 170); font-style: italic;">driver</span>.findElement(By.<span style="box-sizing: border-box; font-style: italic;">xpath</span>(xpath)).isDisplayed())
+               {
+                  String actualFont = <span style="box-sizing: border-box; color: rgb(152, 118, 170); font-style: italic;">driver</span>.findElement(By.<span style="box-sizing: border-box; font-style: italic;">xpath</span>(xpath)).getCssValue(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;font-size&quot;</span>)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            if</span>(actualFont.equals(expectedFont)){font=<span style="box-sizing: border-box; color: rgb(204, 120, 50);">true;</span>}<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">        </span>}
+            }
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">catch</span>(Exception e) { }
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">return </span>font<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span>
+   }
+   
+</pre><br><br></div>
+     
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">8.How to validate font 'color' an element by Selenium??<h3><br><br>
+   <pre style="box-sizing: border-box; font-family: Menlo; font-size: 9pt; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(169, 183, 198); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(43, 43, 43);"> <span style="box-sizing: border-box; color: rgb(128, 128, 128);">// This method will compare Web Element Color
+      </span><span style="box-sizing: border-box; color: rgb(128, 128, 128);">
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">public static boolean </span><span style="box-sizing: border-box; color: rgb(255, 198, 109);">validateElementColor</span>(String xpath <span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>String expetedColor)
+      {
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">boolean </span>ecolor = <span style="box-sizing: border-box; color: rgb(204, 120, 50);">false;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">    try</span>{
+               <span style="box-sizing: border-box; color: rgb(204, 120, 50);">if</span>(<span style="box-sizing: border-box; color: rgb(152, 118, 170); font-style: italic;">driver</span>.findElement(By.<span style="box-sizing: border-box; font-style: italic;">xpath</span>(xpath)).isDisplayed())
+               {
+                  String color = <span style="box-sizing: border-box; color: rgb(152, 118, 170); font-style: italic;">driver</span>.findElement(By.<span style="box-sizing: border-box; font-style: italic;">xpath</span>(xpath)).getCssValue(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;color&quot;</span>)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>String[] hexValue = color.replace(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;rgba(&quot;</span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span><span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;&quot;</span>).replace(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;)&quot;</span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span><span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;&quot;</span>).split(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;,&quot;</span>)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            int </span>hexValue1=Integer.<span style="box-sizing: border-box; font-style: italic;">parseInt</span>(hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">0</span>])<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">1</span>] = hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">1</span>].trim()<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            int </span>hexValue2=Integer.<span style="box-sizing: border-box; font-style: italic;">parseInt</span>(hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">1</span>])<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">2</span>] = hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">2</span>].trim()<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            int </span>hexValue3=Integer.<span style="box-sizing: border-box; font-style: italic;">parseInt</span>(hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">2</span>])<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>String actualColor = String.<span style="box-sizing: border-box; font-style: italic;">format</span>(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;#%02x%02x%02x&quot;</span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>hexValue1<span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>hexValue2<span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>hexValue3)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">           if</span>(actualColor.equals(expetedColor)){ecolor=<span style="box-sizing: border-box; color: rgb(204, 120, 50);">true;</span>}<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">        </span>}
+            }
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">catch</span>(Exception e) { }
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">return </span>ecolor<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span>
+   }</pre>
+            <br><br></div>
+     
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">9.How to validate 'background-color' of an element by Selenium??<h3><br><br>
+   <pre style="box-sizing: border-box; font-family: Menlo; font-size: 9pt; margin-top: 0px; margin-bottom: 1rem; overflow: auto; display: block; color: rgb(169, 183, 198); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; background-color: rgb(43, 43, 43);"><span style="box-sizing: border-box; color: rgb(128, 128, 128);">// This method will compare Web Element Background Color
+      </span><span style="box-sizing: border-box; color: rgb(128, 128, 128);">
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">public static boolean </span><span style="box-sizing: border-box; color: rgb(255, 198, 109);">validateElementBGColor</span>(String xpath <span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>String expetedColor)
+      {
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">boolean </span>ecolor = <span style="box-sizing: border-box; color: rgb(204, 120, 50);">false;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">    try</span>{
+               <span style="box-sizing: border-box; color: rgb(204, 120, 50);">if</span>(<span style="box-sizing: border-box; color: rgb(152, 118, 170); font-style: italic;">driver</span>.findElement(By.<span style="box-sizing: border-box; font-style: italic;">xpath</span>(xpath)).isDisplayed())
+               {
+                  String bcolor = <span style="box-sizing: border-box; color: rgb(152, 118, 170); font-style: italic;">driver</span>.findElement(By.<span style="box-sizing: border-box; font-style: italic;">xpath</span>(xpath)).getCssValue(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;background-color&quot;</span>)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>String[] hexValue = bcolor.replace(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;rgba(&quot;</span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span><span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;&quot;</span>).replace(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;)&quot;</span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span><span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;&quot;</span>).split(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;,&quot;</span>)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            int </span>hexValue1=Integer.<span style="box-sizing: border-box; font-style: italic;">parseInt</span>(hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">0</span>])<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">1</span>] = hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">1</span>].trim()<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            int </span>hexValue2=Integer.<span style="box-sizing: border-box; font-style: italic;">parseInt</span>(hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">1</span>])<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">2</span>] = hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">2</span>].trim()<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            int </span>hexValue3=Integer.<span style="box-sizing: border-box; font-style: italic;">parseInt</span>(hexValue[<span style="box-sizing: border-box; color: rgb(104, 151, 187);">2</span>])<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            </span>String bactualColor = String.<span style="box-sizing: border-box; font-style: italic;">format</span>(<span style="box-sizing: border-box; color: rgb(106, 135, 89);">&quot;#%02x%02x%02x&quot;</span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>hexValue1<span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>hexValue2<span style="box-sizing: border-box; color: rgb(204, 120, 50);">, </span>hexValue3)<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">            if</span>(bactualColor.equals(expetedColor)){ecolor=<span style="box-sizing: border-box; color: rgb(204, 120, 50);">true;</span>}<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span><span style="box-sizing: border-box; color: rgb(204, 120, 50);">        </span>}
+            }
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">catch</span>(Exception e) {}
+            <span style="box-sizing: border-box; color: rgb(204, 120, 50);">return </span>ecolor<span style="box-sizing: border-box; color: rgb(204, 120, 50);">;
+      </span>
+   }</pre>
+   <br><br></div>
+     
+   <!--##################################################################-->
+
+
+    <!--##################################################################-->
+
+    <div id="TABHandlesection" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">10.How to Handle TAB using selenium??<h3><br><br>
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>Ershad<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>java   .util.ArrayList<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">public class </span>DEMO {
+      
+            <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+      </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception {
+      
+               System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/rm/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span>((JavascriptExecutor) <span style="color:#9876aa;font-style:italic;">driver</span>).executeScript(<span style="color:#6a8759;">&quot;window.open()&quot;</span>)<span style="color:#cc7832;">; </span><span style="color:#808080;">// Creating a new TAB
+      </span><span style="color:#808080;">        </span>ArrayList&lt;String&gt; tabs = <span style="color:#cc7832;">new </span>ArrayList&lt;String&gt;(<span style="color:#9876aa;font-style:italic;">driver</span>.getWindowHandles())<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(tabs.get(<span style="color:#6897bb;">1</span>))<span style="color:#cc7832;">; </span><span style="color:#808080;">// Switching to child window by Index
+      </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.navigate().to(<span style="color:#6a8759;">&quot;https://www.facebook.com&quot;</span>)<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing child window
+      </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(tabs.get(<span style="color:#6897bb;">0</span>))<span style="color:#cc7832;">; </span><span style="color:#808080;">// Switching back to parent window by index
+      </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">    </span>}
+      
+      }</pre>
+
+   <br><br></div>
+     
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="windowHandlesection" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">11.How to Handle Child+Parent Window Using Selenium</h3><br><br>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   <span style="color:#cc7832;">package </span>Ershad<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.Set<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.Iterator<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>DEMO {
+   
+   
+         <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception {
+   
+   
+            System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/rm/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Returns the parent window name as a String
+   </span><span style="color:#808080;">        </span>String mainWindow = <span style="color:#9876aa;font-style:italic;">driver</span>.getWindowHandle()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Returns number of  windows opened by WebDriver and will return Set of Strings
+   </span><span style="color:#808080;">        </span>Set&lt;String&gt; set = <span style="color:#9876aa;font-style:italic;">driver</span>.getWindowHandles()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Using Iterator to iterate with in windows
+   </span><span style="color:#808080;">        </span>Iterator&lt;String&gt; itr = set.iterator()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        while </span>(itr.hasNext()) {
+               String childWindow = itr.next()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Compare whether the main windows is not equal to child window. If not equal, we will close.
+   </span><span style="color:#808080;">            </span><span style="color:#cc7832;">if </span>(!mainWindow.equals(childWindow)) {
+                     <span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(childWindow)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">                </span><span style="color:#808080;">// Below code will print Child Window URL
+   </span><span style="color:#808080;">                </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(childWindow).getCurrentUrl())<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">                </span><span style="color:#9876aa;font-style:italic;">driver</span>.close()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#808080;">// Back to Parent Window
+   </span><span style="color:#808080;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(mainWindow)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span>}
+   
+   }
+   
+   </pre>
+         <br><br></div>
+      
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">12.Navigate to a specific URL in same TAB</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/rm/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// now navigating from google to facebook
+   </span><span style="color:#808080;">
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.navigate().to(<span style="color:#6a8759;">&quot;https://www.faacebook.com&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;</span>
+</pre><br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">13.Difference between driver.close() and driver.quit()</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/rm/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// Returns the parent window name as a String
+   </span>String mainWindow = <span style="color:#9876aa;font-style:italic;">driver</span>.getWindowHandle()<span style="color:#cc7832;">;
+   </span><span style="color:#808080;">// Returns number of  windows opened by WebDriver and will return Set of Strings
+   </span>Set&lt;String&gt; set = <span style="color:#9876aa;font-style:italic;">driver</span>.getWindowHandles()<span style="color:#cc7832;">;
+   </span><span style="color:#808080;">// Using Iterator to iterate with in windows
+   </span>Iterator&lt;String&gt; itr = set.iterator()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">while </span>(itr.hasNext()) {
+         String childWindow = itr.next()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span><span style="color:#808080;">// Compare whether the main windows is not equal to child window. If not equal, we will close.
+   </span><span style="color:#808080;">    </span><span style="color:#cc7832;">if </span>(!mainWindow.equals(childWindow)) {
+            <span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(childWindow)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Below code will print Child Window URL
+   </span><span style="color:#808080;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(childWindow).getCurrentUrl())<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.close()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing child TAB
+   </span><span style="color:#808080;">    </span>}
+   }
+   <span style="color:#808080;">// Back to Parent Window
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(mainWindow)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing Window including all TABs</span></pre>
+   <p><br></p></div>
+                   
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">14.Right click using Selenium?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+      System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mr/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span>WebElement element = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>))<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span>Actions action = <span style="color:#cc7832;">new </span>Actions(<span style="color:#9876aa;font-style:italic;">driver</span>).contextClick(element)<span style="color:#cc7832;">;
+      </span>action.build().perform()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">try</span>{Thread.<span style="font-style:italic;">sleep</span>(<span style="color:#6897bb;">5000</span>)<span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">catch</span>(Exception e){}<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing Window</span>
+      <span style="color:#808080;"></span>
+      </pre><br><br></div>
+
+                     
+   
+   <!--##################################################################-->
+   <!--##################################################################-->
+
+   <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">15.Double click using Selenium?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+      System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/MR/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span>WebElement element = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>))<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span>Actions action = <span style="color:#cc7832;">new </span>Actions(<span style="color:#9876aa;font-style:italic;">driver</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#808080;">//Here I used JavascriptExecutor interface to scroll down to the targeted element
+      </span>((JavascriptExecutor) <span style="color:#9876aa;font-style:italic;">driver</span>).executeScript(<span style="color:#6a8759;">&quot;arguments[0].scrollIntoView();&quot;</span><span style="color:#cc7832;">, </span>element)<span style="color:#cc7832;">;
+      </span><span style="color:#808080;">//used doubleClick(element) method to do double click action
+      </span>action.doubleClick(element).build().perform()<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">try</span>{Thread.<span style="font-style:italic;">sleep</span>(<span style="color:#6897bb;">5000</span>)<span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">catch</span>(Exception e){}<span style="color:#cc7832;">;
+      </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing Window</span>
+      
+      </pre>
+         <br><br></div>
+
+                     
+   
+   <!--##################################################################-->
+   <!--##################################################################-->
+
+   <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">16.Drag and Drop using Selenium?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mr/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span>Actions action = <span style="color:#cc7832;">new </span>Actions(<span style="color:#9876aa;font-style:italic;">driver</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#808080;">//navigate to the required url where we could do drag and drop action
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;http://jqueryui.com/droppable/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">//To get source Element
+   </span>WebElement fromobject = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;WebElement&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#808080;">//To get target Element
+   </span>WebElement toobject = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">cssSelector</span>(<span style="color:#6a8759;">&quot;#droppable&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#808080;">//dragAndDrop(source, target) method accepts two parameters source and Element.
+   </span><span style="color:#808080;">//used dragAndDrop method to drag and drop the source locator to target Element
+   </span>action.dragAndDrop(fromobject<span style="color:#cc7832;">, </span>toobject).build().perform()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">try</span>{Thread.<span style="font-style:italic;">sleep</span>(<span style="color:#6897bb;">5000</span>)<span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">catch</span>(Exception e){}<span style="color:#cc7832;">;
+            </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing Window</span></pre>
+            <br><br></div>
+
+                     
+   
+   <!--##################################################################-->
+   <!--##################################################################-->
+
+   <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">17.Capture Screenshot using Selenium?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mr/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span>File screenshotFile = ((TakesScreenshot)<span style="color:#9876aa;font-style:italic;">driver</span>).getScreenshotAs(OutputType.<span style="color:#9876aa;font-style:italic;">FILE</span>)<span style="color:#cc7832;">;
+   </span>FileUtils.copyFile(screenshotFile<span style="color:#cc7832;">, new </span>File(<span style="color:#6a8759;">&quot;C:</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">manual2Automation.png&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">try</span>{Thread.<span style="font-style:italic;">sleep</span>(<span style="color:#6897bb;">5000</span>)<span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">catch</span>(Exception e){}<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing Window</span></pre>
+   <br><br></div>
+
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">18.How To Read XL file using Selenium</h3><br><br>
+         <p>Dependency Required:</p>
+
+     <p>   
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#e8bf6a;">&lt;dependencies&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">    </span><span style="color:#808080;">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi --&gt;
+   </span><span style="color:#808080;">    </span><span style="color:#e8bf6a;">&lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">        &lt;groupId&gt;</span>org.apache.poi<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">        &lt;artifactId&gt;</span>poi<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">        &lt;version&gt;</span>3.11<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">    &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">    &lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">        &lt;groupId&gt;</span>org.apache.poi<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">        &lt;artifactId&gt;</span>poi-ooxml<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">        &lt;version&gt;</span>3.11<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">    &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">&lt;/dependencies&gt;</span></pre> </p>
+
+            <p>Code To Read XL Data </p>
+            <p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>Ershad<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.io.FileInputStream<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.Iterator<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.apache.poi.ss.usermodel.Cell<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.apache.poi.ss.usermodel.Row<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.apache.poi.xssf.usermodel.XSSFSheet<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.apache.poi.xssf.usermodel.XSSFWorkbook<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>Test2 {
+   
+         <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">main</span>(String[] args) {
+         <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated method stub
+   </span><span style="color:#a8c023;font-style:italic;">
+   </span><span style="color:#a8c023;font-style:italic;">        </span><span style="color:#cc7832;">try </span>{
+               FileInputStream file = <span style="color:#cc7832;">new </span>FileInputStream(<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;C:</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Users</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">200908</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">OneDrive - Cognizant</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Desktop</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Practise.xlsx&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Create Workbook instance holding reference to .xlsx file
+   </span><span style="color:#808080;">            </span>XSSFWorkbook workbook = <span style="color:#cc7832;">new </span>XSSFWorkbook(file)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Get first/desired sheet from the workbook
+   </span><span style="color:#808080;">            </span>XSSFSheet sheet = workbook.getSheetAt(<span style="color:#6897bb;">0</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Iterate through each rows one by one
+   </span><span style="color:#808080;">            </span>Iterator&lt;Row&gt; rowIterator = sheet.iterator()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            while </span>(rowIterator.hasNext()) {
+                     Row row = rowIterator.next()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// For each row, iterate through all the columns
+   </span><span style="color:#808080;">                </span>Iterator&lt;Cell&gt; cellIterator = row.cellIterator()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">                while </span>(cellIterator.hasNext()) {
+                        Cell cell = cellIterator.next()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Check the cell type and format accordingly
+   </span><span style="color:#808080;">                    </span><span style="color:#cc7832;">switch </span>(cell.getCellType()) {
+                           <span style="color:#cc7832;">case </span>Cell.CELL_TYPE_NUMERIC:
+                                 System.<span style="color:#9876aa;font-style:italic;">out</span>.print(cell.getNumericCellValue()+<span style="color:#6a8759;">&quot;|&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">                            break;
+   </span><span style="color:#cc7832;">                        case </span>Cell.CELL_TYPE_STRING:
+                                 System.<span style="color:#9876aa;font-style:italic;">out</span>.print(cell.getStringCellValue()+<span style="color:#6a8759;">&quot;|&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">                            break;
+   </span><span style="color:#cc7832;">                    </span>}
+   
+                     }
+                     System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>}
+               file.close()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#cc7832;">catch</span>(Exception e)
+            {
+   
+            }
+   
+         }
+   
+   }</pre>
+            </p>
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">19.Read XML Using Java For Selenium</h3><br><br>
+         <p>Sample XML : For Keeping Test Data</p>
+<p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#e8bf6a;">&lt;TestCase&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">&lt;FirstName&gt;</span>MITHUN<span style="color:#e8bf6a;">&lt;/FirstName&gt;
+   </span><span style="color:#e8bf6a;">&lt;LastName&gt;</span>ROY<span style="color:#e8bf6a;">&lt;/LastName&gt;
+   </span><span style="color:#e8bf6a;">&lt;EmailID&gt;</span>mithunroy.ee@gmail.com<span style="color:#e8bf6a;">&lt;/EmailID&gt;
+   </span><span style="color:#e8bf6a;">&lt;PhoneNumber&gt;</span>123456789<span style="color:#e8bf6a;">&lt;/PhoneNumber&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">&lt;/TestCase&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">    </span>
+</pre></p>
+<p>Code to read XML:</p>
+<p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   <span style="color:#cc7832;">package </span>Ershad<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.io.FileInputStream<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.Iterator<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>javax.xml.parsers.DocumentBuilder<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>javax.xml.parsers.DocumentBuilderFactory<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>ReadXL {
+   
+         <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">main</span>(String[] args) {
+         <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated method stub
+   </span><span style="color:#a8c023;font-style:italic;">
+   </span><span style="color:#a8c023;font-style:italic;">
+   </span><span style="color:#a8c023;font-style:italic;">        </span>String firstname =  <span style="font-style:italic;">getXMLData</span>(<span style="color:#6a8759;">&quot;FirstName&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(firstname)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+         <span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">getXMLData</span>(String datafor)
+         {
+            String nodevalue = <span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">        try</span>{
+   
+               String sourceXML = <span style="color:#6a8759;">&quot;/Users/mr/IdeaProjects/DeleteThisProject/readXML.xml&quot;</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>File file = <span style="color:#cc7832;">new </span>File(sourceXML)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.<span style="font-style:italic;">newInstance</span>()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>org.w3c.dom.Document document = documentBuilder.parse(file)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">            </span>nodevalue =  document.getElementsByTagName(datafor).item(<span style="color:#6897bb;">0</span>).getTextContent()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+   
+            <span style="color:#cc7832;">catch</span>(Exception e)
+            {
+               nodevalue = <span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#cc7832;">return </span>nodevalue<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+   }
+   
+   </pre>
+            <p><br></p>
+</p>
+<br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">20.How to do Mouse Hover using Selenium?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/mr/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span>Actions builder = <span style="color:#cc7832;">new </span>Actions(<span style="color:#9876aa;font-style:italic;">driver</span>)<span style="color:#cc7832;">;
+   </span>WebElement element = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>))<span style="color:#cc7832;">;
+   </span>builder.moveToElement(element).build().perform()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">try</span>{Thread.<span style="font-style:italic;">sleep</span>(<span style="color:#6897bb;">5000</span>)<span style="color:#cc7832;">;</span>}<span style="color:#cc7832;">catch</span>(Exception e){}<span style="color:#cc7832;">;
+   </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// Closing Window</span>
+   
+   </pre>
+<br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">21.What are different Locators in Selenium?</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#808080;">//Different types of Locators in Selenium are as follows:
+   </span><span style="color:#808080;">
+   </span><span style="color:#808080;">// i. ID
+   </span><span style="color:#808080;">
+   </span>WebElement eleId = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;Login&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// ii. Name
+   </span><span style="color:#808080;">
+   </span>WebElement eleName = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;signUP&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// iii. Class Name
+   </span><span style="color:#808080;">
+   </span>WebElement eleClass = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">className</span>(<span style="color:#6a8759;">&quot;eleClass&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// iv. Tag Name
+   </span><span style="color:#808080;">
+   </span>WebElement eleTag = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">tagName</span>(<span style="color:#6a8759;">&quot;img&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// v. Link Text &amp; Partial Link Text
+   </span><span style="color:#808080;">
+   </span>WebElement parLink = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">partialLinkText</span>(<span style="color:#6a8759;">&quot;LinkText&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">// vi. CSS Selector
+   </span><span style="color:#808080;">
+   </span>WebElement eleCss = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">cssSelector</span>(<span style="color:#6a8759;">&quot;Div.a&quot;</span>))<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#808080;">//  vii. XPath
+   </span><span style="color:#808080;">
+   </span>WebElement eleXpath = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;//a[@input = &#39;buttton&#39;]&quot;</span>))<span style="color:#cc7832;">;</span></pre>
+   <p><br></p>
+
+
+<br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="SeleniumWaitTime" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">22.Implicit  , Explicit , Fluent Wait in Selenium</h3><br><br>
+
+<p>Implicit Wait :</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#9876aa;font-style:italic;">driver</span>.manage().timeouts().implicitlyWait(<span style="color:#6897bb;">30</span><span style="color:#cc7832;">, </span>TimeUnit.SECONDS)<span style="color:#cc7832;">;</span>
+</pre>
+
+<p>Explicit Wait :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">WebDriverWait wait = <span style="color:#cc7832;">new </span>WebDriverWait(WebDriverRefrence<span style="color:#cc7832;">,</span><span style="color:#6897bb;">20</span>)<span style="color:#cc7832;">;
+   </span>WebElement aboutMe<span style="color:#cc7832;">;
+   </span>aboutMe= wait.until(ExpectedConditions.visibilityOfElementLocated(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;SignIn&quot;</span>)))<span style="color:#cc7832;">;</span>
+</pre>
+
+<p>Fluent Wait :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+      Wait&lt;WebDriver&gt; wait = <span style="color:#cc7832;">new </span>FluentWait&lt;WebDriver&gt;(<span style="color:#9876aa;font-style:italic;">driver</span>)
+              .withTimeout(<span style="color:#6897bb;">20</span><span style="color:#cc7832;">, </span>TimeUnit.SECONDS)
+              .pollingEvery(<span style="color:#6897bb;">5</span><span style="color:#cc7832;">, </span>TimeUnit.SECONDS)
+              .ignoring(NoSuchElementException.<span style="color:#cc7832;">class</span>)<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span>WebElement aboutMe= wait.until(<span style="color:#cc7832;">new </span>Function&lt;WebDriver<span style="color:#cc7832;">, </span>WebElement&gt;() {
+          <span style="color:#cc7832;">public </span>********** <span style="color:#ffc66d;">apply</span>(WebDriver driver) {
+              <span style="color:#cc7832;">****** </span>driver.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;LoginButton&quot;</span>))<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">    </span>}
+      })<span style="color:#cc7832;">;</span>
+      <span style="color:#cc7832;"></span>
+</pre>
+<br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">23.Headless in Chrome Browser ~</h3><br><br>
+               <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">ChromeOptions options = <span style="color:#cc7832;">new </span>ChromeOptions()<span style="color:#cc7832;">;<br></span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">"webdriver.chrome.driver"</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">"/Users/mr/Downloads/chromedriver2"</span>)<span style="color:#cc7832;">;<br></span>options.addArguments(<span style="color:#6a8759;">"--headless"</span>)<span style="color:#cc7832;">;<br></span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver(options)<span style="color:#cc7832;">;<br></span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">"https://google.com/"</span>)<span style="color:#cc7832;">;</span>
+               </pre>
+<br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">24.Types of Webdriver APIs are available in Selenium?</h3><br><br>
+         <p>
+               Below is the list of driver classes that you can use for the browser
+               automation.
+           </p>
+           <ul>
+               <li>
+                   ChromeDriver,
+               </li>
+               <li>
+                   FirefoxDriver,
+               </li>
+               <li>
+                   HtmlUnitDriver,
+               </li>
+               <li>
+                   InternetExplorerDriver,
+               </li>
+               <li>
+                   IPhoneDriver,
+               </li>
+               <li>
+                   EventFiringWebDriver,
+               </li>
+               <li>
+                   IPhoneSimulatorDriver,
+               </li>
+               <li>
+                   AndroidDriver,
+               </li>
+               <li>
+                   RemoteWebDriver.
+               </li>
+           </ul>        
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">25.How to make sure that a page is loaded using Selenium Webdriver?</h3><br><br>
+
+<pre class="lang:java decode:true " style="box-sizing: border-box; margin-top: 20px; margin-bottom: 20px; padding: 20px; border: 0px; outline: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; font-family: monospace, monospace; font-size: 16px; overflow: auto; letter-spacing: 0.2px; color: rgb(238, 238, 238) !important; background: rgb(46, 50, 67) !important;">WebDriverWait check = new WebDriverWait(driver, 40);
+check.until(ExpectedConditions.anyElement(By.id("Login")));</pre>
+               <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">26.Read a JavaScript variable in Selenium WebDriver?</h3><br><br>
+
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#808080;">// Initialize the Javascripts object.<br></span><span style="color:#808080;"><br></span>JavascriptExecutor JS = (JavascriptExecutor) <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;<br></span><span style="color:#808080;">// Get the current site title.<br></span>String TL = (String)JS.executeScript(<span style="color:#6a8759;">"Document Title"</span>)<span style="color:#cc7832;">;<br></span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">"Title IS : " </span>+ TL)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span>
+         </pre><br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="CMDRunSelenium" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">27.Run the Selenium Webdriver test from the command line?</h3><br><br>
+
+         <pre class="lang:sh decode:true " style="box-sizing: border-box; margin-top: 20px; margin-bottom: 20px; padding: 20px; border: 0px; outline: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; font-family: monospace, monospace; font-size: 16px; overflow: auto; letter-spacing: 0.2px; color: rgb(238, 238, 238) !important; background: rgb(46, 50, 67) !important;">java -classpath ".;selenium-server-standalone-3.2.0.0.jar" packagename\classname  
+         </pre><div><br></div><br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">28.Exceptions we face in Selenium Webdriver?</h3><br><br>
+
+         <div>
+               <br/>
+           </div>
+           <ul>
+               <p>
+                   NoSuchWindowException,
+               </p>
+               <p>
+                   NoSuchElementException,
+               </p>
+               <p>
+                   WebDriverException,
+               </p>
+               <p>
+                   NoAlertPresentException,
+               </p>
+               <p>
+                   TimeoutException.
+               </p>
+           </ul>
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">29.How can you check the state of a checkbox/radio button?</h3><br><br>
+
+         <pre class="lang:java decode:true " style="box-sizing: border-box; margin-top: 20px; margin-bottom: 20px; padding: 20px; border: 0px; outline: 0px; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-stretch: inherit; line-height: inherit; vertical-align: baseline; font-family: monospace, monospace; font-size: 16px; overflow: auto; letter-spacing: 0.2px; color: rgb(238, 238, 238) !important; background: rgb(46, 50, 67) !important;">boolean ele_status = driver.findElement(By.id("checkbox/radio button id")).isSelected();</pre><div><br></div>
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">30.Handle the alert popups in Selenium Webdriver?</h3><br><br>
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">String parentWindow = <span style="color:#9876aa;font-style:italic;">driver</span>.getWindowHandle()<span style="color:#cc7832;">;<br></span>Alert pop = <span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().alert()<span style="color:#cc7832;">; </span><span style="color:#808080;">// shift control to the alert popup.<br></span>pop.accept()<span style="color:#cc7832;">; </span><span style="color:#808080;">// click on ok/yes button.<br></span>pop.dismiss()<span style="color:#cc7832;">; </span><span style="color:#808080;">// click on cancel button.<br></span><span style="color:#808080;">// Move the control back to source page.<br></span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().window(parentWindow)<span style="color:#cc7832;">;  </span><span style="color:#808080;">// move back to the source page.</span>
+         </pre>
+        
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">31.Process to start the IE/Chrome browser?</h3><br><br>
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#808080;"> // For the IE web browser.<br></span><span style="color:#808080;"><br></span> System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">"webdriver.ie.driver"</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">"/Users/mr/Downloads/iedriver.exe"</span>)<span style="color:#cc7832;">;<br></span> WebDriver driver = <span style="color:#cc7832;">new </span>InternetExplorerDriver()<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span><span style="color:#808080;"> // For the Chrome web browser.<br></span><span style="color:#808080;"><br></span> System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">"webdriver.chrome.driver"</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">"/Users/mr/Downloads/chromedriver.exe"</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span> WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span>
+         </pre>
+         
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">32.Differentiate between the absolute and relative XPath?</h3><br><br>
+<p>Single slash "/" signifies an absolute XPath.Means immediate child</p>
+<p>Double Slash "//" represents the relative XPath.May not be iimediate child</p>
+         
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">&lt;div&gt;<br>     &lt;li&gt;<br>     &lt;li&gt;<br>     &lt;a&gt;<br>     &lt;ul&gt;<br>          &lt;li&gt;<br>             &lt;a&gt;<br>           &lt;li&gt;<br>              &lt;a&gt;<br>            &lt;li&gt;</pre>
+         <p>As per above example -> div/li count should be 2 , but div//li count is 5 </p>
+         <p>Applying same logic --> div/a == 1 but div//a == 3</p>
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+    <!--##################################################################-->
+
+    <div id="FrameHandleSel" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">33.  Handle Frame using Selenium</h3><br><br>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#808080;">// By Frame ID<br></span><span style="color:#808080;"><br></span><span style="color:#808080;"> </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().frame(<span style="color:#6a8759;">"FrameID"</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span><span style="color:#cc7832;"> </span><span style="color:#808080;">// By Frame Name<br></span><span style="color:#808080;"><br></span><span style="color:#808080;"> </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().frame(<span style="color:#6a8759;">"FrameName"</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span><span style="color:#cc7832;"> </span><span style="color:#808080;">// By Frame Web Element<br></span><span style="color:#808080;"><br></span><span style="color:#808080;"> </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().frame(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">"frameId"</span>)))<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span><span style="color:#cc7832;"> </span><span style="color:#808080;">// By Frame Index<br></span><span style="color:#808080;"><br></span><span style="color:#808080;"> </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().frame(<span style="color:#6897bb;">0</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"> </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().frame(<span style="color:#6897bb;">1</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span><span style="color:#cc7832;"> </span><span style="color:#808080;">// Go Back To Parent Window From Frame<br></span><span style="color:#808080;"><br></span><span style="color:#808080;"> </span><span style="color:#9876aa;font-style:italic;">driver</span>.switchTo().defaultContent()<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span></pre>
+
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+
+     <!--##################################################################-->
+
+     <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">34.  Upload an Image using Selenium</h3><br><br>
+
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><br> WebElement ele = <span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">"BrowseButton"</span>))<span style="color:#cc7832;">;<br></span> ele.sendKeys(<span style="color:#6a8759;">"D:</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Images</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">img1.png"</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span></pre>
+         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">35.  Type without using SendKeys in Selenium</h3><br><br>
+
+         <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><br> ((JavascriptExecutor)<span style="color:#9876aa;font-style:italic;">driver</span>).executeScript(<span style="color:#6a8759;">"document.getElementById('emailTextBox').value='abc@gmail.com';"</span>)<span style="color:#cc7832;">;<br></span><span style="color:#cc7832;"><br></span></pre>         <br><br></div>
+      
+                     
+   
+   <!--##################################################################-->
+   <!--##################################################################-->
+                  </div>
+               </div>
+            </div>
+            </div>
+   </section>
+                  
+      <!--================Blog Area end =================-->
+
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="js/slick.min.js"></script>
+   <script src="js/jquery.counterup.min.js"></script>
+   <script src="js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="js/custom.js"></script>
+   <script src="js/newjavascriptsfile.js"></script>
+   <script src="js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

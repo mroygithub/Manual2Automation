@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cucumber POM.XML | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: right;
+         width: 83px;
+         padding: 5px;
+      }
+        .left {
+          float: left;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Cucumber With POM.XML</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+      <img class="centerimg" src="../img/cmm1.png" alt="How To Run Cucumber using Maven" style="text-align:center;widows: 400;height:400">
+      <img class="centerimg" src="../img/ccm001.png" alt="How To Run Cucumber using Maven" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Cucumber With POM.XML</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                    <!-- Run Cucumber using POM.XML -->
+
+               <div class="blog_details">
+                  <h5>First we need to set up Maven in our system :
+                     <br>  <strong>Windows:</strong> Download maven from <a href="../https://maven.apache.org/download.cgi"> Here</a>
+                     <br> Unzip it, set MAVEN_HOME as 'maven unzip path/bin'. Same in windows PATH as well.
+                     <br> <strong>MAC:</strong>Install maven from Terminal : <font color="red">brew install maven</font>
+                     <p>Using Terminal check maven version as below:</p>
+                  <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><meta charset="utf-8"><span style='color: rgb(248, 248, 242); font-family: "Source Code Pro", "Liberation Mono", "Courier New", Courier, monospace; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: pre-wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(68, 71, 90); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>mvn -v</span>
+                  </pre>
+                  <strong><p>Add below code in your pom.xml</strong></p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+   <span style="color:#e8bf6a;">&lt;properties&gt;
+      </span><span style="color:#e8bf6a;">    &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+      </span><span style="color:#e8bf6a;">    &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+   </span><span style="color:#e8bf6a;">&lt;/properties&gt;</span>
+
+</pre>
+<strong><p>My complete pom.xml now looks like below:</strong></p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+   <span style="color:#e8bf6a;">&lt;?</span><span style="color:#bababa;">xml version=</span><span style="color:#6a8759;">&quot;1.0&quot; </span><span style="color:#bababa;">encoding=</span><span style="color:#6a8759;">&quot;UTF-8&quot;</span><span style="color:#e8bf6a;">?&gt;
+   </span><span style="color:#e8bf6a;">&lt;project </span><span style="color:#bababa;">xmlns=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0&quot;
+   </span><span style="color:#6a8759;">         </span><span style="color:#bababa;">xmlns:</span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">=</span><span style="color:#6a8759;">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+   </span><span style="color:#6a8759;">         </span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">:schemaLocation=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#e8bf6a;">&gt;
+   </span><span style="color:#e8bf6a;">    &lt;modelVersion&gt;</span>4.0.0<span style="color:#e8bf6a;">&lt;/modelVersion&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>com.maven.cucumbertest<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>com.maven.cucumbertest<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">    &lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">    &lt;properties&gt;
+   </span><span style="color:#e8bf6a;">        &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+   </span><span style="color:#e8bf6a;">        &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+   </span><span style="color:#e8bf6a;">    &lt;/properties&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">    &lt;dependencies&gt;
+   </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>io.cucumber<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>cucumber-java<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>5.5.0<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>io.cucumber<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>cucumber-junit<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>5.5.0<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>io.cucumber<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>cucumber-core<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>5.5.0<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>io.cucumber<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>gherkin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>13.0.0<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+   </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.seleniumhq.selenium<span style="color:#e8bf6a;">&lt;/groupId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>selenium-java<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+   </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>3.141.59<span style="color:#e8bf6a;">&lt;/version&gt;
+   </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">    &lt;/dependencies&gt;
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">
+   </span><span style="color:#e8bf6a;">&lt;/project&gt;</span>
+
+</pre>
+                  </h5><br>
+
+                  <strong><p>Open Terminal or cmd --> go to your project path pom.xml file-->type 'mvn test'</strong>
+                  <br> This will start your execution and Terminal/cmd output will be as below:
+                  <br><img src=".././img/ccm004.png" alt="How To Run Cucumber using Maven" class="img-responsive">
+                  <br><img src=".././img/ccm005.png" alt="How To Run Cucumber using Maven" class="img-responsive">
+                  
+                  </p>
+
+     <h4><font color="red">Pass feature file as a parameter : Maven</font></h4>   
+     <strong><p>I want to execute only feature file : stringConcat.feature</strong></p>          
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+<span style="color:#629755;font-style:italic;"># Feature file name : stringConcat.feature
+   </span><span style="color:#cc7832;font-weight:bold;">Feature: </span>Do String Concat and output it with Calculation.
+   
+      
+      <span style="color:#bbb529;">@addition
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>Pass company name and add two numbers
+         <span style="color:#cc7832;font-weight:bold;">When </span>We pass company as &quot;Cognizant&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>Output should be &quot;Welcome to Cognizant&quot;
+         <span style="color:#cc7832;font-weight:bold;">And </span>When we pass two numbers as &quot;5&quot; and &quot;5&quot; for addition
+         <span style="color:#cc7832;font-weight:bold;">Then </span>output should be &quot;10&quot;
+   
+   
+      <span style="color:#bbb529;">@subtraction
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>Pass company name and add two numbers
+         <span style="color:#cc7832;font-weight:bold;">When </span>We pass company as &quot;Google&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>Output should be &quot;Welcome to Google&quot;
+         <span style="color:#cc7832;font-weight:bold;">And </span>When we pass two numbers as &quot;8&quot; and &quot;5&quot; for subtraction
+         <span style="color:#cc7832;font-weight:bold;">Then </span>output should be &quot;3&quot;
+      
+      </pre>
+     <br> <strong><p>My testRunner class features path should be generic , not any perticular feature file.</strong></p> 
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+   <span style="color:#cc7832;">package </span>testRunner<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>io.cucumber.junit.<span style="color:#bbb529;">CucumberOptions</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.junit.Cucumber<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#bbb529;">@RunWith</span>(Cucumber.<span style="color:#cc7832;">class</span>)
+   <span style="color:#bbb529;">@CucumberOptions</span>(
+   
+            <span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;src/test/Feature&quot;</span><span style="color:#cc7832;">, </span><span style="color:#d0d0ff;">glue </span>= <span style="color:#6a8759;">&quot;stepDefinition&quot;</span><span style="color:#cc7832;">,
+   </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">plugin </span>= { <span style="color:#6a8759;">&quot;pretty&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;html:target/cucumber-reports&quot; </span>})
+   
+   
+   
+   <span style="color:#cc7832;">public class </span>TestRunner {
+   
+   
+   }</pre>
+
+   <br> <strong><p>Now we have multiple feature file inside 'src/test/Feature'. We waht to execure only 'stringConcat' using mvn</strong></p> 
+</h5><br>
+
+<strong><p>Open Terminal or cmd --> go to your project path pom.xml file-->type 
+      mvn test -Dcucumber.options=<br>"src/test/Feature/stringConcat.feature"
+</strong>
+<br> This will start your execution and Terminal/cmd output will be as below:
+<br><img src=".././img/ccm006.png" alt="How To Run Cucumber using Maven" class="img-responsive">
+<br> <strong>Code for the above output is :</strong>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+   <span style="color:#cc7832;">package </span>stepDefinition<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">When</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Then</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>StepDeftest2 {
+   
+       String <span style="color:#9876aa;">concatedvalue</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    int </span><span style="color:#9876aa;">finalnumber </span>=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@When</span>(<span style="color:#6a8759;">&quot;We pass company as {string}&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">we_pass_company_as</span>(String string) {
+   
+           <span style="color:#9876aa;">concatedvalue </span>= <span style="color:#6a8759;">&quot;Welcome to&quot;</span>+<span style="color:#6a8759;">&quot; &quot;</span>+string<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;Output should be {string}&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">output_should_be</span>(String string) {
+   
+           <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">concatedvalue</span>.equals(string))
+           {
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Output String is Pass as :&quot;</span>+<span style="color:#9876aa;">concatedvalue</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+       }
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;When we pass two numbers as {int} and {int} for addition&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">when_we_pass_two_numbers_as_and_for_addition</span>(Integer int1<span style="color:#cc7832;">, </span>Integer int2) {
+   
+           <span style="color:#9876aa;">finalnumber </span>= int1+int2<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;When we pass two numbers as {int} and {int} for subtraction&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">when_we_pass_two_numbers_as_and_for_subtraction</span>(Integer int1<span style="color:#cc7832;">, </span>Integer int2) {
+   
+           <span style="color:#9876aa;">finalnumber </span>=int1-int2<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">    </span>}
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;output should be {int}&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">output_should_be</span>(Integer int1) {
+   
+           <span style="color:#cc7832;">if </span>(<span style="color:#9876aa;">finalnumber</span>==int1)
+           {
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Final number is Pass as :&quot;</span>+<span style="color:#9876aa;">finalnumber</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+   
+       }
+   
+   }</pre>
+
+</p>
+
+<h4><font color="red">Pass 'TAG' as a parameter : Maven</font></h4>   
+     <p>I want to pass only 'smoke' or 'regression' as a parameter to execute.Below
+        command will execute all 'smoke' tagged scenarios from all the features file.
+     </p>          
+
+<strong><p>Open Terminal or cmd --> go to your project path pom.xml file-->type 
+      mvn test -Dcucumber.options="--tags @smoke"
+</strong>
+
+<p>To run scenarios with @smoke and @regression:
+      <strong>  mvn test -Dcucumber.options="--tags @smoke --tags @regression"
+</strong></p>
+<p>To run scenarios with @smoke OR @regression:
+      <strong>  mvn test -Dcucumber.options="--tags @smoke,@regression"
+</strong></p>
+                  
+
+               </div>
+               <!--##################################################################-->
+
+               </div>
+            </div>
+         </div>  
+      </div>
+
+      <div class="inner"><a href="../cucumber/ccb_tags.html" class="previous">&laquo; Previous</a></div>
+      <div class="inner"><a href="../cucumber/ccb_jenkins.html" class="previous">Next &raquo;</a></div>
+      
+     
+   </section>
+   <!--================Blog Area end =================-->
+
+  <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+  
+     <!-- jquery plugins here-->
+     <!-- jquery -->
+     <script src="../js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="../js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../js/bootstrap.min.js"></script>
+     <!-- easing js -->
+     <script src="../js/jquery.magnific-popup.js"></script>
+     <!-- swiper js -->
+     <script src="../js/swiper.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/masonry.pkgd.js"></script>
+     <!-- particles js -->
+     <script src="../js/owl.carousel.min.js"></script>
+     <script src="../js/jquery.nice-select.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/slick.min.js"></script>
+     <script src="../js/jquery.counterup.min.js"></script>
+     <script src="../js/waypoints.min.js"></script>
+     <!-- custom js -->
+     <script src="../js/custom.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+  </body>
+  
+  </html>

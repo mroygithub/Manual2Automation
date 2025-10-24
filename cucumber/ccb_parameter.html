@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cucumber Parameterizations | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: right;
+         width: 83px;
+         padding: 5px;
+      }
+        .left {
+          float: left;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Cucumber Parameterization</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+      <img class="centerimg" src="../img/cmm1.png" alt="cucumber1" style="text-align:center;widows: 400;height:400">
+      <img class="centerimg" src="../img/ccm001.png" alt="flow" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Cucumber Parameterization</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                 <!-- Cucumber Parameterization-->
+
+
+               
+               <div class="blog_details">
+                  <p>Cucumber test data Parameterization can be achieved in various way.
+                  </p><br>
+                  <p>Consider below feature file ,  Where google url & title are not passing from feature file.</p><br>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;font-weight:bold;">Feature: </span>Scenarios to validate google Application
+<span style="color:#cc7832;font-weight:bold;">Scenario: </span>Check for Google Title
+<span style="color:#cc7832;font-weight:bold;">Given </span>User launch google application
+<span style="color:#cc7832;font-weight:bold;">Then </span>User should see google home page
+<span style="color:#cc7832;font-weight:bold;">Then </span>User validate google page title
+<span style="color:#cc7832;font-weight:bold;">And </span>user close the application</pre>
+<br><p>To pass google url and title value from feature file , we can write it as below.</p><br>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;font-weight:bold;">Feature: </span>Scenarios to validate google Application
+<span style="color:#cc7832;font-weight:bold;">Scenario: </span>Check for Google Title
+<span style="color:#cc7832;font-weight:bold;">Given </span>User launch google application as &quot;https://www.google.com&quot;
+<span style="color:#cc7832;font-weight:bold;">Then </span>User should see google home page
+<span style="color:#cc7832;font-weight:bold;">Then </span>User validate google page title as &quot;Google&quot;
+<span style="color:#cc7832;font-weight:bold;">And </span>user close the application</pre>
+<p><strong>When we change a Feature file steps , then we need to recreate stepDefinition for those steps.
+   Here we have changed two Feature file steps , let's rerun the feature file. It will automatically generate steps for those
+   two steps.</strong>
+</p>
+<p>You can implement missing steps with the snippets below:</p>
+<p><br></p>
+<p>@Given(&quot;User launch google application as {string}&quot;)</p>
+<p>public void user_launch_google_application_as(String string) {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+<p><br></p>
+<p>@Then(&quot;User validate google page title as {string}&quot;)</p>
+<p>public void user_validate_google_page_title_as(String string) {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+
+<br><img src=".././img/cmm2.0.png" alt="ccm" class="img-responsive">
+<br><p>Now add these two steps in stepDefinition class file as below. Where 'url' & 'title' values are parameterized
+   and driven from feature file. 
+</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>stepDefinition<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Given</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Then</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeOptions<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">public class </span>StepDeftest1 {
+
+
+      WebDriver <span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">null;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Given</span>(<span style="color:#6a8759;">&quot;User launch google application as {string}&quot;</span>)
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_launch_google_application_as</span>(String string) {
+
+         <span style="color:#808080;">// Launching Google Application
+</span><span style="color:#808080;">        </span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/mrouser/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(string)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span>}
+
+      <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;User should see google home page&quot;</span>)
+
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_should_see_google_home_page</span>() {
+
+         <span style="color:#808080;">// Validating google search button
+</span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;(//input[@value=&#39;Google Search&#39;])[2]&quot;</span>)).isDisplayed()<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span>}
+
+      <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;User validate google page title as {string}&quot;</span>)
+
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_validate_google_page_title_as</span>(String string) {
+
+         <span style="color:#808080;">// Checking for page title...
+</span><span style="color:#808080;">
+</span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.getTitle().equals(string))
+         {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Pge Title is Pass&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+
+      }
+
+      <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;user close the application&quot;</span>)
+
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_close_the_application</span>() {
+
+         <span style="color:#808080;">// Close the application
+</span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span>}
+
+
+}</pre><br><br><br>
+
+<p><font color="red">Cucumber Parameterization inside Example table:</font></p>
+   <p>Consider a scenario where we will launch 5 website and compare their titles.</p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;font-weight:bold;">Feature: </span>Scenarios to validate five applications and Title
+
+
+   <span style="color:#629755;font-style:italic;"># This is second scenario for parameterization Example</span>
+
+   <span style="color:#cc7832;font-weight:bold;">Scenario Outline: </span>validate five application title using parameterization
+   <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with url as &quot;&lt;URL&gt;&quot;
+   <span style="color:#cc7832;font-weight:bold;">Then </span>user navigates to the home page
+   <span style="color:#cc7832;font-weight:bold;">Then </span>get title value from application and its value should be &quot;&lt;TitleValue&gt;&quot;
+   <span style="color:#cc7832;font-weight:bold;">Then </span>User close the application
+   <span style="color:#cc7832;font-weight:bold;">Examples:
+   </span><span style="color:#cc7832;font-weight:bold;">
+   </span><span style="color:#cc7832;font-weight:bold;">    | </span><span style="color:#9876aa;font-weight:bold;">URL </span><span style="color:#cc7832;font-weight:bold;">| </span><span style="color:#9876aa;font-weight:bold;">TitleValue </span><span style="color:#cc7832;font-weight:bold;">|
+   </span><span style="color:#cc7832;font-weight:bold;">    | </span><span style="color:#297bde;font-weight:bold;">https://www.google.com </span><span style="color:#cc7832;font-weight:bold;">| </span><span style="color:#297bde;font-weight:bold;">Google </span><span style="color:#cc7832;font-weight:bold;">|
+   </span><span style="color:#cc7832;font-weight:bold;">    | </span><span style="color:#297bde;font-weight:bold;">https://www.facebook.com </span><span style="color:#cc7832;font-weight:bold;">| </span><span style="color:#297bde;font-weight:bold;">Facebook &ndash; log in or sign up </span><span style="color:#cc7832;font-weight:bold;">|
+   </span><span style="color:#cc7832;font-weight:bold;">    | </span><span style="color:#297bde;font-weight:bold;">https://www.linkedin.com </span><span style="color:#cc7832;font-weight:bold;">| </span><span style="color:#297bde;font-weight:bold;">LinkedIn </span><span style="color:#cc7832;font-weight:bold;">|
+   </span><span style="color:#cc7832;font-weight:bold;">    | </span><span style="color:#297bde;font-weight:bold;">https://www.microsoft.com </span><span style="color:#cc7832;font-weight:bold;">| </span><span style="color:#297bde;font-weight:bold;">Microsoft - Official Home Page </span><span style="color:#cc7832;font-weight:bold;">|
+   </span><span style="color:#cc7832;font-weight:bold;">    | </span><span style="color:#297bde;font-weight:bold;">https://manual2automation.com </span><span style="color:#cc7832;font-weight:bold;">| </span><span style="color:#297bde;font-weight:bold;">Automation Testing tools : selenium WebDriver, API , Rest Assured , Appium </span><span style="color:#cc7832;font-weight:bold;">|</span>
+
+
+   </pre>
+
+   <span><p>
+         # This time instead of 'Scenario' it is 'Scenario Outline'.
+         <br># Parameters are 'URL' and 'TitleValue'.
+         <br> Run this feature file , it will generate stepDefinition methods.
+      </p>
+   </span>
+
+   <p>You can implement missing steps with the snippets below:</p>
+<p><br></p>
+<p>@Given(&quot;user launch application with url as {string}&quot;)</p>
+<p>public void user_launch_application_with_url_as(String string) {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+<p><br></p>
+<p>@Then(&quot;user navigates to the home page&quot;)</p>
+<p>public void user_navigates_to_the_home_page() {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+<p><br></p>
+<p>@Then(&quot;get title value from application and its value should be {string}&quot;)</p>
+<p>public void get_title_value_from_application_and<br>_its_value_should_be(String string) {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+<p>@Then(&quot;User close the application&quot;)</p>
+<p>public void User_close_the_application() {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+<p><br></p>
+
+<p>Copy this code to stepDefinition class file and complete the code as below.</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>stepDefinition<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Given</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Then</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeOptions<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>StepDeftest1 {
+   
+   
+       WebDriver <span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Given</span>(<span style="color:#6a8759;">&quot;user launch application with url as {string}&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_launch_application_with_url_as</span>(String string) {
+   
+           <span style="color:#808080;">// Launching Google Application
+   </span><span style="color:#808080;">        </span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/myusername/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(string)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;user navigates to the home page&quot;</span>)
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_navigates_to_the_home_page</span>() {
+   
+           <span style="color:#808080;">// Validating google search button
+   </span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>.findElement(By
+                   .<span style="font-style:italic;">xpath</span>(<span style="color:#6a8759;">&quot;//title&quot;</span>))
+                   .isDisplayed()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;get title value from application and its value should be {string}&quot;</span>)
+   
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">get_title_value_from_application_<br>and_its_value_should_be</span>(String string) {
+   
+           <span style="color:#808080;">// Checking for page title...
+   </span><span style="color:#808080;">
+   </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.getTitle().equals(string))
+           {
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application Pge Title is Pass&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+   
+       }
+   
+       <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;User close the application&quot;</span>)
+   
+       <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">User_close_the_application</span>() {
+   
+           <span style="color:#808080;">// Close the application
+   </span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+   }</pre>
+
+<br><h5>After Execution test report would look like below.</h5>
+<br><img src=".././img/ccm2.1.png" alt="ccm" class="img-responsive">
+
+<p><font color="red">Cucumber Parameterization using DataTable:</font></p>
+   <p>Consider a scenario where we will launch 5 website and compare their titles. This time feature file would
+      look like below format.
+   </p>
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+         
+      <span style="color:#cc7832;font-weight:bold;">Feature: </span>Scenarios to validate five applications and Title
+         
+         
+             <span style="color:#cc7832;font-weight:bold;">Scenario Outline: </span>validate five application titles
+               <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with given url with &lt;loop&gt;
+         
+                 <span style="color:#cc7832;font-weight:bold;">|</span><span style="color:#297bde;font-weight:bold;">URL</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">        | </span><span style="color:#297bde;font-weight:bold;">https://www.google.com </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">        | </span><span style="color:#297bde;font-weight:bold;">https://www.facebook.com </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">        | </span><span style="color:#297bde;font-weight:bold;">https://www.linkedin.com </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">        | </span><span style="color:#297bde;font-weight:bold;">https://www.microsoft.com </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">        | </span><span style="color:#297bde;font-weight:bold;">https://manual2automation.com </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">
+         </span><span style="color:#cc7832;font-weight:bold;">      Then </span>get title value from application and its value should be as feature file &lt;loop&gt;
+         
+         
+               <span style="color:#cc7832;font-weight:bold;">|</span><span style="color:#297bde;font-weight:bold;">Title</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      | </span><span style="color:#297bde;font-weight:bold;">Google </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      | </span><span style="color:#297bde;font-weight:bold;">Facebook &ndash; log in or sign up </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      | </span><span style="color:#297bde;font-weight:bold;">LinkedIn </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      | </span><span style="color:#297bde;font-weight:bold;">Microsoft - Official Home Page </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      | </span><span style="color:#297bde;font-weight:bold;">Automation Testing tools : selenium WebDriver, API , Rest Assured , Appium </span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">
+         </span><span style="color:#cc7832;font-weight:bold;">      Then </span>User close the application
+         
+              <span style="color:#cc7832;font-weight:bold;">Examples:
+         </span><span style="color:#cc7832;font-weight:bold;">      |</span><span style="color:#9876aa;font-weight:bold;">loop</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      |</span><span style="color:#297bde;font-weight:bold;">0</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      |</span><span style="color:#297bde;font-weight:bold;">1</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      |</span><span style="color:#297bde;font-weight:bold;">2</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      |</span><span style="color:#297bde;font-weight:bold;">3</span><span style="color:#cc7832;font-weight:bold;">|
+         </span><span style="color:#cc7832;font-weight:bold;">      |</span><span style="color:#297bde;font-weight:bold;">4</span><span style="color:#cc7832;font-weight:bold;">|</span>
+      
+      </pre>
+
+      <p>Note:
+         <br> # Here 'loop' is an integer.
+         <br> # 'URL' & 'Title' is table header.
+      </p>
+      <p>While running this feature file it will create below stepDefinition automatically</p>
+<strong><p>
+
+      <p>You can implement missing steps with the snippets below:</p>
+<p><br></p>
+<p>@Given(&quot;user launch application with given url with {int}&quot;)</p>
+<p>public void user_launch_application_with_given_url_with(Integer int1, io.cucumber.datatable.DataTable dataTable) {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; // For automatic transformation, change DataTable to one of</p>
+<p>&nbsp; &nbsp; // E, List&lt;E&gt;, List&lt;List&lt;E&gt;&gt;, List&lt;Map&lt;K,V&gt;&gt;, Map&lt;K,V&gt; or</p>
+<p>&nbsp; &nbsp; // Map&lt;K, List&lt;V&gt;&gt;. E,K,V must be a String, Integer, Float,</p>
+<p>&nbsp; &nbsp; // Double, Byte, Short, Long, BigInteger or BigDecimal.</p>
+<p>&nbsp; &nbsp; //</p>
+<p>&nbsp; &nbsp; // For other transformations you can register a DataTableType.</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+<p><br></p>
+<p>@Then(&quot;get title value from application and its value should be as feature file {int}&quot;)</p>
+<p>public void get_title_value_from_application_and_its_value<br>_should_be_
+   as_feature_file
+   (Integer int1, io.cucumber.datatable.DataTable dataTable) {</p>
+<p>&nbsp; &nbsp; // Write code here that turns the phrase above into concrete actions</p>
+<p>&nbsp; &nbsp; // For automatic transformation, change DataTable to one of</p>
+<p>&nbsp; &nbsp; // E, List&lt;E&gt;, List&lt;List&lt;E&gt;&gt;, List&lt;Map&lt;K,V&gt;&gt;, Map&lt;K,V&gt; or</p>
+<p>&nbsp; &nbsp; // Map&lt;K, List&lt;V&gt;&gt;. E,K,V must be a String, Integer, Float,</p>
+<p>&nbsp; &nbsp; // Double, Byte, Short, Long, BigInteger or BigDecimal.</p>
+<p>&nbsp; &nbsp; //</p>
+<p>&nbsp; &nbsp; // For other transformations you can register a DataTableType.</p>
+<p>&nbsp; &nbsp; throw new io.cucumber.java.PendingException();</p>
+<p>}</p>
+
+   
+</p></strong>
+<p>Note:
+  <br> # As close application stepDefinition method was already there , no new stepDefinition generated for it.
+</p>
+<h5>We can implement the code as below.</h5>
+<br><br>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+<span style="color:#cc7832;">package </span>stepDefinition<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Given</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>io.cucumber.java.en.<span style="color:#bbb529;">Then</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeOptions<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">import </span>java.util.*<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">public class </span>StepDeftest1 {
+   
+   
+      WebDriver <span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">null;
+   </span><span style="color:#cc7832;">    </span>String <span style="color:#9876aa;">url</span><span style="color:#cc7832;">,</span><span style="color:#9876aa;">title</span><span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Given</span>(<span style="color:#6a8759;">&quot;user launch application with given url with {int}&quot;</span>)
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">user_launch_application_with_given_url_with</span>(Integer int1<span style="color:#cc7832;">, </span>io.cucumber.datatable.DataTable dataTable) {
+   
+         List&lt;Map&lt;String<span style="color:#cc7832;">, </span>String&gt;&gt; list = dataTable.asMaps(String.<span style="color:#cc7832;">class, </span>String.<span style="color:#cc7832;">class</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">url </span>= list.get(int1).get(<span style="color:#6a8759;">&quot;URL&quot;</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;">url</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Launching Google Application
+   </span><span style="color:#808080;">        </span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/mithunroy/Downloads/chromedriver&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#9876aa;">url</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+      <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;get title value from application and its value should be as feature file {int}&quot;</span>)
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">get_title_value_from_application_<br>and_its_value_should_be_as_feature_file</span>(Integer int1<span style="color:#cc7832;">, </span>io.cucumber.datatable.DataTable dataTable) {
+   
+   
+         List&lt;Map&lt;String<span style="color:#cc7832;">, </span>String&gt;&gt; list = dataTable.asMaps(String.<span style="color:#cc7832;">class, </span>String.<span style="color:#cc7832;">class</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">title </span>= list.get(int1).get(<span style="color:#6a8759;">&quot;Title&quot;</span>)<span style="color:#cc7832;">;</span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#9876aa;">title</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// Checking for page title...
+   </span><span style="color:#808080;">
+   </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.getTitle().equals(<span style="color:#9876aa;">title</span>))
+         {
+               System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application Pge Title is Pass&quot;</span>)<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">        </span>}
+   
+      }
+   
+      <span style="color:#bbb529;">@Then</span>(<span style="color:#6a8759;">&quot;User close the application&quot;</span>)
+      <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">User_close_the_application</span>() {
+   
+         <span style="color:#808080;">// Close the application
+   </span><span style="color:#808080;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span>}
+   
+   
+   }</pre>
+
+
+   <br><p>After Execution test report would look like below.</p>
+<br><img src=".././img/ccm002.png" alt="ccm" class="img-responsive">
+
+               </div>
+               <!--##################################################################-->
+
+               </div>
+            </div>
+         </div>  
+      </div>
+
+      <div id="outer">
+            <div class="inner"><a href="../cucumber/ccb_reporting.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../cucumber/ccb_tags.html" class="previous">Next &raquo;</a></div>
+      </div>
+      
+      
+     
+   </section>
+   <!--================Blog Area end =================-->
+
+  <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

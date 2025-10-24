@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Parallel Execution | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+    <style>
+            
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG Parallel Execution</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Parallel Execution" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Parallel Execution</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+        <div class="blog_details">
+            <h5>Run multiple <strong>methods</strong> using Parallel execution</h5>
+            <p>TestNG.xml will be written as below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;methods&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;2&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot; </span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;</span>
+    <span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+</pre>
+
+<p>Test Class file can be written as below , where two test methods will be trigerred at same time</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+    
+    
+    
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chromepath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chromepath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.facebook.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_3</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/cmpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.twitter.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_4</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/cmpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.zomato.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    }
+    
+    
+    
+    </pre>
+
+
+    <h5>Run multiple <strong>tests</strong> using Parallel execution</h5>
+            <p>TestNG.xml will be written as below , where manual2Automation1 & manual2Automation2 tests will be executed
+                at same time then manual2Automation3 & manual2Automation4.
+            </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;tests&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;2&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">            &lt;methods&gt;&lt;include </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;testcase_1&quot;</span><span style="color:#e8bf6a;">/&gt;&lt;/methods&gt;&lt;/class&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation2&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">                &lt;methods&gt;&lt;include </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;testcase_2&quot;</span><span style="color:#e8bf6a;">/&gt;&lt;/methods&gt;&lt;/class&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation3&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">                &lt;methods&gt;&lt;include </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;testcase_3&quot;</span><span style="color:#e8bf6a;">/&gt;&lt;/methods&gt;&lt;/class&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation4&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">                &lt;methods&gt;&lt;include </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;testcase_4&quot;</span><span style="color:#e8bf6a;">/&gt;&lt;/methods&gt;&lt;/class&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+</pre>
+
+<p>Test Class file can be written as below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+    
+    
+    
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chromepath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chromepath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.facebook.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_3</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/cmpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.twitter.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_4</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(Thread.<span style="font-style:italic;">currentThread</span>().getId())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/cmpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>WebDriver driver = <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.get(<span style="color:#6a8759;">&quot;https://www.zomato.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>driver.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    }
+    
+    
+    
+    </pre><br><br>
+
+
+    <h5>Run multiple <strong>Class</strong> using Parallel execution</h5>
+            <p>TestNG.xml will be written as below , where testNGClass1 & testNGClass2 tests will be executed
+                at same time then testNGClass3 & testNGClass4.
+            </p>
+
+            <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+                </span><span style="color:#e8bf6a;">
+                </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;classes&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;2&quot;</span><span style="color:#e8bf6a;">&gt;
+                </span><span style="color:#e8bf6a;">
+                </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+                </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+                </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass1&quot;</span><span style="color:#e8bf6a;">/&gt;
+                </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass2&quot;</span><span style="color:#e8bf6a;">/&gt;
+                </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass3&quot;</span><span style="color:#e8bf6a;">/&gt;
+                </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass4&quot;</span><span style="color:#e8bf6a;">/&gt;
+                </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+                </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+                </span><span style="color:#e8bf6a;">
+                </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+                </span></pre>
+
+<p>The Class Structure as :</p>
+<br><img src="../img/tg13.png" alt="Maven TestNG Parallel Execution" class="responsive"><br>
+
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testngxmldatadriven.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngprioandgrou.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

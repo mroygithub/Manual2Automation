@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Robot User Defined Keyword | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Robot User Defined Keyword</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">How Can we create user define keyword in Robot Framework</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+                  <div class="blog_details">
+                     <h1>HOW TO WRITE USER DEFINED KEYWORDS IN ROBOT FRAMEWORK?</h1>
+                     <p>
+                        <p>Consider below code where we are doing below activities - </p>
+                        <p>
+                           <br>1. <strong>Open Browser    https://www.google.com  Chrome</strong> &ndash; Launch Google in Chrome Browser
+                           <br>2. <strong>Maximize Browser Window</strong> &ndash;  Maximize the Chrome Browser
+                           <br>3. <strong>Wait For Condition  return document.title == "Google"</strong> &ndash;  Validate Google Title 
+                           <br>4. <strong>Wait Until Page Contains Element    xpath://img[@class='lnXdpd']</strong> &ndash;  Validate Google Logo 
+                           <br>5. <strong>Element Should Be Visible    xpath:(//input[@name='btnK'])[2]</strong> &ndash;  Validate Google Search button
+                           <br>6. <strong>Close All Browsers</strong> &ndash;  Close Application
+                        </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+</span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+</span><span style="color:#6a8759;">*** Variables ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#6a8759;">*** Test Cases ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Verify Google Application
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://www.google.com  Chrome
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+</span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;Google&quot;
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element    </span><span style="color:#9876aa;font-style:italic;">xpath://img[@class=&apos;lnXdpd&apos;]
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Element Should Be Visible    </span><span style="color:#9876aa;font-style:italic;">xpath:(//input[@name=&apos;btnK&apos;])[2]
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Close All Browsers
+</span><span style="color:#ffc66d;">
+</span><span style="color:#6a8759;">*** Keywords ***
+</span></pre>
+                     </p>
+                     <h3> Now we can break the above steps with custom keys under *** Keywords *** section as below</h3>
+
+
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Keywords ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Validate Google Page Title
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;Google&quot;
+</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#cc7832;">Validate Google Logo
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element    </span><span style="color:#9876aa;font-style:italic;">xpath://img[@class=&apos;lnXdpd&apos;]
+</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#cc7832;">Validate Google Search Button
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Element Should Be Visible    </span><span style="color:#9876aa;font-style:italic;">xpath:(//input[@name=&apos;btnK&apos;])[2]
+</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#cc7832;">Close My Application
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span></pre>
+
+
+                     <p>So Keys are described as below - </p>
+                        <p>
+                           <br>1. <strong>Validate Google Page Title</strong> &ndash;  Validate Google Title 
+                           <br>2. <strong>Validate Google Logo</strong> &ndash;  Validate Google Logo 
+                           <br>3. <strong>Validate Google Search Button</strong> &ndash;  Validate Google Search button
+                           <br>4. <strong>Close My Application</strong> &ndash;  Close Application
+                        </p>
+                        <p>So we can call these KEYS from *** *** Test Cases *** as below - </p>
+<p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Test Cases ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Verify Google Application
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://www.google.com  Chrome
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+</span><span style="color:#ffc66d;">    Validate Google Page Title
+</span><span style="color:#ffc66d;">    Validate Google Logo
+</span><span style="color:#ffc66d;">    Validate Google Search Button
+</span><span style="color:#ffc66d;">    Close My Application</span></pre></p>
+<p>Final code can be written as below - </p>
+<p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+</span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+</span><span style="color:#6a8759;">*** Variables ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#6a8759;">*** Test Cases ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Verify Google Application
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://www.google.com  Chrome
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+</span><span style="color:#ffc66d;">    Validate Google Page Title
+</span><span style="color:#ffc66d;">    Validate Google Logo
+</span><span style="color:#ffc66d;">    Validate Google Search Button
+</span><span style="color:#ffc66d;">    Close My Application
+</span><span style="color:#ffc66d;">
+</span><span style="color:#6a8759;">*** Keywords ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Validate Google Page Title
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;Google&quot;
+</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#cc7832;">Validate Google Logo
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element    </span><span style="color:#9876aa;font-style:italic;">xpath://img[@class=&apos;lnXdpd&apos;]
+</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#cc7832;">Validate Google Search Button
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Element Should Be Visible    </span><span style="color:#9876aa;font-style:italic;">xpath:(//input[@name=&apos;btnK&apos;])[2]
+</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#cc7832;">Close My Application
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers
+</span>
+
+</pre></p>
+                        
+                        </pre>
+
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython/MyFirstRobotScripts.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../RobotPython/robotActions.html" class="previous">Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

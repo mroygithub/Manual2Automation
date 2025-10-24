@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Reporting For Selenium | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: gray;
+                font-size: 25px;
+            }
+
+            img {
+                     border: 1px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Customized HTML Report For Selenium With Screenshot</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/Sel+HTML.jpg" alt="Reporting For Selenium" 
+      style="text-align:center;widows: 400;height:400;border: white;">
+      <h2 style="text-align:center; margin-top: 40px;">Create HTML Report For Selenium[Java / Python]</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <h3>Create HTML Report using Java with below features:</h3>
+                <br><br><h4><strong>
+                    </strong> </h4>
+
+                <p>We will be using Java StringBuilder to create HTML Test Report.</p>
+                    <br><img src="../img/sv004.png" alt="Selenium Test Reporting" class="responsive"><br>
+
+                <p>As per above screenshot we can say :
+                    <br>Report has Date and Time
+                    <br>Total Test Case count
+                    <br>Total PASS count
+                    <br>Total FAIL count
+                    <br>Total Execution Time in Minutes
+                    <br>Test Case Name , Description , Screenshot , Status.
+                    <br>By clicking on screenshot link would navigate to actual screenshot.
+                </p>
+
+                <p>Code to get Date and Time</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#808080;">// Test Method to read Date AND Time.
+            </span><span style="color:#808080;">
+            </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">dateNTime</span>()
+            {
+                DateFormat df = <span style="color:#cc7832;">new </span>SimpleDateFormat(<span style="color:#6a8759;">&quot;dd/MM/yy HH:mm:ss&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>Calendar calobj = Calendar.<span style="font-style:italic;">getInstance</span>()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span><span style="color:#808080;">//System.out.println(df.format(calobj.getTime()));
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">return </span>df.format(calobj.getTime())<span style="color:#cc7832;">;
+            </span>}
+            
+            </pre>
+            <p><br></p>
+
+
+                <p>Code to capture PASS status</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#808080;">// Test report creation when test is Pass
+            </span><span style="color:#808080;">
+            </span><span style="color:#cc7832;">public static  void </span><span style="color:#ffc66d;">TestStepPass</span>(String testname <span style="color:#cc7832;">, </span>String testdescription)
+            {
+                <span style="color:#9876aa;font-style:italic;">passcount </span>= <span style="color:#9876aa;font-style:italic;">passcount</span>+<span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>String screenshot_path = <span style="font-style:italic;">captureScreenshot</span>(<span style="color:#9876aa;font-style:italic;">driver </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;PASS&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    try</span>{
+                    <span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testname<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testdescription<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&lt;a href=&quot;</span>+screenshot_path+<span style="color:#6a8759;">&quot;&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Screenshot&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/a&gt;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;PASS&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;GREEN&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+                <span style="color:#cc7832;">catch</span>(Exception e){
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Unable to create PASS Test Report&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            }
+            
+            </pre>
+            <p><br></p>
+
+                        <p>Code to capture FAIL status</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#808080;">// Test report creation when test is Fail
+            </span><span style="color:#808080;">
+            </span><span style="color:#cc7832;">public static  void </span><span style="color:#ffc66d;">TestStepFail</span>(String testname <span style="color:#cc7832;">, </span>String testdescription)
+            {
+                String screenshot_path = <span style="font-style:italic;">captureScreenshot</span>(<span style="color:#9876aa;font-style:italic;">driver </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;FAIL&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span><span style="color:#9876aa;font-style:italic;">failcount </span>= <span style="color:#9876aa;font-style:italic;">failcount</span>+<span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    try</span>{
+                    <span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testname<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testdescription<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&lt;a href=&quot;</span>+screenshot_path+<span style="color:#6a8759;">&quot;&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Screenshot&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/a&gt;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;FAIL&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Red&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+                <span style="color:#cc7832;">catch</span>(Exception e){
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Unable to create Fail Test Report&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            }
+            
+            </pre>
+            <p><br></p>
+
+            <p>Code For HTML Text Color</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#629755;font-style:italic;">/**
+        </span><span style="color:#629755;font-style:italic;"> * Method which can Change color of HTML Text
+        </span><span style="color:#629755;font-style:italic;"> * </span><span style="color:#629755;font-weight:bold;font-style:italic;">@param </span><span style="color:#8a653b;font-style:italic;">text
+        </span><span style="color:#8a653b;font-style:italic;"> </span><span style="color:#629755;font-style:italic;">* </span><span style="color:#629755;font-weight:bold;font-style:italic;">@param </span><span style="color:#8a653b;font-style:italic;">colorOfText
+        </span><span style="color:#8a653b;font-style:italic;"> </span><span style="color:#629755;font-style:italic;">* </span><span style="color:#629755;font-weight:bold;font-style:italic;">@return
+        </span><span style="color:#629755;font-weight:bold;font-style:italic;"> </span><span style="color:#629755;font-style:italic;">*/
+        </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">textcolor</span>(String text <span style="color:#cc7832;">, </span>String colorOfText)
+        {
+            StringBuilder s = <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>s.append(String.<span style="font-style:italic;">format</span>(<span style="color:#6a8759;">&quot;&lt;font color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">%s</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;%s&lt;/font&gt;&quot;</span><span style="color:#cc7832;">,</span>colorOfText<span style="color:#cc7832;">,</span>text))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>String output = s.toString()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    return </span>output<span style="color:#cc7832;">;
+        </span>}</pre>
+        <p><br></p>
+
+        <p>This Method is useful to Create Final Test Report</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#629755;font-style:italic;">/**
+    </span><span style="color:#629755;font-style:italic;"> *  This Method is useful to Create Final Test Report
+    </span><span style="color:#629755;font-style:italic;"> */
+    </span><span style="color:#629755;font-style:italic;">
+    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">createFinalTable</span>(String tableBody <span style="color:#cc7832;">, </span>String functionality)
+    {
+        <span style="color:#cc7832;">return
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">            </span><span style="color:#6a8759;">&quot;&lt;html&gt;&lt;head&gt;&lt;p&gt;&lt;/p&gt;&lt;/head&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;marquee width=100% bgcolor=#000000&gt;&lt;font size=5 color=#FFCCFF&gt;&quot;</span>+functionality+<span style="color:#6a8759;">&quot;&lt;/font&gt;&lt;/marquee&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;p&gt;&lt;/title &lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&amp;nbsp;&lt;/background&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> align=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">center</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Type of SEO Testing&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+functionality+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Date and Time&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">dateNTime</span>()+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Scenario Executed&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">passcount</span>+<span style="color:#9876aa;font-style:italic;">failcount</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Test Scenario Pass&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">passcount</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Test Scenario Fail&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">failcount</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Execution Time(Mins.)&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">actualExecutionTime</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+<span style="color:#6a8759;">&quot;&lt;/table&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> align=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">center</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Test Case Name&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Test Case Description&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Screenshot&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Status&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;/tr&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ tableBody
+                        + <span style="color:#6a8759;">&quot;&lt;/table&gt;&lt;/body&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+    </span><span style="color:#6a8759;">                    </span>+ <span style="color:#6a8759;">&quot;&lt;/html&gt;&quot;</span><span style="color:#cc7832;">;
+    </span>}
+    
+    </pre>
+    <p><br></p>
+
+    <p>Code To Save HTML Test Report</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">saveTestReport</span>(String report <span style="color:#cc7832;">, </span>String reportName)
+            {
+                File file = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/mrpath/Downloads/delete/&quot;</span>+reportName+<span style="color:#6a8759;">&quot;.html&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    try </span>(BufferedWriter writer = <span style="color:#cc7832;">new </span>BufferedWriter(<span style="color:#cc7832;">new </span>FileWriter(file))) {
+                    writer.write(report)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                    <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated catch block
+            </span><span style="color:#a8c023;font-style:italic;">        </span>e.printStackTrace()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            }
+            
+            </pre>
+            <p><br></p>
+
+            <p>Complete Code With All Methods are given below :
+
+                <br>Launch Google application
+                <br>Validate Google text box , Google Search button ,
+                I M Feeling lucky button
+                <bt>It will capture screenshot both for Pass and Fail Count...
+            </p>
+
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>Ershad<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.io.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.io.IOException<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.text.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.util.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.io.FileHandler<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>Rep {
+        
+        
+        
+            <span style="color:#cc7832;">public static </span>StringBuilder <span style="color:#9876aa;font-style:italic;">STBuilder</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    public static int </span><span style="color:#9876aa;font-style:italic;">passcount </span>= <span style="color:#6897bb;">0 </span><span style="color:#cc7832;">, </span><span style="color:#9876aa;font-style:italic;">failcount</span>=<span style="color:#6897bb;">0 </span><span style="color:#cc7832;">,</span><span style="color:#9876aa;font-style:italic;">actualExecutionTime</span>=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String[] args) <span style="color:#cc7832;">throws </span>Exception
+            {
+                <span style="color:#9876aa;font-style:italic;">STBuilder </span>= <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">        </span><span style="color:#808080;">//Example if login button is Displayed....
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">        </span>System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/mrpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://google.com/&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">        if</span>(<span style="font-style:italic;">checkForWebElementToCheck</span>(By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;q&quot;</span>)))
+                {<span style="font-style:italic;">TestStepPass</span>(<span style="color:#6a8759;">&quot;Google Home Page&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Search Test Box displayed successfully&quot;</span>)<span style="color:#cc7832;">;</span>}
+                <span style="color:#cc7832;">else </span>{<span style="font-style:italic;">TestStepFail</span>(<span style="color:#6a8759;">&quot;Google Home Page&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Search Test Box is not displayed successfully&quot;</span>)<span style="color:#cc7832;">;</span>}
+        
+                <span style="color:#cc7832;">if</span>(<span style="font-style:italic;">checkForWebElementToCheck</span>(By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;btnK&quot;</span>)))
+                {<span style="font-style:italic;">TestStepPass</span>(<span style="color:#6a8759;">&quot;Google Home Page&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Google Search button is displayed successfully&quot;</span>)<span style="color:#cc7832;">;</span>}
+                <span style="color:#cc7832;">else </span>{<span style="font-style:italic;">TestStepFail</span>(<span style="color:#6a8759;">&quot;Google Home Page&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Google Search button is displayed successfully&quot;</span>)<span style="color:#cc7832;">;</span>}
+        
+                <span style="color:#cc7832;">if</span>(<span style="font-style:italic;">checkForWebElementToCheck</span>(By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;btnI&quot;</span>)))
+                {<span style="font-style:italic;">TestStepPass</span>(<span style="color:#6a8759;">&quot;Google Home Page&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;I M Feeling Lucky button is displayed successfully&quot;</span>)<span style="color:#cc7832;">;</span>}
+                <span style="color:#cc7832;">else </span>{<span style="font-style:italic;">TestStepFail</span>(<span style="color:#6a8759;">&quot;Google Home Page&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;I M Feeling Lucky button is displayed successfully&quot;</span>)<span style="color:#cc7832;">;</span>}
+        
+        
+                <span style="color:#808080;">//  Once your All validation for Login is Completed....Then save HTML REPORT like...
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">        </span><span style="font-style:italic;">saveTestReport</span>(<span style="font-style:italic;">createFinalTable</span>(<span style="color:#9876aa;font-style:italic;">STBuilder</span>.toString()<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Google Functionality&quot;</span>) <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Google Home Page Report&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">checkForWebElementToCheck</span>(By by)
+            {
+                <span style="color:#cc7832;">boolean </span>flag = <span style="color:#cc7832;">false;
+        </span><span style="color:#cc7832;">        try</span>{
+                    <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(by).isDisplayed()){flag=<span style="color:#cc7832;">true;</span>}
+                }
+                <span style="color:#cc7832;">catch</span>(Exception e)
+                {e.printStackTrace()<span style="color:#cc7832;">;</span>}
+                <span style="color:#cc7832;">return </span>flag<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        
+        
+            <span style="color:#808080;">// Test report creation when test is Pass
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static  void </span><span style="color:#ffc66d;">TestStepPass</span>(String testname <span style="color:#cc7832;">, </span>String testdescription)
+            {
+                <span style="color:#9876aa;font-style:italic;">passcount </span>= <span style="color:#9876aa;font-style:italic;">passcount</span>+<span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>String screenshot_path = <span style="font-style:italic;">captureScreenshot</span>(<span style="color:#9876aa;font-style:italic;">driver </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;PASS&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">        try</span>{
+                    <span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testname<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testdescription<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&lt;a href=&quot;</span>+screenshot_path+<span style="color:#6a8759;">&quot;&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Screenshot&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/a&gt;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;PASS&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;GREEN&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#cc7832;">catch</span>(Exception e){
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Unable to create PASS Test Report&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}}
+        
+        
+        
+            <span style="color:#808080;">// Test report creation when test is Fail
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static  void </span><span style="color:#ffc66d;">TestStepFail</span>(String testname <span style="color:#cc7832;">, </span>String testdescription)
+            {
+                String screenshot_path = <span style="font-style:italic;">captureScreenshot</span>(<span style="color:#9876aa;font-style:italic;">driver </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;FAIL&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">failcount </span>= <span style="color:#9876aa;font-style:italic;">failcount</span>+<span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        try</span>{
+                    <span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testname<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(testdescription<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&lt;a href=&quot;</span>+screenshot_path+<span style="color:#6a8759;">&quot;&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Screenshot&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Blue&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/a&gt;&lt;/td&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#9876aa;font-style:italic;">STBuilder</span>.append(<span style="color:#6a8759;">&quot;&lt;td bgcolor=#FFFFFF style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;FAIL&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Red&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#cc7832;">catch</span>(Exception e){
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Unable to create Fail Test Report&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}}
+        
+        
+            <span style="color:#629755;font-style:italic;">/**
+        </span><span style="color:#629755;font-style:italic;">     * Method which can Change color of HTML Text
+        </span><span style="color:#629755;font-style:italic;">     * </span><span style="color:#629755;font-weight:bold;font-style:italic;">@param </span><span style="color:#8a653b;font-style:italic;">text
+        </span><span style="color:#8a653b;font-style:italic;">     </span><span style="color:#629755;font-style:italic;">* </span><span style="color:#629755;font-weight:bold;font-style:italic;">@param </span><span style="color:#8a653b;font-style:italic;">colorOfText
+        </span><span style="color:#8a653b;font-style:italic;">     </span><span style="color:#629755;font-style:italic;">* </span><span style="color:#629755;font-weight:bold;font-style:italic;">@return
+        </span><span style="color:#629755;font-weight:bold;font-style:italic;">     </span><span style="color:#629755;font-style:italic;">*/
+        </span><span style="color:#629755;font-style:italic;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">textcolor</span>(String text <span style="color:#cc7832;">, </span>String colorOfText)
+            {
+                StringBuilder s = <span style="color:#cc7832;">new </span>StringBuilder()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>s.append(String.<span style="font-style:italic;">format</span>(<span style="color:#6a8759;">&quot;&lt;font color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">%s</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;%s&lt;/font&gt;&quot;</span><span style="color:#cc7832;">,</span>colorOfText<span style="color:#cc7832;">,</span>text))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>String output = s.toString()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        return </span>output<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#629755;font-style:italic;">/**
+        </span><span style="color:#629755;font-style:italic;">     *  This Method is useful to Create Final Test Report
+        </span><span style="color:#629755;font-style:italic;">     */
+        </span><span style="color:#629755;font-style:italic;">
+        </span><span style="color:#629755;font-style:italic;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">createFinalTable</span>(String tableBody <span style="color:#cc7832;">, </span>String functionality)
+            {
+                <span style="color:#cc7832;">return
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">                </span><span style="color:#6a8759;">&quot;&lt;html&gt;&lt;head&gt;&lt;p&gt;&lt;/p&gt;&lt;/head&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;marquee width=100% bgcolor=#000000&gt;&lt;font size=5 color=#FFCCFF&gt;&quot;</span>+functionality+<span style="color:#6a8759;">&quot;&lt;/font&gt;&lt;/marquee&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;p&gt;&lt;/title &lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&amp;nbsp;&lt;/background&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> align=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">center</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Type of SEO Testing&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+functionality+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Date and Time&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+<span style="font-style:italic;">dateNTime</span>()+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Scenario Executed&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">passcount</span>+<span style="color:#9876aa;font-style:italic;">failcount</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Test Scenario Pass&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">passcount</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Test Scenario Fail&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">failcount</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;tr&gt;&lt;td bgcolor=#3333ff style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Total Execution Time(Mins.)&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&lt;td bgcolor=#ccff66 style=text-align:center&gt;&quot;</span>+String.<span style="font-style:italic;">valueOf</span>(<span style="color:#9876aa;font-style:italic;">actualExecutionTime</span>)+<span style="color:#6a8759;">&quot;&lt;/td&gt;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+<span style="color:#6a8759;">&quot;&lt;/table&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;table border=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">1</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> bordercolor=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#003300</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;"> align=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">center</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Test Case Name&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Test Case Description&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Screenshot&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;td bgcolor=#000033 style=text-align:center&gt;&lt;b&gt;&quot;</span>+<span style="font-style:italic;">textcolor</span>(<span style="color:#6a8759;">&quot;Status&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;white&quot;</span>)+<span style="color:#6a8759;">&quot;&lt;/b&gt;&lt;/td&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/tr&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ tableBody
+                                + <span style="color:#6a8759;">&quot;&lt;/table&gt;&lt;/body&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;body&gt;&lt;p&gt;&lt;/p&gt;&lt;background color=</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">#RRGGBB</span><span style="color:#cc7832;">\&quot;</span><span style="color:#6a8759;">&gt;&lt;/body&gt;&quot;
+        </span><span style="color:#6a8759;">                        </span>+ <span style="color:#6a8759;">&quot;&lt;/html&gt;&quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+            <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">saveTestReport</span>(String report <span style="color:#cc7832;">, </span>String reportName)
+            {
+                File file = <span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/mrpath/Downloads/delete/&quot;</span>+reportName+<span style="color:#6a8759;">&quot;.html&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        try </span>(BufferedWriter writer = <span style="color:#cc7832;">new </span>BufferedWriter(<span style="color:#cc7832;">new </span>FileWriter(file))) {
+                    writer.write(report)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                    <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated catch block
+        </span><span style="color:#a8c023;font-style:italic;">            </span>e.printStackTrace()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+            }
+        
+        
+            <span style="color:#808080;">// Test Method to read Date AND Time.
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">dateNTime</span>()
+            {
+                DateFormat df = <span style="color:#cc7832;">new </span>SimpleDateFormat(<span style="color:#6a8759;">&quot;dd/MM/yy HH:mm:ss&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>Calendar calobj = Calendar.<span style="font-style:italic;">getInstance</span>()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#808080;">//System.out.println(df.format(calobj.getTime()));
+        </span><span style="color:#808080;">        </span><span style="color:#cc7832;">return </span>df.format(calobj.getTime())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        
+            <span style="color:#808080;">// Test Method to read Date AND Time.
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">screenshotPattern</span>()
+            {
+                DateFormat df = <span style="color:#cc7832;">new </span>SimpleDateFormat(<span style="color:#6a8759;">&quot;dd_MM_yy_HH_mm_ss&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>Calendar calobj = Calendar.<span style="font-style:italic;">getInstance</span>()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#808080;">//System.out.println(df.format(calobj.getTime()));
+        </span><span style="color:#808080;">        </span><span style="color:#cc7832;">return </span>df.format(calobj.getTime())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        
+            <span style="color:#cc7832;">public static </span>String <span style="color:#ffc66d;">captureScreenshot</span>(WebDriver driver <span style="color:#cc7832;">, </span>String type)
+            {
+                String screenshotpath = <span style="color:#cc7832;">null;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">        try </span>{
+                    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.<span style="color:#9876aa;font-style:italic;">FILE</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span>screenshotpath = <span style="color:#6a8759;">&quot;/Users/mtpath/Downloads/delete/&quot;</span>+<span style="font-style:italic;">screenshotPattern</span>()+type+<span style="color:#6a8759;">&quot;.png&quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#808080;">//The below method will save the screen shot in destination directory with name &quot;screenshot.png&quot;
+        </span><span style="color:#808080;">            </span>FileHandler.<span style="font-style:italic;">copy</span>(scrFile<span style="color:#cc7832;">, new </span>File(screenshotpath))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                    e.printStackTrace()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+        
+                <span style="color:#cc7832;">return </span>screenshotpath<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        
+        
+        }</pre>
+        <p><br></p>
+
+        <h3>Create HTML Report using Python with below features:</h3>
+
+        <p>We will be using Python html_file to create HTML Test Report.</p>
+
+        <br><img src="../img/sv005.png" alt="Selenium Test Reporting Using Python" class="responsive"><br>
+
+        <p>Initialize Test Report as :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            pro_path = Path(__file__).parent
+            x = <span style="color:#8888c6;">str</span>(pro_path).split(<span style="color:#6a8759;">&quot;TestScenarios&quot;</span>)[<span style="color:#6897bb;">0</span>] + <span style="color:#8888c6;">str</span>(<span style="color:#6a8759;">&quot;TestReport/&quot;</span>)
+            <span style="color:#cc7832;">with </span><span style="color:#8888c6;">open</span>(x + <span style="color:#6a8759;">&#39;HomeTestScenario.html&#39;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&#39;w&#39;</span>) <span style="color:#cc7832;">as </span>html_file:
+            
+            </pre>
+            <p><br></p>
+
+
+            <p>Pass Method can be written as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#bbb529;">@classmethod
+        </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">when_test_is_pass</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">, </span>html_string<span style="color:#cc7832;">, </span>test_id<span style="color:#cc7832;">, </span>test_description):
+            html_string.write(<span style="color:#6a8759;">&#39;&lt;tr style=&quot;background-color:#f2f2f2&quot;&gt;&#39;</span>+
+            <span style="color:#6a8759;">&#39;&lt;td&gt;&lt;center&gt;&#39;</span>+test_id+<span style="color:#6a8759;">&#39;&lt;/center&gt;&lt;/td&gt;&#39; </span>+
+            <span style="color:#6a8759;">&#39;&lt;td&gt;&lt;center&gt;&#39;</span>+test_description+<span style="color:#6a8759;">&#39;&lt;/center&gt;&lt;/td&gt;&#39; </span>+
+            <span style="color:#6a8759;">&#39;&lt;td style=&quot;background-color:#b3ffcc&quot;&gt;&lt;center&gt;PASS&lt;/center&gt;&lt;/td&gt;&#39; </span>+
+            <span style="color:#6a8759;">&#39;&lt;/tr&gt;&#39;</span>)
+        
+        </pre>
+        <p><br></p>
+
+
+        <p>FAIL Method can be written as :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#bbb529;">@classmethod
+            </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">when_test_is_fail</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">,</span>html_string<span style="color:#cc7832;">, </span>test_id<span style="color:#cc7832;">, </span>test_description):
+                html_string.write(<span style="color:#6a8759;">&#39;&lt;tr style=&quot;background-color:#f2f2f2&quot;&gt;&#39; </span>+
+                <span style="color:#6a8759;">&#39;&lt;td&gt;&lt;center&gt;&#39; </span>+ test_id + <span style="color:#6a8759;">&#39;&lt;/center&gt;&lt;/td&gt;&#39; </span>+
+                <span style="color:#6a8759;">&#39;&lt;td&gt;&lt;center&gt;&#39; </span>+ test_description + <span style="color:#6a8759;">&#39;&lt;/center&gt;&lt;/td&gt;&#39; </span>+
+                <span style="color:#6a8759;">&#39;&lt;td style=&quot;background-color:#ffb3b3&quot;&gt;&lt;center&gt;FAIL&lt;/center&gt;&lt;/td&gt;&#39; </span>+
+                <span style="color:#6a8759;">&#39;&lt;/tr&gt;&#39;</span>)
+                
+                </pre>
+                <p><br></p>
+                <p><br></p>
+
+
+                <p>Test can be called as :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            HomeTestDef.header_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Header section validation</span>
+            
+            </pre>
+            <p><span style="color:#808080;"><br></span></p>
+            <p><br></p>
+
+
+                        <p>Test Implementation can be Written as :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#bbb529;">@staticmethod
+            </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">header_options_validation</span>(self<span style="color:#cc7832;">, </span>html_report):
+                <span style="color:#cc7832;">try</span>:
+                    self.assertTrue(Driver.is_web_element_displayed(HomePage.applicationLogo()))
+                    Driver.click_and_implicit_wait(HomePage.loginLink())
+                    Driver.go_back(<span style="color:#6897bb;">5</span>)
+                    ReusableTest.when_test_is_pass(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-001&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Logo is available&quot;</span>)
+                    ReusableTest.when_test_is_pass(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-002&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Sign In is available&quot;</span>)
+            
+                <span style="color:#cc7832;">except</span>:
+            
+                    ReusableTest.when_test_is_fail(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-001&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Logo is not available&quot;</span>)
+                      ReusableTest.when_test_is_fail(html_report<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home-TC-002&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Page Sign In is not available&quot;</span>)   
+            </pre>
+            <p><br></p>
+
+                                <p>Final Test Report can be created as :</p>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#bbb529;">@classmethod
+                </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">final_html</span>(<span style="color:#94558d;">cls</span><span style="color:#cc7832;">, </span>html_file):
+                
+                    html_file.write(<span style="color:#6a8759;">&#39;&lt;/body&gt;&#39;</span>)
+                    html_file.write(<span style="color:#6a8759;">&#39;&lt;/html&gt;&#39;</span>)
+                    html_file.close()              
+                </pre>
+                <p><br></p>
+                <p><br></p>
+
+
+                <p>Final Test Report can be called as :</p>
+
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+<span style="color:#808080;"># Final report
+</span>ReusableTest.final_html(html_file)
+</pre>
+<p><br></p>
+
+<p>Code For the UNIT Test using Python can be wtitten as :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#cc7832;">import </span>unittest
+    <span style="color:#cc7832;">from </span>pathlib <span style="color:#cc7832;">import </span>Path
+    <span style="color:#cc7832;">from </span>Reusable.reusable_methods <span style="color:#cc7832;">import </span>ReusableTest
+    <span style="color:#cc7832;">from </span>Reusable <span style="color:#cc7832;">import </span>Driver
+    <span style="color:#cc7832;">from </span>TestScenarioImplementation.HomeTestDef <span style="color:#cc7832;">import </span>HomeTestDef
+    
+    
+    <span style="color:#cc7832;">class </span>HomeTestClass(unittest.TestCase):
+    
+        <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">setUp</span>(<span style="color:#94558d;">self</span>):
+    
+            Driver.Initialize()
+    
+        <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">test_scenarios_execution</span>(<span style="color:#94558d;">self</span>):
+    
+            pro_path = Path(__file__).parent
+            x = <span style="color:#8888c6;">str</span>(pro_path).split(<span style="color:#6a8759;">&quot;TestScenarios&quot;</span>)[<span style="color:#6897bb;">0</span>] + <span style="color:#8888c6;">str</span>(<span style="color:#6a8759;">&quot;TestReport/&quot;</span>)
+            <span style="color:#cc7832;">with </span><span style="color:#8888c6;">open</span>(x + <span style="color:#6a8759;">&#39;HomeTestScenario.html&#39;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&#39;w&#39;</span>) <span style="color:#cc7832;">as </span>html_file:
+    
+                <span style="color:#808080;"># Create initial test report
+    </span><span style="color:#808080;">            </span>ReusableTest.initial_html(html_file<span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Home Test Scenarios&quot;</span>)
+    
+                <span style="color:#808080;"># Starting execution
+    </span><span style="color:#808080;">            </span>HomeTestDef.go_to_url(ReusableTest.read_xml(<span style="color:#6a8759;">&quot;applicationurl&quot;</span>))  <span style="color:#808080;"># Launch The Application
+    </span><span style="color:#808080;">            </span>HomeTestDef.header_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Header section validation
+    </span><span style="color:#808080;">            </span>HomeTestDef.footer_options_validation(<span style="color:#94558d;">self</span><span style="color:#cc7832;">, </span>html_file)  <span style="color:#808080;"># Do Footer section validation
+    </span><span style="color:#808080;">
+    </span><span style="color:#808080;">            # Final report
+    </span><span style="color:#808080;">            </span>ReusableTest.final_html(html_file)
+    
+        <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">tearDown</span>(<span style="color:#94558d;">self</span>):
+            Driver.close_driver()
+    
+    
+    <span style="color:#cc7832;">if </span>__name__ == <span style="color:#6a8759;">&#39;__main__&#39;</span>:
+        unittest.main()</pre>
+    <p><br></p>
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../SeleniumJava/xlreadforSel.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumusingjava.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

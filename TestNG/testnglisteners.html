@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Listeners | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+    <style>
+            
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG Listeners</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Listeners" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Listeners</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+            <h5>What is TestNG Listeners?</h5>
+            <p>TestNG <font color="red">Listeners</font>
+                in Selenium WebDriver are modules that listens to certain events and keep track of test execution while performing some action at every stage of test execution.
+                TestNG Listeners in Selenium WebDriver can be implemented at two levels:</p>
+            <p>Class level: Here, we implement listeners for each particular class no matter how much test cases it includes.
+            <br>Suite level: Here, we implement listeners for a particular suite which includes several classes as test cases.
+            </p>
+            
+            <h5>Types of TestNG Listeners?</h5>
+            <p>There are many TestNG listeners in Selenium WebDriver as below:
+                 <br>   1.ITestListener
+                 <br>   2.IAnnotationTransformer
+                 <br>   3.IInvokedMethodListener
+                 <br>   4.ISuiteListener
+                 <br>   5.IReporter
+                 <br>   6.IConfigurable
+                 <br>   7.IExecutionListener
+                 <br>   8.IHookable
+                 <br>   9.IMethodInterceptor
+                 <br>   10.IConfigurationListener
+            </p>
+
+            <h5>How To implement : ITestListener With Screenshot onTestFailure:</h5>
+            <p>Create a new package --> Class --> In this case my package.class name is ==>listeners.ItestListeners</p>
+            <p><font color="red">ItestListeners.class</font></p>
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        
+        <span style="color:#cc7832;">package </span>listeners<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.testng.ITestContext<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.testng.ITestListener<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.testng.ITestResult<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.TakesScreenshot<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.OutputType<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.io.IOException<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.commons.io.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.testng.ITestContext<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>TestNGPKG.utilsClass<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.OutputType<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>ItestListeners <span style="color:#cc7832;">extends </span>utilsClass <span style="color:#cc7832;">implements </span>ITestListener {
+        
+        
+            <span style="color:#cc7832;">public static </span>String <span style="color:#9876aa;font-style:italic;">filePath </span>= <span style="color:#6a8759;">&quot;/Users/mpath/Downloads/delete/&quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    public void </span><span style="color:#ffc66d;">onTestStart</span>(ITestResult testresult) {
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Started&quot; </span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testresult.getName())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">onTestSuccess</span>(ITestResult testresult) {
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Success&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testresult.getName())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">onTestFailure</span>(ITestResult testresult) {
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Failed&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testresult.getName())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// This is very important as test got failed ....
+        </span><span style="color:#808080;">        // Write Code to capture Selenium WebDriver Screenshot
+        </span><span style="color:#808080;">        // Take screenshot and store as a file format
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">        </span>ITestContext context = testresult.getTestContext()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>captureScreenshot(testresult.getName())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">captureScreenshot</span>(String testName) {
+                File scrFile = ((TakesScreenshot) <span style="color:#9876aa;font-style:italic;">driver</span>).getScreenshotAs(OutputType.<span style="color:#9876aa;font-style:italic;">FILE</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#808080;">//The below method will save the screen shot in d drive with test method name
+        </span><span style="color:#808080;">        </span><span style="color:#cc7832;">try </span>{
+                    FileUtils.<span style="font-style:italic;">copyFile</span>(scrFile<span style="color:#cc7832;">, new </span>File(<span style="color:#9876aa;font-style:italic;">filePath</span>+testName+<span style="color:#6a8759;">&quot;.png&quot;</span>))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Screenshot is Saved.&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>} <span style="color:#cc7832;">catch </span>(IOException e) {
+                    e.printStackTrace()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+            }
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">onTestSkipped</span>(ITestResult testresult) {
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Skipped&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testresult.getName())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// This is very important as test got failed ....
+        </span><span style="color:#808080;">        // Write Code to capture Selenium WebDriver Screenshot
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">onTestFailedButWithinSuccessPercentage</span>(ITestResult testresult) {
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Failed but within success percentage&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testresult.getName())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">onStart</span>(ITestContext testcontext) {
+        
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This is onStart method&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testcontext.getOutputDirectory())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">onFinish</span>(ITestContext testcontext) {
+        
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This is onFinish method&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testcontext.getPassedTests())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This is onFinish method&quot;</span>+<span style="color:#6a8759;">&quot;  &quot; </span>+testcontext.getFailedTests())<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        
+        
+        }
+    </pre>
+
+    <p>Note : ItestListeners is extending utilsClass to get the instatnce of WebDriver.</p>
+            <p><font color="red">utilsClass.class</font></p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>utilsClass {
+    
+        <span style="color:#cc7832;">public static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">null;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    public </span>WebDriver <span style="color:#ffc66d;">setupDriver</span>()
+        {
+            System.<span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;/Users/driverpath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        return </span><span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    }
+</pre>
+<p>TestNG test file will look like below:</p>
+<p><font color="red">testNGClass2.class</font></p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.ITestNGListener<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">AfterSuite</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">BeforeSuite</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Listeners</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>listeners.ItestListeners<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>TestNGPKG.utilsClass<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass2 <span style="color:#cc7832;">extends  </span>utilsClass{
+    
+        <span style="color:#cc7832;">private  </span>WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@BeforeSuite
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">launchapplication</span>()
+        {
+            <span style="color:#9876aa;">driver </span>= setupDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">sign</span>()
+        {
+            Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">test</span>()
+        {
+            Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo1&quot;</span>)).isDisplayed())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@AfterSuite
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">closeApplication</span>()
+        {
+            <span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }
+    
+    
+    
+    </pre>
+
+
+    <p>To call ITestListener from TestNG.xml file we need to add below code. Where 
+        <br>listeners = package name.
+        <br>ItestListeners = class name [implemented above]
+    </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        
+    <span style="color:#e8bf6a;">&lt;listeners&gt;
+     </span><span style="color:#e8bf6a;">    &lt;listener </span><span style="color:#bababa;">class-name=</span><span style="color:#6a8759;">&quot;listeners.ItestListeners&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">&lt;/listeners&gt;</span>
+        
+    </pre>
+    <p>Now complete TestNG.xml will look like :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;false&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;1&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;listeners&gt;
+    </span><span style="color:#e8bf6a;">        &lt;listener </span><span style="color:#bababa;">class-name=</span><span style="color:#6a8759;">&quot;listeners.ItestListeners&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/listeners&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass2&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+
+</pre>
+
+<p>Below is test report where two test are getting executed from testNGClass2.class file. Details are :
+   <strong> <br> 'sign' and 'test' are two test name.
+    <br> sign = pass
+    <br> test = fail
+    <br> onTestFailure is calling captureScreenshot.
+    <br> screenshot is getting saved at below path -
+    <br> /Users/mpath/Downloads/delete/
+    <br> Screenshot is Saved. </strong>
+</p>
+            <p><font color="red">Test Result :</font></p>
+
+            <p>WARNING: All illegal access operations will be denied in a future release</p>
+<p>[TestNG] Running:</p>
+<p>&nbsp; /Users/path/IdeaProjects/conIntelliJTestNG/src/main/resources/myTestNG.xml</p>
+<p>Starting ChromeDriver 2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5) on port 34536</p>
+<p>Only local connections are allowed.</p>
+<p>May 25, 2020 7:19:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession</p>
+<p>INFO: Detected dialect: OSS</p>
+<p>This is onStart method &nbsp;/Users/path/IdeaProjects/conIntelliJTestNG/test-output/manual2Automation Test Suite</p>
+<p>Test Started &nbsp;sign</p>
+<p>Test Success &nbsp;sign</p>
+<p>Test Started &nbsp;test</p>
+<p><br></p>
+<p>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;hplogo1&quot;}</p>
+<p>&nbsp; (Session info: chrome=83.0.4103.61)</p>
+<p>&nbsp; (Driver info: chromedriver=2.44.609545 (c2f88692e98ce7233d2df7c724465ecacfe74df5),platform=Mac OS X 10.13.4 x86_64) (WARNING: The server did not provide any stacktrace information)</p>
+<p>Command duration or timeout: 0 milliseconds</p>
+<p>For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html</p>
+<p>Build info: version: &#39;3.141.59&#39;, revision: &#39;e82be7d358&#39;, time: &#39;2018-11-14T08:17:03&#39;</p>
+<p>System info: host: &#39;Mithuns-MacBook-Air-2.local&#39;, ip: &#39;fe80:0:0:0:1cf3:8fc0:e15c:cb23%en0&#39;, os.name: &#39;Mac OS X&#39;, os.arch: &#39;x86_64&#39;, os.version: &#39;10.13.4&#39;, java.version: &#39;14.0.1&#39;</p>
+<p>Driver info: org.openqa.selenium.chrome.ChromeDriver</p>
+<p>Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.44.609545 (c2f88692e98ce7..., userDataDir: /var/folders/ns/jys6dhcd605...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:63961}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 83.0.4103.61, webStorageEnabled: true}</p>
+<p>Session ID: 316cface2627ec2ae3a2cb5d6121e276</p>
+<p>*** Element info: {Using=id, value=hplogo1}</p>
+<p><br></p>
+<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</p>
+<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)</p>
+<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)</p>
+<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)</p>
+<p><span style="white-space:pre;">&nbsp; &nbsp;&nbsp;</span>at com.intellij.rt.execution.application.AppMainV2.main(AppMainV2.java:131)</p>
+<p><br></p>
+<p>Test Failed &nbsp;test</p>
+<p>Screenshot is Saved.</p>
+<p>This is onFinish method &nbsp;[ResultMap map={[TestResult name=sign status=SUCCESS method=testNGClass2.sign()[pri:0, instance:TestNGPKG.testNGClass2@1ce24091] output={null}]=testNGClass2.sign()[pri:0, instance:TestNGPKG.testNGClass2@1ce24091]}]</p>
+<p>This is onFinish method &nbsp;[ResultMap map={[TestResult name=test status=FAILURE method=testNGClass2.test()[pri:0, instance:TestNGPKG.testNGClass2@1ce24091] output={null}]=testNGClass2.test()[pri:0, instance:TestNGPKG.testNGClass2@1ce24091]}]</p>
+<p><br></p>
+<p>===============================================</p>
+<p>manual2Automation Test Suite</p>
+<p>Total tests run: 2, Failures: 1, Skips: 0</p>
+<p>===============================================</p>
+<p><br></p>
+<p><br></p>
+<p>Process finished with exit code 0</p>
+<p><br></p>
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testnginex.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngpomrun.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

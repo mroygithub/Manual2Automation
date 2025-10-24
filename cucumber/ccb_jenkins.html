@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cucumber Jenkins Set Up| manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: right;
+         width: 83px;
+         padding: 5px;
+      }
+        .left {
+          float: left;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Cucumber Jenkins Set Up</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+      <img class="centerimg" src="../img/cmm1.png" alt="Cucumber Jenkins Set Up" style="text-align:center;widows: 400;height:400">
+      <img class="centerimg" src="../img/ccm001.png" alt="Cucumber Jenkins Set Up" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Cucumber With Jenkins</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                    <!-- Run Cucumber using Jenkins -->
+
+
+              
+               <div class="blog_details">
+                  <h5>We should have below prerequisite:<br><br>
+                     <br>  <font color="red">#Java / JDK installed in system.</font>
+                     <br>  <font color="red">#Maven Installed in Machine</font>
+                     <br>  <font color="red">#Jenkins Installed in Machine</font>
+                     <br>  <font color="red">#My project in GIT repository</font>
+                  </h5><br>
+                  <p>Do below Jenkins Configuration for Java JDK and Maven path. Go to Jenkins Configuration and set these
+                     two paths as below.
+                  
+                  <br><img src=".././img/ccj1.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                  <br><img src=".././img/ccj2.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                  </p>
+
+                 <br><br> <p>Create a Maven Jenkins project as below.
+                     <br><img src=".././img/ccj3.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                 </p>
+                        
+               <p>Click on 'This project is parameterized check box' ,Set feafure files and Tags as choice 
+                  parameter.
+                  <br><img src=".././img/ccj4.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                  </p>
+                  
+
+                  <p>Set to your GIT url as below with GIT credentials.
+                        <br><img src=".././img/ccj5.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                     </p>
+                     
+
+                     <p>Go to Pre Build --> execute cell and write below command
+                           <br><img src=".././img/ccj6.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                           <br># Note here '$FeatureFile' is parameterized where FeatureFile is
+                           Chioce parameter feature file name.
+                           <br>How to run it from Jenkins?Below Jenkins run will execute only 'stringConcat.feature' file.
+                           <br><img src=".././img/ccj9.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                     </p>
+
+                     <p><font color="red">How to pass both 'feature file' and 'TAG' as parameter?</font>
+                           <br><img src=".././img/ccj7.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                           <br># Note here '$FeatureFile' & '$TAG' are parameterized where FeatureFile is
+                           Chioce parameter feature file name and '$TAG' is tag name from Chioce parameter.
+                           <br>How to run it from Jenkins?Below Jenkins run will execute only 'stringConcat.feature' file
+                           having @addition tags.
+                           <br><img src=".././img/ccj12.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                           <br> Jenkins Test Report will be like below:
+                           <br><img src=".././img/ccj8.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                           <br> How to run all feature file with all Tags?Both options should be blank selection.
+                           <br><img src=".././img/ccj11.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                     </p>
+   
+               </div>
+               <!--##################################################################-->
+
+               </div>
+            </div>
+         </div>  
+      </div>
+
+      <div id="outer">
+         <div class="inner"><a href="../cucumber/ccb_pom.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../cucumber/ccb_hooks.html" class="previous">Next &raquo;</a></div>
+      </div>
+      
+     
+   </section>
+   <!--================Blog Area end =================-->
+
+  <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+  
+     <!-- jquery plugins here-->
+     <!-- jquery -->
+     <script src="../js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="../js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../js/bootstrap.min.js"></script>
+     <!-- easing js -->
+     <script src="../js/jquery.magnific-popup.js"></script>
+     <!-- swiper js -->
+     <script src="../js/swiper.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/masonry.pkgd.js"></script>
+     <!-- particles js -->
+     <script src="../js/owl.carousel.min.js"></script>
+     <script src="../js/jquery.nice-select.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/slick.min.js"></script>
+     <script src="../js/jquery.counterup.min.js"></script>
+     <script src="../js/waypoints.min.js"></script>
+     <!-- custom js -->
+     <script src="../js/custom.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+  </body>
+  
+  </html>

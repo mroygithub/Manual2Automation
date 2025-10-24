@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Merge PDF | manual2Automation</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+
+        p {
+            color: black;
+            font-size: 20px;
+            word-wrap: break-word;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        h5 {
+            color: Blue;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 25px;
+            word-wrap: break-word;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+            $("#code1").load("../PDFCompare/c4.html");
+        });
+    </script>
+    <style>
+        .right {
+            float: center;
+            width: 110px;
+            padding: 10px;
+        }
+
+        .left {
+            float: center;
+            width: 120px;
+            padding: 6px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Merge Multiple PDF Files Into Single PDF[By Page]</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+       <br><br> <img class="centerimg" src="../img/pdf5.jpg" alt="Merge Multiple PDF Files Into Single PDF"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Merge Multiple PDF Files Into Single PDF</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Example : Runtime Break And Merge PDF By Parameter
+                            </h5>
+
+                            <p>Let's take an example of a PDF file which has 30 pages. Now if we split it , we will
+                                create 30 PDF files , where runtime after split we want to Merge
+                            page number 24,25,26 and create a new PDF file of these 3 pages. How to do that???</p>
+
+                           <p>Below example is showing :
+                               <br> We have a PDF with 5 pages.
+                               <br> Splitting the PDF with All 5 Pages.
+                               <br> Passsing a runtime parameter as 3,4
+                               <br> This would create a final/merged PDF with page number 3 and 4. These two number we are Passsing
+                               as parameter.
+                               <br> Full end to end flow is happening runtime.
+                           </p>    
+                           
+                           <p>First Split the PDF file</p><br>
+
+            <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            
+            <span style="color:#808080;">// Below Code is Splitting
+            </span><span style="color:#808080;">
+            </span><span style="color:#cc7832;">try </span>{
+            
+                File file =<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+<span style="color:#6a8759;">&quot;MITHUN_PDF.pdf&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span><span style="color:#808080;">//Loading an existing PDF document
+            </span><span style="color:#808080;">    </span>PDDocument document = PDDocument.<span style="font-style:italic;">load</span>(file)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span><span style="color:#808080;">// Create a Splitter object
+            </span><span style="color:#808080;">    </span>Splitter splitter = <span style="color:#cc7832;">new </span>Splitter()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span><span style="color:#808080;">//splitting the pages of a PDF document
+            </span><span style="color:#808080;">    </span>List&lt;PDDocument&gt; Pages = splitter.split(document)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span><span style="color:#808080;">//Creating an iterator object
+            </span><span style="color:#808080;">    </span>Iterator&lt;PDDocument&gt; iterator = Pages.listIterator()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span><span style="color:#808080;">//saving splits as individual PDF document
+            </span><span style="color:#808080;">    </span><span style="color:#cc7832;">int </span>pdfPageNumber = <span style="color:#6897bb;">1</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    while</span>(iterator.hasNext()) {
+                    PDDocument pd = iterator.next()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>pd.save(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+ pdfPageNumber++ +<span style="color:#6a8759;">&quot;.pdf&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;PDF File Split is Done&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>document.close()<span style="color:#cc7832;">;
+            </span>}
+            <span style="color:#cc7832;">catch</span>(Exception e) {System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;PDF Split is Fail&quot;</span>)<span style="color:#cc7832;">; </span>}
+        
+        </pre>
+
+        <p>Passing veriable as a parameter as below with 2 page numbers which we want to merge after split.</p><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">public static </span>String <span style="color:#9876aa;font-style:italic;">mergePDFPages </span>= <span style="color:#6a8759;">&quot;3,4&quot;</span><span style="color:#cc7832;">;</span>
+        
+                </pre>
+                <p><span style="color:#cc7832;"><br></span></p>
+
+
+<p>Creating an object of PDFMergerUtility , and setting destination of merged file save location.</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">PDFMergerUtility   mergePdf = <span style="color:#cc7832;">new </span>PDFMergerUtility()<span style="color:#cc7832;">;
+    </span>mergePdf.setDestinationFileName(<span style="color:#6a8759;">&quot;/Users/path/Downloads/PDFAutomation/&quot;</span>+<span style="color:#6a8759;">&quot;Merged.pdf&quot;</span>)<span style="color:#cc7832;">;</span></pre>
+
+
+<p>Now iterating 'mergePDFPages' variable from first element to last element and comparing with all splitted files 
+    present in that folder which just now we have crated. Once element name match page number then add that page to merge.
+    Once all element iteartion is done then save the final PDF merged file.
+</p><br>
+
+<p>First Split then Merge as per page number , full code is given below.</p><br>
+
+
+<div id="code1"></div>
+        <p>After PDF Split and Merge</p><br>
+
+        <br><img src=".././img/pdf6.png" alt="PDF Merge by PDFBox" class="img-responsive">
+
+        <br><br>
+
+
+                        </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+        <div id="outer">
+            <div class="inner"><a href="../PDFCompare/SinglePDFToMultiple.html " class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../PDFCompare/MergepdfbyLine.html" class="previous">Next &raquo;</a></div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

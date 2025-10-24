@@ -1,0 +1,43 @@
+<html>
+
+<body>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#629755;font-style:italic;">#########   https://manual2Automation.com ###############
+    </span><span style="color:#629755;font-style:italic;">  #######       Created By :: MITHUN ROY ################
+    </span><span style="color:#629755;font-style:italic;">
+    </span><span style="color:#cc7832;font-weight:bold;">Feature: </span>User wants to check Google URL as GET
+    
+    
+        <span style="color:#cc7832;font-weight:bold;">Background:
+    </span><span style="color:#cc7832;font-weight:bold;">
+    </span><span style="color:#cc7832;font-weight:bold;">    * </span>def <span style="color:#297bde;font-weight:bold;">serviceURL</span> = <span style="color:#297bde;font-weight:bold;">&#39;https://jsonplaceholder.typicode.com/posts/1&#39;
+    </span><span style="color:#297bde;font-weight:bold;">
+    </span><span style="color:#297bde;font-weight:bold;">
+    </span><span style="color:#297bde;font-weight:bold;"> </span><span style="color:#629755;font-style:italic;"># Scenario 2 :: Example of GET
+    </span><span style="color:#629755;font-style:italic;">
+    </span><span style="color:#629755;font-style:italic;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>Testing valid GET endpoint
+    
+        <span style="color:#cc7832;font-weight:bold;">Given </span>url <span style="color:#297bde;font-weight:bold;">serviceURL
+    </span><span style="color:#297bde;font-weight:bold;">    </span><span style="color:#cc7832;font-weight:bold;">When </span>method <span style="color:#297bde;font-weight:bold;">GET
+    </span><span style="color:#297bde;font-weight:bold;">    </span><span style="color:#cc7832;font-weight:bold;">Then </span>status <span style="color:#297bde;font-weight:bold;">200
+    </span><span style="color:#297bde;font-weight:bold;">    </span><span style="color:#cc7832;font-weight:bold;">And </span>match <span style="color:#297bde;font-weight:bold;">responseType == &#39;json&#39;
+    </span><span style="color:#297bde;font-weight:bold;">    </span><span style="color:#cc7832;font-weight:bold;">And </span>assert <span style="color:#297bde;font-weight:bold;">responseTime &lt; 2000
+    </span><span style="color:#297bde;font-weight:bold;">    </span><span style="color:#cc7832;font-weight:bold;">And </span>match response ==
+    
+        <span style="color:#6a8759;">&quot;&quot;&quot;
+    </span><span style="color:#6a8759;">    {
+    </span><span style="color:#6a8759;">      &quot;userId&quot;: 1,
+    </span><span style="color:#6a8759;">      &quot;id&quot;: 1,
+    </span><span style="color:#6a8759;">      &quot;title&quot;: &quot;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&quot;,
+    </span><span style="color:#6a8759;">      &quot;body&quot;: &quot;quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto&quot;
+    </span><span style="color:#6a8759;">    }
+    </span><span style="color:#6a8759;">    &quot;&quot;&quot;
+    </span><span style="color:#6a8759;">    </span><span style="color:#cc7832;font-weight:bold;">And </span><span style="color:#297bde;font-weight:bold;">response.title == &#39;sunt aut facere repellat provident occaecati excepturi optio reprehenderit&#39;
+    </span><span style="color:#297bde;font-weight:bold;">
+    </span><span style="color:#297bde;font-weight:bold;">
+    </span></pre>
+    <p><br></p>
+</body>
+
+</html>

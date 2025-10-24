@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Priority and Groups | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+    <style>
+            
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG Priority and Groups</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Priority and Grouping" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Priority and Groups</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+        <div class="blog_details">
+            <h5>We can set priority in test method itself as below:</h5>
+            <p>TestNG.xml will be written as below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass2 {
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_3</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Third TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Second TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;First TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+    }
+    
+    </pre><br><br>
+
+    <p><strong>Output will be displayed as below:
+            <br>[TestNG] Running:
+            <br> /Users/path/Library/Caches/IdeaIC2018.3/temp-testng-customsuite.xml
+            <br>First TC
+            <br> Second TC
+            <br>Third TC</strong>
+    </p><br><br>
+
+
+<h5>Set priority using 'priority' key as below:</h5>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass2 {
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">1</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_3</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Third TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">2</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Second TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">3</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;First TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">0</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_0</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;ZERO TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+    }
+    
+    
+    
+    </pre>
+
+    <p> <strong> Result :
+        <br>[TestNG] Running:
+        <br>/Users/temp-testng-customsuite.xml
+        <br> ZERO TC
+        <br> Third TC
+        <br> Second TC
+        <br> First TC</strong>
+    Note : Priority key overlaps method level priority.
+    </p>
+
+    <h5>Set priority using 'priority' key with -ve value:</h5>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass2 {
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">2</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">sign</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;2 TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">1</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">test</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;1 TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= <span style="color:#6897bb;">0</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">cases</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;0 TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">priority </span>= -<span style="color:#6897bb;">1</span>)
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">hello</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;-1 TC&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+    }
+     
+    
+    </pre>
+
+    <p> <strong> Result :
+           <br> [TestNG] Running:
+           <br> /Users//temp-testng-customsuite.xml
+           <br>  -1 TC
+           <br>  0 TC
+           <br> 1 TC
+           <br> 2 TC </strong>
+        </p><br><br><br>
+
+        <h5>TestNG Grouping of Test Cases:</h5>
+
+        <p>TestNG class as below :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass2 {
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups</span>= {<span style="color:#6a8759;">&quot;Smoke&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">sign</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;sign TC..this is Smoke&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups</span>= {<span style="color:#6a8759;">&quot;Regression&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">test</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;test TC..this is Regression&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups</span>= {<span style="color:#6a8759;">&quot;Smoke&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">cases</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;cases TC..this is Smoke&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups</span>= {<span style="color:#6a8759;">&quot;Regression&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">hello</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;hello TC..this is Regression&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+    }
+    
+    
+    
+    </pre>
+
+    <p>To run only SMOKE tests TestNG XML as below :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span>
+    <span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;false&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;1&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;groups&gt;
+    </span><span style="color:#e8bf6a;">            &lt;run&gt;
+    </span><span style="color:#e8bf6a;">                &lt;include </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;Smoke&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/run&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/groups&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass2&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+</pre><br><br>
+<p><strong>Test Result as :
+        <br> [TestNG] Running:
+        <br>  /Users/main/resources/myTestNG.xml
+        <br>cases TC..this is Smoke
+        <br>sign TC..this is Smoke</strong>
+</p>
+
+<p>We can <font color="red">Exclude</font> a perticular group also:[below example is excluding 'Smoke' , which will execute only Regression group of tests.]</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation Test Suite&quot; </span><span style="color:#bababa;">parallel=</span><span style="color:#6a8759;">&quot;classes&quot; </span><span style="color:#bababa;">thread-count=</span><span style="color:#6a8759;">&quot;2&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;groups&gt;
+    </span><span style="color:#e8bf6a;">            &lt;run&gt;
+    </span><span style="color:#e8bf6a;">                &lt;exclude </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;Smoke&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/run&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/groups&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass2&quot;</span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+
+</pre>
+
+    
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testngParallel.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testnginex.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="QA Automation Testing tutorials|Selenium">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+     <meta name="author" content="MITHUN ROY">
+    <title>Appium with Python | manual2Automation</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("foot.html");
+        });
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+         <div id="header"></div>
+     </header>
+     <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Set Up Appium with Python using VS Code</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-8 posts-list">
+                  <div class="single-post"> <div class="feature-img">
+                     <img class="img-fluid" src="img/py0.png" alt="">
+                  </div><br><br><br>
+                        
+    <!--##################################################################-->
+
+    <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">Install Python 3</h3>
+         <p>1. Download and Install Python from here :<font color="red">https://www.python.org/downloads/</font>
+
+         </p>   
+      
+      <p>2. If you are using MAC machine then type <strong>python3</strong> in terminal , python should
+         be installed already
+         <br><img src="./img/py2.png" alt="Python Appium" style="width: 75%;">
+
+      </p>
+         
+      <p>3. If you are using Windows machine then it is 
+         mandatory to add Python installation path to the Environment Variables. Once it is done 
+         then open cmd and type <strong>python --version</strong>. An example of the output is:
+         <br><img src="./img/py3.png" alt="Python Appium" style="width: 50%;"><br><br>
+
+      </p>
+    </div>
+    <br><br><br>
+      <!--##################################################################-->
+      <!--##################################################################-->
+   <div id="mwrada" style="background-color:white;">
+      <h3 style="background: greenyellow; text-align:center;">Install Xcode for Mac Machine</h3>
+      <p> If you are using a Mac machine to use Appium then we need to install Xcode to set up Appium.
+         Go to Apple App store and install it. For Windows machine it is not applicable.
+         <br><img src="./img/py14.png" alt="Python Appium" style="width: 75%;">
+      </p>
+   </div> <br><br><br>
+ <!--##################################################################-->
+      <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">Download and Install Android Studio</h3>
+         <p>1. Download and Install Android Studio from here : <font color="red">https://developer.android.com/studio</font>
+
+         </p>   
+      
+      <p>2. If you are using MAC machine then follow below process to set Android Home path set.
+
+         <br> 2.1=>Open terminal and Type nano ~/.bash_profile 
+         <br> 2.2=>Add below installation path --
+         <br>2.3=>export ANDROID_HOME=/Users/<username>/Library/Android/sdk
+            <br>2.4=>export PATH=$PATH:$ANDROID_HOME/platform-tools
+            <br>2.5=>export PATH=$PATH:$ANDROID_HOME/tools
+            <br> 2.6=>export PATH=$PATH:$ANDROID_HOME/tools/bin
+            <br>2.7=>export PATH=$PATH:$ANDROID_HOME/emulator
+            <br>Reopen terminal and check if it worked==>
+            <br>source ~/.bash_profile
+            <br>echo $ANDROID_HOME
+            <br> Once path is set then in terminal type adb , it should return something.
+      </p>
+      <p>3. If you are using Windows machine then , 
+         Go to Start -> Control Panel -> System -> Advanced(tab) -> 
+         Environment Variables -> System Variables.
+         <br>3.1 ==>Variable name: ANDROID_HOME, Variable value: the path where you installed the android SDK, in my case is, C:\Android\android-sdk.
+         <br>3.2 ==> You have to add the variable to the Path variable system by adding this: ;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools;.
+         <br>3.3==> Once path is set then in cmd type adb , it should return something.
+      </p>
+               
+         </div> <br><br><br>
+      <!--##################################################################-->
+      <!--##################################################################-->
+    <div id="mwrada" style="background-color:white;">
+      <h3 style="background: greenyellow; text-align:center;">Install Appium using Node.js</h3>
+      <p>1. The first step is to verify whether Node.js is already installed in the system.
+         To do so, open the terminal and run the below command:
+         <br><font color="red">node --version</font>
+         <br>If it is already installed then it’ll return the Node version , else download it from :
+         <font color="red">https://nodejs.org/en/download/</font>.Choose the Node installer per the underlying operating system (Mac or Windows).
+         <br><img src="./img/py7.png" alt="Python Appium" style="width: 75%;">
+      </p>
+      <p>2. Mac users can use the node -v and npm -v commands to verify the installation and version details.
+         Else go to Step 1 URL and install it as per Mac version.
+      </p>   
+   
+   <p>3. Once Node is installed then use below command to install Appium in your system. This command 
+      is same both for Mac and Windows.
+      <br><font color="red">npm install -g appium</font>
+   </p>
+      
+   <p>4. The above command will download and install Appium. Once done, verify the Appium installation on MAC or Windows by running the command below:
+      <br><font color="red">appium --version or appium -v</font>
+      <br><img src="./img/py6.png" alt="Python Appium" style="width: 75%;">
+      <br>This will return the latest Appium version installed in your system.
+
+   </p>
+   
+</div> <br><br><br>
+<!--##################################################################-->
+<div id="Appium_doctor" style="background-color:white;">
+   <h3 style="background: greenyellow; text-align:center;">Installing and Using Appium Doctor</h3>
+   <p>1. Appium Doctor can be used to check whether all the prerequisites/dependencies/installations required for installing Appium are met.
+   </p>
+   <p>2. Open cmd/terminal and run below command to install Appium doctor.
+      <br><font color="red">npm install -g appium-doctor</font>
+   </p>
+   <p>2. Once Appium doctor is installed then run below command
+      <br><font color="red">appium-doctor</font>
+      <br>Observe that Appium Doctor start checking if any Appium prerequisites, setup configuration or dependencies are missing before installing Appium as shown below:
+      <br><img src="./img/py15.png" alt="Python Appium" style="width: 75%;">
+   </p>
+
+</div> <br><br><br>
+<!--##################################################################-->
+      <div id="mwrada" style="background-color:white;">
+         <h3 style="background: greenyellow; text-align:center;">Download Appium Inspector</h3>
+         <p>1. Download and Install Appium Inspector from here : <font color="red">https://github.com/appium/appium-inspector/releases</font>
+
+         </p>   
+      
+      <p>2. If you are using MAC machine then download <font color="red"><strong>Appium-Inspector-mac-2023.2.1.dmg
+      </strong></font> then install it.
+         <br><img src="./img/py5.png" alt="Python Appium" style="width: 75%;">
+
+      </p>
+         
+      <p>2. If you are using Windows machine then download <font color="red"><strong>Appium-Inspector-windows-2023.2.1.exe
+      </strong> </font> install it.
+         <br><img src="./img/py4.png" alt="Python Appium" style="width: 75%;">
+
+      </p>
+      
+   </div> <br><br><br>
+   <!--##################################################################-->
+
+   <!--##################################################################-->
+   <div id="mwrada" style="background-color:white;">
+      <h3 style="background: greenyellow; text-align:center;">How To use Appium Inspector?</h3>
+      <p>1. Connect real device with data cable with your local Mac/Windows machine. You can 
+         also use Emulator cloud device from Android Studio.
+         <br><img src="./img/py11.png" alt="Python Appium" style="width: 75%;">
+         <br>Make sure your device is recognized by Android SDK. To check this, open 
+         cmd/Terminal and type <font color="red">adb devices</font>. This should return 
+         your Android device ID. If you connect Simulator then this command can display Simulator id also.
+         <br><img src="./img/py10.png" alt="Python Appium" style="width: 75%;">
+      </p> 
+      <p>2. Download the APK file which we are going to automate in local Mac/Windows machine. 
+      </p>   
+      <p>3. Open cmd / Terminal to start appium server by typing 
+         <font color="red"><strong>appium
+         </strong> </font> as below. This command will start Appium server.
+         <br><img src="./img/py8.png" alt="Python Appium" style="width: 75%;">
+
+      </p>
+         
+   <p>4. Now double click to open Appium Inspector and fill below details.
+      <br>Remote Host =  <font color="red">127.0.0.1</font>
+      <br>Remote Port =  <font color="red">4723</font>
+      <br>Remote Path =  <font color="red">/wd/hub</font>
+      <br>Remote Host =  <font color="red">127.0.0.1</font>
+      <br>Under Desired Capabilities -
+      <br>platformName =  <font color="red">Android</font>
+      <br>appium:app =  <font color="red">/Users/mithunroy/Downloads/com.flipkart.com.apk</font>
+      <br><img src="./img/py9.png" alt="Python Appium" style="width: 75%;">
+   </p>
+      
+   <p>5. Once all details are filled then click on Start Session to start the session.
+      It will launch the session as below.
+      <br><img src="./img/py12.png" alt="Python Appium" style="width: 75%;">
+   </p>
+   <p>6. Now click on the arrow to inspect the app object to find its id/xpath or other properties.
+      <br><img src="./img/py13.png" alt="Python Appium" style="width: 75%;">
+   </p>
+</div> <br><br><br>
+<!--##################################################################-->
+<!--##################################################################-->
+<div id="mwrada" style="background-color:white;">
+   <h3 style="background: greenyellow; text-align:center;">Install Appium Python Client</h3>
+   <p>1. It is an extension library for adding WebDriver Protocol and Appium commands to the Selenium Python language binding for use with the mobile testing framework Appium.
+   </p>   
+<p>2. Open cmd/terminal and run below command to install it. 
+   <br><font color="red"><strong>pip install Appium-Python-Client</strong></font>
+</p>
+</div> <br><br><br>
+<!--##################################################################-->
+<!--##################################################################-->
+<div id="mwrada" style="background-color:white;">
+   <h3 style="background: greenyellow; text-align:center;">Download and Install Visual Studio Code</h3> 
+<p>1. Go to below link and download then install Visual Studio Code.
+   <br><font color="red"><strong>https://code.visualstudio.com/</strong></font>
+   <br><img src="./img/py16.png" alt="Python Appium" style="width: 75%;">
+   <br>Visual Studio Code is available both for Mac and Windows.
+</p>
+</div> <br><br><br>
+<!--##################################################################-->
+<!--##################################################################-->
+<div id="mwrada" style="background-color:white;">
+   <h3 style="background: greenyellow; text-align:center;">Android Chrome Browser Web Automation using Appium Python</h3> 
+<p>1. Create a new folder for project directory
+   <br>2. Open Visual Studio Code.
+   <br><img src="./img/py17.png" alt="Python Appium" style="width: 75%;">
+   <br>3. Click on open and select the directory folder.
+   <br><img src="./img/py18.png" alt="Python Appium" style="width: 75%;">
+   <br>4. Once VS Code open with project directory then create a python file AppiumWeb.py as below.
+   <br><img src="./img/py19.png" alt="Python Appium" style="width: 75%;">
+    <br>5. Connect your Android Device with data cable and check the 
+    device UDID should be getting identified by adb devices.
+    <br>6. Now Check your Android device Chrome Browser version.
+   <br><img src="./img/py20.png" alt="Python Appium" style="width: 75%;">
+</p>
+<p>7. Download Chrome Driver maintaining same version from here :<br><font color="red">https://chromedriver.chromium.org/downloads</font>
+<br><img src="./img/py21.png" alt="Python Appium" style="width: 75%;">
+</p>  
+<p>8. Now open cmd/terminal and start Appium server with below command:
+   <br><font color="red">appium --chromedriver-executable /Users/mithunroy/Downloads/BrowserDrivers/chromedriver</font>
+<br><img src="./img/py22.png" alt="Python Appium" style="width: 75%;">
+<br><font color="red">appium</font>  = command to start Appium Server
+<br><font color="red">--chromedriver-executable</font> = Parameter name to pass Chrome Driver path
+<br><font color="red">/Users/mithunroy/Downloads/BrowserDrivers/chromedriver</font> = Chrome Driver location
+</p>
+<p>9. Now go to Visual Studio Code , in AppiumWeb.py file and write below code 
+  <div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Menlo, Monaco, 'Courier New', monospace;font-weight: normal;font-size: 12px;line-height: 18px;white-space: pre;"><span style="color: #6a9955;"># Python code to demonstrate working of unittest<br></span><span style="color: #6a9955;"># Appium With Python</span><span style="color: #6a9955;"># Android Web using Chrome with Appium Python<br></span><span style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">unittest<br></span><span style="color: #c586c0;">from</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">appium</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">webdriver</span><span style="color: #d4d4d4;">&nbsp;&nbsp;<br></span><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">TestMobileChrome</span><span style="color: #d4d4d4;">(</span><span style="color: #4ec9b0;">unittest</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">TestCase</span><span style="color: #d4d4d4;">):</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #9cdcfe;">desired_caps</span><span style="color: #d4d4d4;">&nbsp;= {</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #ce9178;">&quot;deviceName&quot;</span><span style="color: #d4d4d4;">:&nbsp;</span><span style="color: #ce9178;">&quot;Samsung&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #ce9178;">&quot;platformName&quot;</span><span style="color: #d4d4d4;">:&nbsp;</span><span style="color: #ce9178;">&quot;Android&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #ce9178;">&quot;version&quot;</span><span style="color: #d4d4d4;">&nbsp;:&nbsp;</span><span style="color: #ce9178;">&quot;9.0&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #ce9178;">&nbsp; &nbsp; &nbsp; &quot;udid&quot;</span><span style="color: #d4d4d4;">&nbsp;:&nbsp;</span><span style="color: #ce9178;">&quot;11f2b948&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #ce9178;">&quot;browserName&quot;</span><span style="color: #d4d4d4;">:&nbsp;</span><span style="color: #ce9178;">&quot;chrome&quot;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br>}</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #6a9955;"># Launch Chrome Browser in Real Device using Chrome</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; def</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">setUp</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">):</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; &nbsp; &nbsp;global</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp;driver</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #4ec9b0;">webdriver</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">Remote</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">&quot;http://localhost:4723/wd/hub&quot;</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">desired_caps</span><span style="color: #d4d4d4;">)<br></span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp;</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">get</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">&quot;https://www.google.com&quot;</span><span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #6a9955;">&nbsp; &nbsp;# Validate Google Page Title</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; &nbsp;def</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">test_googleTitle</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">):</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp;self</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">assertEqual</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">title</span><span style="color: #d4d4d4;">&nbsp;,&nbsp;</span><span style="color: #ce9178;">&apos;Google&apos;</span><span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #dcdcaa;">&nbsp; &nbsp; &nbsp;print</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">&apos;Google Title Validation is Pass&apos;</span><span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #6a9955;">&nbsp; &nbsp;# Quiting the Browser&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; &nbsp;def</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">tearDown</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">): &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp; driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">quit</span><span style="color: #d4d4d4;">()</span><span style="color: #d4d4d4;">&nbsp;&nbsp;<br></span><span style="color: #c586c0;">if</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">__name__</span><span style="color: #d4d4d4;">&nbsp;==&nbsp;</span><span style="color: #ce9178;">&apos;__main__&apos;</span><span style="color: #d4d4d4;">:</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #4ec9b0;">unittest</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">main</span><span style="color: #d4d4d4;">()</span></div>
+</p>
+<p>
+   <br><font color="red">import unittest</font>  = This is for using Python Unit Testing Framework
+   <br><font color="red">from appium import webdriver</font>  = Adding appium library
+   <br><font color="red">desired_caps</font> Python dictionary to declare all mandatory capabilities to 
+   launch Android Web using Appium.
+   <br><font color="red">webdriver.Remote("http://localhost:4723/wd/hub", self.desired_caps)</font>  = 
+   To initiate Appium Web driver session using desired_caps.
+   <br><font color="red">self.assertEqual(driver.title , 'Google')</font>  = Python UnitTest assertion
+   to validate google page title.
+   <br><font color="red">if __name__ == '__main__':</font>  = This is main function to call Python 
+   UnitTest.
+</p>
+<p> Run the file using below commnd :
+   <br><font color="red">python3 AppiumWeb.py</font>
+   <br>The code should run and launch Chrome Browser in Android Mobile Device. Open Google application ,
+   validate its logo and close it. The Result is given below.
+   <br><img src="./img/py23.png" alt="Python Appium" style="width: 75%;">
+
+
+</div> <br><br><br>
+<!--##################################################################-->
+<!--##################################################################-->
+<div id="mwrada" style="background-color:white;">
+   <h3 style="background: greenyellow; text-align:center;">Android native APP [.APK] Automation using Appium Python</h3> 
+<p>1. Create a new folder for project directory
+   <br>2. Open Visual Studio Code.
+   <br><img src="./img/py17.png" alt="Python Appium" style="width: 75%;">
+   <br>3. Click on open and select the directory folder.
+   <br><img src="./img/py18.png" alt="Python Appium" style="width: 75%;">
+   <br>4. Once VS Code open with project directory then create a python file AppiumWeb.py as below.
+   <br><img src="./img/py19.png" alt="Python Appium" style="width: 75%;">
+    <br>5. Connect your Android Device with data cable and check the 
+    device UDID should be getting identified by adb devices.
+</p>
+
+<p>6. Now open cmd/terminal and start Appium server with below command:
+   <br><font color="red">appium</font>
+<br><img src="./img/py24.png" alt="Python Appium" style="width: 75%;">
+<br><font color="red">appium</font>  = command to start Appium Server
+</p>
+<p>7. Now the test APK file need be downloaded / store in Mac/Windows any directory. In below 
+   example we are using Naukri APP for an example to automate the native App.
+      <br><img src="./img/py25.png" alt="Python Appium" style="width: 75%;">
+</p>
+<p>8. Now go to Visual Studio Code , in AppiumWeb.py file and write below code 
+<div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Menlo, Monaco, 'Courier New', monospace;font-weight: normal;font-size: 12px;line-height: 18px;white-space: pre;"><span style="color: #6a9955;"># Python code to demonstrate working of unittest<br></span><span style="color: #6a9955;"># Appium With Python<br></span><span style="color: #6a9955;"># Android Native App with Appium Python<br></span><span style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">unittest<br></span><span style="color: #c586c0;">from</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">appium</span><span style="color: #d4d4d4;">&nbsp;<br></span><span style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">webdriver<br></span><span style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">time</span><span style="color: #d4d4d4;">&nbsp;<br></span><span style="color: #c586c0;">from</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">appium</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">webdriver</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">common</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">appiumby</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">AppiumBy</span><br><span style="color: #569cd6;">class</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #4ec9b0;">TestMobileChrome</span><span style="color: #d4d4d4;">(</span><span style="color: #4ec9b0;">unittest</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">TestCase</span><span style="color: #d4d4d4;">):</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #9cdcfe;">desired_caps</span><span style="color: #d4d4d4;">&nbsp;= {</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #ce9178;">&nbsp; &nbsp; &nbsp; &nbsp;&quot;deviceName&quot;</span><span style="color: #d4d4d4;">:&nbsp;</span><span style="color: #ce9178;">&quot;Samsung&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #ce9178;">&nbsp; &nbsp; &nbsp; &nbsp;&quot;platformName&quot;</span><span style="color: #d4d4d4;">:&nbsp;</span><span style="color: #ce9178;">&quot;Android&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #ce9178;">&quot;version&quot;</span><span style="color: #d4d4d4;">&nbsp;:&nbsp;</span><span style="color: #ce9178;">&quot;9.0&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #ce9178;">&quot;udid&quot;</span><span style="color: #d4d4d4;">&nbsp;:&nbsp;</span><span style="color: #ce9178;">&quot;11f2b948&quot;</span><span style="color: #d4d4d4;">,</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #ce9178;">&quot;app&quot;</span><span style="color: #d4d4d4;">:&nbsp;</span><span style="color: #ce9178;">&quot;/Users/mithunroy/Downloads/naukri-com-17-1.apk&quot;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp; &nbsp; }</span><br><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #6a9955;"># Android Native App in Real Device using Chrome</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; &nbsp; &nbsp;def</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">setUp</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">):</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; &nbsp; &nbsp; &nbsp; global</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp; &nbsp; driver</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #4ec9b0;">webdriver</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">Remote</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">&quot;http://localhost:4723/wd/hub&quot;</span><span style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">desired_caps</span><span style="color: #d4d4d4;">)<br></span><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp;&nbsp;</span><span style="color: #6a9955;"># Validate Some Element in Test APK File ...</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #569cd6;">&nbsp; &nbsp; &nbsp;def</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">test_googleTitle</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">):</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #4ec9b0;">&nbsp; &nbsp; &nbsp; &nbsp;time</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">sleep</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp; &nbsp;driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">find_element</span><span style="color: #d4d4d4;">(</span><span style="color: #4ec9b0;">AppiumBy</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">ID</span><span style="color: #d4d4d4;">,</span><span style="color: #ce9178;">&apos;naukriApp.appModules.login:id/ssa_cancel_textview&apos;</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">click</span><span style="color: #d4d4d4;">()</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #4ec9b0;">&nbsp; &nbsp; &nbsp; &nbsp;time</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">sleep</span><span style="color: #d4d4d4;">(</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp; &nbsp;self</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">assertTrue</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">find_element</span><span style="color: #d4d4d4;">(</span><span style="color: #4ec9b0;">AppiumBy</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">ID<br></span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;,</span><span style="color: #ce9178;">&apos;naukriApp.appModules.login:id/textViewLabel&apos;</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">is_displayed</span><span style="color: #d4d4d4;">())</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp; &nbsp;self</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">assertTrue</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">find_element</span><span style="color: #d4d4d4;">(</span><span style="color: #4ec9b0;">AppiumBy</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">ID<br></span><span style="color: #d4d4d4;"> ,</span><span style="color: #ce9178;">&apos;naukriApp.appModules.login:id/textViewLogin&apos;</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">is_displayed</span><span style="color: #d4d4d4;">())</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #9cdcfe;">&nbsp; &nbsp; &nbsp; &nbsp;self</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">assertTrue</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">find_element</span><span style="color: #d4d4d4;">(</span><span style="color: #4ec9b0;">AppiumBy</span><span style="color: #d4d4d4;">.</span><span style="color: #9cdcfe;">ID<br></span><span style="color: #d4d4d4;"> ,</span><span style="color: #ce9178;">&apos;naukriApp.appModules.login:id/textViewNormalLogin&apos;</span><span style="color: #d4d4d4;">).</span><span style="color: #dcdcaa;">is_displayed</span><span style="color: #d4d4d4;">())</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></span><span style="color: #dcdcaa;">&nbsp; &nbsp; &nbsp; &nbsp; print</span><span style="color: #d4d4d4;">(</span><span style="color: #ce9178;">&apos;Naukri App Login text with Button is Available&apos;</span><span style="color: #d4d4d4;">)</span><span style="color: #d4d4d4;">&nbsp; &nbsp;<br>&nbsp; &nbsp;&nbsp;</span><span style="color: #6a9955;"># Quiting the App&nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;</span><span style="color: #569cd6;"><br>&nbsp; &nbsp; &nbsp;def</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">tearDown</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">self</span><span style="color: #d4d4d4;">): &nbsp; &nbsp; &nbsp; &nbsp;</span><span style="color: #d4d4d4;">&nbsp; &nbsp; &nbsp;&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style="color: #9cdcfe;">driver</span><span style="color: #d4d4d4;">.</span><span style="color: #dcdcaa;">quit</span><span style="color: #d4d4d4;">()</span><span style="color: #d4d4d4;">&nbsp;&nbsp;<br></span><span style="color: #c586c0;">if</span><span style="color: #d4d4d4;">&nbsp;</span><span style="color: #9cdcfe;">__name__</span><span style="color: #d4d4d4;">&nbsp;==&nbsp;</span><span style="color: #ce9178;">&apos;__main__&apos;</span><span style="color: #d4d4d4;">:</span><span style="color: #d4d4d4;">&nbsp; &nbsp;&nbsp;<br></span><span style="color: #4ec9b0;">unittest</span><span style="color: #d4d4d4;">.</span><span style="color: #4ec9b0;">main</span><span style="color: #d4d4d4;">()</span></div></p>
+<p>
+   <br><font color="red">import unittest</font>  = This is for using Python Unit Testing Framework
+   <br><font color="red">from appium import webdriver</font>  = Adding appium library
+   <br><font color="red">desired_caps</font> Python dictionary to declare all mandatory capabilities to 
+   launch Android Web using Appium.
+    <br><font color="red">"app": "/Users/mithunroy/Downloads/naukri-com-17-1.apk"</font>  = To declare APK file path under desired_caps
+   <br><font color="red">webdriver.Remote("http://localhost:4723/wd/hub", self.desired_caps)</font>  = 
+   To initiate Appium Web driver session using desired_caps.
+   <br><font color="red">self.assertTrue(driver.find_element(AppiumBy.ID
+           ,'naukriApp.appModules.login:id/textViewLabel').is_displayed()) </font>  = Python UnitTest assertion
+   to validate element with ID.
+   <br><font color="red">if __name__ == '__main__':</font>  = This is main function to call Python 
+   UnitTest.
+</p>
+<p> Run the file using below commnd :
+   <br><font color="red">python3 AppiumWeb.py</font>
+   <br>9. The code should run and launch Naukri native APP in Android Mobile Device. Then validate the 
+   3 Android Element with its ID.
+   <br><img src="./img/py26.png" alt="Python Appium" style="width: 75%;">
+
+
+</div> <br><br><br>
+<!--##################################################################-->
+ 
+   <!--##################################################################-->
+                  </div>
+                  </div>
+            </div>
+            </div>
+   </section>
+                  
+      <!--================Blog Area end =================-->
+
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="js/slick.min.js"></script>
+   <script src="js/jquery.counterup.min.js"></script>
+   <script src="js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="js/custom.js"></script>
+   <script src="js/newjavascriptsfile.js"></script>
+   <script src="js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

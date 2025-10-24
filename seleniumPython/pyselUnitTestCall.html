@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium with Pyhton | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Selenium Python - First Test Scripts</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/pysel2.png" alt="Python Selenium"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Implement Selenium Python - First Test Scripts</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Package and Python File Creation Before Code Development</h5>
+                            <p>
+                                Right click on project --> new --> Python Package
+                            </p>
+                            <p><img src="../img/pysel10.png" alt="Python XML" class="img-responsive"></p>
+
+                            <p>
+                                Give Pakage name as --> Click Enter --> Python Package is created successfully.
+                            </p>
+
+                            <p><img src="../img/pysel28.png" alt="Python XML" class="img-responsive"></p>
+
+                            <p>
+                                    Right click on Python Package --> new -->   Python File --> Give Any File Name --> Click Enter --> Python File is created successfully.
+                            </p>
+                                <p><img src="../img/pysel29.png" alt="Python XML" class="img-responsive"></p>
+                                <p><img src="../img/pysel30.png" alt="Python XML" class="img-responsive"></p>
+
+
+                                <h5>Code To Launch Google , do few validations and Close the Browser</h5>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#808080;"># Developed By MITHUN ROY
+        </span><span style="color:#808080;"># https://manual2Automation.com
+        </span><span style="color:#808080;">
+        </span><span style="color:#cc7832;">import </span>unittest
+        
+        <span style="color:#cc7832;">from </span>selenium <span style="color:#cc7832;">import </span>webdriver
+        
+        <span style="color:#cc7832;">class </span>GooglePageTest(unittest.TestCase):
+            Instance = <span style="color:#cc7832;">None
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    def </span><span style="color:#ffc66d;">setUp</span>(<span style="color:#94558d;">self</span>):
+        
+                <span style="color:#cc7832;">global </span>Instance
+                Instance = webdriver.Chrome(<span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver&quot;</span>)
+                Instance.implicitly_wait(<span style="color:#6897bb;">10</span>)
+                Instance.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)
+        
+            <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">test_scenarios_execution</span>(<span style="color:#94558d;">self</span>):
+        
+                Instance.find_element_by_xpath(<span style="color:#6a8759;">&quot;//input[@name=&apos;q&apos;]&quot;</span>).is_displayed()
+                Instance.find_element_by_xpath(<span style="color:#6a8759;">&quot;//input[@name=&apos;btnK&apos;]&quot;</span>).is_displayed()
+        
+        
+            <span style="color:#cc7832;">def </span><span style="color:#ffc66d;">tearDown</span>(<span style="color:#94558d;">self</span>):
+        
+                Instance.quit()
+        
+        
+        
+        <span style="color:#cc7832;">if </span>__name__ == <span style="color:#6a8759;">&apos;__main__&apos;</span>:
+            unittest.main()</pre>
+
+            <p><span
+                style='color: #FF0000;'>unittest</span> been built into the Python standard library since version 2.0. We can see it in commercial Python applications and open-source projects.
+                    unittest contains both a testing framework and a test runner. unittest has some important requirements for writing and executing tests.</p>
+                            
+                  <p>The unittest module provides a rich set of tools for constructing and running tests. This section demonstrates that a small subset of the tools suffice to meet the needs of most users.</p> 
+                   <p>
+                        <span
+                style='color: #FF0000;'>GooglePageTest</span> = Class Name
+
+                <br>
+
+                <span
+                style='color: #FF0000;'>unittest.TestCase</span> = A testcase is created by subclassing unittest.TestCase. The three individual tests are defined with methods are named as setUp , test_scenarios_execution , tearDown
+                 </p>
+
+                   <p>
+                        The <strong>setUp()</strong> and <strong>tearDown()</strong> methods allow you to define instructions that will be executed before and after each test method. 
+                   </p>
+
+                   <p>
+                        <span
+                        style='color: #FF0000;'>Instance = None</span> = Class Variable Declaration
+                       <br> <span
+                        style='color: #FF0000;'>global Instance</span> = To make Instance as Global Variable
+
+                        <span
+                        style='color: #FF0000;'>Instance = webdriver.Chrome("/Users/mithunroy/Downloads/chromedriver")</span>
+                        = To initialize the webdriver using Chrome Browser
+                        <br><span
+                        style='color: #FF0000;'>Instance.implicitly_wait(10)</span> = To implicitly wait for 10 seconds.
+
+                        <br><span
+                        style='color: #FF0000;'>Instance.get("https://www.google.com")</span> = Launch Google Chrome
+
+                        <br><span
+                        style='color: #FF0000;'>Instance.find_element_by_xpath("//input[@name='q']").is_displayed()</span> = To Check For Web Element Present Or not. 
+
+                        <br><span
+                        style='color: #FF0000;'>    Instance.quit()</span> = To Quit Chrome Browser
+                   </p>
+
+                   <p>
+                        The final block shows a simple way to run the tests. <strong>unittest.main()</strong> provides a command-line interface to the test script.
+                   </p>
+            
+                        </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outer">
+            <div class="inner"><a href="../seleniumPython/pyselDataDriven.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumPython/pyselReusa.html" class="previous">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

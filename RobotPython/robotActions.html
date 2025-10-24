@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Browser Actions Using Robot Framework | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Browser Actions Using Robot Framework</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">How to handle click,select,type,copy text ... etc using Robot Framework</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+                  <div class="blog_details">
+                     <h1>Robot : Different Types of Variables</h1>
+                     <p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Variables ***
+</span>${emailID}  <span style="color:#9876aa;font-style:italic;">test@test1.com       </span><span style="color:#808080;">#Scalar
+</span>${Password}  <span style="color:#9876aa;font-style:italic;">password123    </span><span style="color:#808080;">#Scalar
+</span>@{applicationList}  <span style="color:#9876aa;font-style:italic;">Google Facebook Amazon   </span><span style="color:#808080;">#List
+</span><span style="color:#9876aa;font-style:italic;">&amp;{VisibleElements}  OrangeHRM=      id:welcome InternetHerokuApp=css:[href=&quot;/logout&quot;]    </span><span style="color:#808080;">#Dictionary</span>
+
+                        </pre>
+                     </p>
+                     <h1>Robot : Click On a Web Element like Link/Button</h1>
+
+<p>
+   <div class="page" title="Page 12"><span style="font-size: 18.000000pt; font-family: 'Georgia'; color: rgb(100.000000%, 77.650000%, 42.750000%); background-color: rgb(16.860000%, 16.860000%, 16.860000%);">Click Element&nbsp;</span><span style="font-size: 18.000000pt; font-family: 'Georgia'; font-style: italic; color: rgb(59.610000%, 46.270000%, 66.670000%); background-color: rgb(16.860000%, 16.860000%, 16.860000%);">css:button[type=&quot;submit&quot;]&nbsp;</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+</p>
+<p>Below example shows how to click on Google Logo </p>
+
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Verify Google Application
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://www.google.com  Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Click Element    </span><span style="color:#9876aa;font-style:italic;">xpath://img[@class=&apos;lnXdpd&apos;]   </span><span style="color:#808080;"># To click on Google Logo
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Close All Browsers
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span>
+
+   </pre>
+
+   <h1>Robot : Type on a Text Box</h1>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#ffc66d;">Input Text  </span><span style="color:#9876aa;font-style:italic;">id:txtPassword admin123</span></pre>
+</p>
+<p>Below example shows how to type on Google search text box </p>
+<p>
+   <pre style='background-color: rgb(43, 43, 43); color: rgb(169, 183, 198); font-family: "JetBrains Mono", monospace; font-size: 9.8pt; text-align: left;'><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#6a8759;">*** Variables ***
+   
+   *** Test Cases ***
+   
+   </span><span style="color:#cc7832;">Verify Google Application
+   
+       </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://www.google.com  Chrome
+       </span><span style="color:#ffc66d;">Maximize Browser Window
+       Input Text  </span><span style="color:#9876aa;font-style:italic;">xpath://input[@name=&apos;q&apos;]    Robot Framework   </span><span style="color:#808080;"># Google Search For Robot Framework
+       </span><span style="color:#ffc66d;">Close All Browsers
+   
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span></pre>
+</p>
+
+
+<h1>Robot : Wait Until Page Contains a Perticular Text</h1>
+<p>
+   <pre 
+   
+   style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;">
+     
+   <span style="color:#ffc66d;">Wait Until Page Contains    </span><span style="color:#9876aa;font-style:italic;">Contact</span>
+      
+      </pre></p>
+
+<p>Below example shows how to wait your scripts till its finding text called 'Contact' </p>
+<p>
+  <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Login Functionality
+</span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+</span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+</span><span style="color:#ffc66d;">
+</span><span style="color:#6a8759;">*** Variables ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#6a8759;">*** Test Cases ***
+</span><span style="color:#cc7832;">Verify Google Application
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://techedtrainings.com/     Chrome
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+</span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element    </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,&apos;CONTACT NOW&apos;)]
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">5
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Click Element   </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,&apos;CONTACT NOW&apos;)]
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains    </span><span style="color:#9876aa;font-style:italic;">Contact</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">5
+</span><span style="color:#6a8759;">*** Keywords ***
+</span><span style="color:#cc7832;">Suite shutdown
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span></pre>
+</p>
+
+<h1>Robot : Wait Until Page Contains an Web Element</h1>
+<p>
+   <pre 
+   
+   style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;">
+     
+   <span style="color:#ffc66d;">Wait Until Page Contains Element   </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,'CONTACT NOW')]</span>
+      
+      </pre></p>
+
+<p>Below example shows how to wait your scripts till its finding xpath == //a[contains(.,'CONTACT NOW')] </p>
+<p>
+  <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Login Functionality
+</span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+</span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+</span><span style="color:#ffc66d;">
+</span><span style="color:#6a8759;">*** Variables ***
+</span><span style="color:#6a8759;">
+</span><span style="color:#6a8759;">*** Test Cases ***
+</span><span style="color:#cc7832;">Verify Google Application
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://techedtrainings.com/     Chrome
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+</span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element    </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,&apos;CONTACT NOW&apos;)]
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">5
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Click Element   </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,&apos;CONTACT NOW&apos;)]
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element   </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,'CONTACT NOW')]</span><span style="color:#9876aa;font-style:italic;">
+</span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">5
+</span><span style="color:#6a8759;">*** Keywords ***
+</span><span style="color:#cc7832;">Suite shutdown
+</span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span></pre>
+</p>
+
+<h1>Robot : Select a Drop down by its value/Index</h1>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;">
+      
+      <span style="color:#ffc66d;"> Select From List By Index   </span><span style="color:#9876aa;font-style:italic;">menu-363    2
+      </span><span style="color:#ffc66d;"> Sleep   </span><span style="color:#9876aa;font-style:italic;">2
+      </span><span style="color:#ffc66d;"> Select From List By Value   </span><span style="color:#9876aa;font-style:italic;">menu-774    New Hire Programs</span>
+      
+      </pre>
+</p>
+
+<p>In above example <strong>'Select From List By Index'</strong> is Robot Action Key , <strong>'menu-363'</strong> is drop down name , <strong>2</strong> is its Index. You can use Xpath to find the drop down too , we are using name here in the example</p>
+<p>In above example <strong>'Select From List By Value'</strong> is Robot Action Key , <strong>'menu-774'</strong> is drop down name , <strong>'New Hire Programs'</strong> is its any option value. You can use Xpath to find the drop down too , we are using name here in the example</p>
+
+
+<p>Below example shows how to select a drop down by its index and another drop down by its value. </p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Login Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Verify Google Application
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://techedtrainings.com/     Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Wait For Condition  </span><span style="color:#9876aa;font-style:italic;">return document.title == &quot;TechEd Trainings &ndash; IT Corporate Trainings&quot;
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains Element    </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,&apos;CONTACT NOW&apos;)]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">5
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Click Element   </span><span style="color:#9876aa;font-style:italic;">xpath://a[contains(.,&apos;CONTACT NOW&apos;)]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Page Contains    </span><span style="color:#9876aa;font-style:italic;">Contact
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Select From List By Index   </span><span style="color:#9876aa;font-style:italic;">menu-363    2
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">2
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Select From List By Value   </span><span style="color:#9876aa;font-style:italic;">menu-774    New Hire Programs
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">5
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown</span>
+   <span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+</p>
+
+<h1>Robot : Play With Check Boxex With Robot Framework</h1>
+<p> <br><img src="../img/checkbox.png" alt="Check Box Example" class="img-responsive"><br> </p>
+<p>
+   As per the Image Checkbox 1 is not selected and Checkbox 2 is selected.
+   <br><strong>Checkbox Should Not Be Selected</strong>     css:input:nth-child(1)  #Checking checkbox 1 is not selected
+   <br><strong>Checkbox Should Not Selected</strong>     css:input:nth-child(3)  #Checking checkbox 2 is selected
+   <br><strong>Select Checkbox</strong>     css:input:nth-child(1)  #select checkbox 1
+   <br><strong>Unselect Checkbox</strong>     css:input:nth-child(3)  #unselect checkbox 2
+</p>
+<p>Below example shows how to verify check box status and check/uncheck Check Boxes </p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Login Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Verify Google Application
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://the-internet.herokuapp.com/checkboxes     Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Checkbox Should Not Be Selected     </span><span style="color:#9876aa;font-style:italic;">css:input:nth-child(1)  </span><span style="color:#808080;">#Checking checkbox 1 is not selected
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Checkbox Should Be Selected     </span><span style="color:#9876aa;font-style:italic;">css:input:nth-child(3)  </span><span style="color:#808080;">#Checking checkbox 2 is selected
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Select Checkbox     </span><span style="color:#9876aa;font-style:italic;">css:input:nth-child(1)  </span><span style="color:#808080;">#select checkbox 1
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Unselect Checkbox   </span><span style="color:#9876aa;font-style:italic;">css:input:nth-child(3)  </span><span style="color:#808080;">#unselect checkbox 2
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Checkbox Should Be Selected     </span><span style="color:#9876aa;font-style:italic;">css:input:nth-child(1)  </span><span style="color:#808080;">#Checking checkbox 1 is selected
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Checkbox Should Not Be Selected     </span><span style="color:#9876aa;font-style:italic;">css:input:nth-child(3)  </span><span style="color:#808080;">#Checking checkbox 2 is not selected
+   </span><span style="color:#808080;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">2
+   </span><span style="color:#6a8759;">*** Keywords ***</span>
+   <span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+</p>
+
+
+
+<h1>Robot : Play With Radio Buttons With Robot Framework</h1>
+<p> <br><img src="../img/radiobutton.png" alt="Radio Button Example" class="img-responsive"><br> </p>
+<p>
+   As per the Image Excel radio button is not selected.
+   <br><strong>Radio Button Should Not Be Selected</strong>     software  #Checking Excel is not selected
+   <br><strong>Select Radio Buttond</strong>     software    Excel  #Selecting Excel radio button
+   <br><strong>Radio Button Should Be Set To</strong>     software    Excel  # checing Excel radio is selected
+</p>
+<p>Below example shows how to verify radio button status and check a Radio Button </p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Radio Button Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Radio Button Functionality
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://www.keynotesupport.com/internet/web-contact-form-example-radio-buttons.shtml    Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Radio Button Should Not Be Selected     </span><span style="color:#9876aa;font-style:italic;">software
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Select Radio Button     </span><span style="color:#9876aa;font-style:italic;">software    Excel
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">2
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Radio Button Should Be Set To   </span><span style="color:#9876aa;font-style:italic;">software    Excel
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Sleep   </span><span style="color:#9876aa;font-style:italic;">2
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+</p>
+
+<h1>Robot : How TO Handle Drag and Drop Using Robot Framework</h1>
+<p> <br><img src="../img/dragAndDrop.png" alt="dragAndDrop Example" class="img-responsive"><br> </p>
+<p>
+   As per the Image we can drag A section into B or B into A.
+   <br><strong>Drag And Drop</strong>     id:column-a    id:column-b  #Dragging A into B
+   <br><strong>Drag And Drop</strong>     id:column-b    id:column-a  #Dragging B into A
+</p>
+<p>Below example shows how to do Drag and Drop Action</p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Drag And Drop Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">To Validate Drag And Drop
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://the-internet.herokuapp.com/drag_and_drop       Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Wait Until Element Is Visible   </span><span style="color:#9876aa;font-style:italic;">id:column-a     timeout=5
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Wait Until Element Is Visible   </span><span style="color:#9876aa;font-style:italic;">id:column-b     timeout=5
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Drag And Drop   </span><span style="color:#9876aa;font-style:italic;">id:column-a    id:column-b
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">sleep   </span><span style="color:#9876aa;font-style:italic;">3
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+</p>
+
+
+<h1>Robot : How TO Handle Scroll Till Web Element Is Visible?</h1>
+<p>
+   Scrolling till xpath://a[text()='Elemental Selenium'] is visible.
+   <br><strong>Scroll Element Into View</strong>     xpath://a[text()='Elemental Selenium']  # Scroll till Element
+</p>
+<p>Below example shows how to Scroll till a perticular linkText is visible.</p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Scroll to Element Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Scroll to Element
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://the-internet.herokuapp.com       Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Wait Until Element Is Visible   </span><span style="color:#9876aa;font-style:italic;">xpath://a[text()=&apos;Elemental Selenium&apos;]     timeout=5
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Scroll Element Into View   </span><span style="color:#9876aa;font-style:italic;">xpath://a[text()=&apos;Elemental Selenium&apos;]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">sleep   </span><span style="color:#9876aa;font-style:italic;">3
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+   
+   </pre>
+</p>
+
+
+
+<h1>Robot : Keyboard Action Functionality Using Robot Framework</h1>
+<p>
+   Type a "SPACE" into a Text Box xpath://input[@id='target']
+   <br><strong>Press Keys</strong>     xpath://input[@id='target']   SPACE  # Type SPACE on xpath://input[@id='target'] Web Element
+</p>
+<p>Below example shows how to Type SPACE on a Text box and Validate its result.</p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Keyboard Action Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Keyboard Action Functionality
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://the-internet.herokuapp.com/key_presses       Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Wait Until Element Is Visible   </span><span style="color:#9876aa;font-style:italic;">xpath://input[@id=&apos;target&apos;]     timeout=2
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Press Keys  </span><span style="color:#9876aa;font-style:italic;">xpath://input[@id=&apos;target&apos;]   SPACE
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Element Text Should Be  </span><span style="color:#9876aa;font-style:italic;">xpath://p[@id=&apos;result&apos;]   You entered: SPACE
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">sleep   </span><span style="color:#9876aa;font-style:italic;">3
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+
+</pre>
+</p>
+
+
+<h1>Robot : Mouse Hover Functionality Check</h1>
+<p>
+   To Hover Mouse on a  xpath:(//img[@alt='User Avatar'])[1]  We write below code.
+   <br><strong>Mouse Over</strong>     (//img[@alt='User Avatar'])[3] # Type Hover on xpath:(//img[@alt='User Avatar'])[1] Web Element
+</p>
+<p>Below example shows how to Hover Mouse on a Web Page Element.</p>
+<p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Documentation   </span><span style="color:#9876aa;font-style:italic;">Mouse Hover Functionality
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#cc7832;">Suite Teardown  </span><span style="color:#ffc66d;">Suite shutdown
+   </span><span style="color:#ffc66d;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#cc7832;">Mouse Hover Functionality
+   </span><span style="color:#cc7832;">
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Open Browser    </span><span style="color:#9876aa;font-style:italic;">https://the-internet.herokuapp.com/hovers       Chrome
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Maximize Browser Window
+   </span><span style="color:#ffc66d;">    Mouse Over  </span><span style="color:#9876aa;font-style:italic;">xpath:(//img[@alt=&apos;User Avatar&apos;])[1]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Element Text Should Be  </span><span style="color:#9876aa;font-style:italic;">css:div:nth-child(3) &gt; div &gt; h5     name: user1     timeout=3
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">sleep   </span><span style="color:#9876aa;font-style:italic;">2
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Mouse Over  </span><span style="color:#9876aa;font-style:italic;">xpath:(//img[@alt=&apos;User Avatar&apos;])[2]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Element Text Should Be  </span><span style="color:#9876aa;font-style:italic;">css:div:nth-child(4) &gt; div &gt; h5     name: user2     timeout=5
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">sleep   </span><span style="color:#9876aa;font-style:italic;">2
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Mouse Over  </span><span style="color:#9876aa;font-style:italic;">(//img[@alt=&apos;User Avatar&apos;])[3]
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Element Text Should Be  </span><span style="color:#9876aa;font-style:italic;">css:div:nth-child(5) &gt; div &gt; h5     name: user3     timeout=5
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">sleep   </span><span style="color:#9876aa;font-style:italic;">3
+   </span><span style="color:#6a8759;">*** Keywords ***
+   </span><span style="color:#cc7832;">Suite shutdown
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">Close All Browsers</span>
+
+</pre>
+</p>
+
+
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython/robotuserdefinedkey.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../RobotPython/TabWindowAlert.html" class="previous">Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

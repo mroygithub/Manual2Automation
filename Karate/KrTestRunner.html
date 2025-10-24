@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Karate Test Runner File | manual2Automation</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        p {
+            color: black;
+            font-size: 20px;
+            word-wrap: break-word;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        h5 {
+            color: Blue;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 25px;
+            word-wrap: break-word;
+        }
+
+        h3 {
+            color: plum;
+            font-size: 25px;
+        }
+
+        img {
+            border: 2px solid black;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+            $("#featurefile1").load("../Karate/c1.html");
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>TestRunner - Karate</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/kr1.png" alt="Karate Test Runner File"
+            style="text-align:center;widows: 400;height:400">
+        <img class="centerimg" src="../img/kr2.png" alt="Karate" style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">Junit TestRunner - Karate</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+                        <div class="blog_details">
+
+                            <!-- ################################################################## -->
+
+                        <!-- KARATE REQUIRED INFORMATIONS....-->
+
+                        <h3>What is Karate Test Runner File?</h3>
+
+                        <p>Test runner class also acts as an interlink between feature files.
+                            </p>
+                            <p>Right click on src/test/Java folder --> New --> Package --> Give Package name as testRunner.
+                               <br> Right click on testRunner package --> New --> Class --> Give class name as 
+                               any class name.
+                            
+                               Modify your testRunner class file as below.</p>
+
+                <br><img src=".././img/kar3.png" alt="KARATE ARCHITECTURE" class="img-responsive"><br><br><br>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <strong><span style="color: rgb(247, 218, 100);">//manual2Autpmation.com
+        //Created By : MITHUN ROY</span></strong>
+        
+        <span style="color:#cc7832;">package </span>testRunner.com<span style="color:#cc7832;">;
+        
+        
+        import </span>com.intuit.karate.junit4.Karate<span style="color:#cc7832;">;
+        import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+        import </span>com.intuit.karate.<span style="color:#bbb529;">KarateOptions</span><span style="color:#cc7832;">;
+        
+        
+        </span><span style="color:#bbb529;">@RunWith</span>(Karate.<span style="color:#cc7832;">class</span>)
+        <span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;classpath:FeatureFiles&quot;</span>)
+        <span style="color:#cc7832;">public class </span>TestRunner {
+        
+        }</pre>
+       
+
+        <p><strong>NOTE:</strong>Below line will execute all feature files present under 'FeatureFiles' Package.
+            Here 'classpath' key is intelligent enough to pick your project path.
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+<span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;classpath:FeatureFiles&quot;</span>)
+</pre>
+
+<p><strong>NOTE:</strong>Below line will execute only 'test.feature' file  under 'FeatureFiles' Package.
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+<span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;classpath:FeatureFiles/test.feature&quot;</span>)
+</pre>
+
+<p><strong>NOTE:</strong>Choose multiple feature files from multiple packages like below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>testRunner.com<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>com.intuit.karate.junit4.Karate<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>com.intuit.karate.<span style="color:#bbb529;">KarateOptions</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#bbb529;">@RunWith</span>(Karate.<span style="color:#cc7832;">class</span>)
+    <span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= { <span style="color:#6a8759;">&quot;classpath:FeatureFiles1/smoketest1.feature&quot;</span><span style="color:#cc7832;">,
+    </span><span style="color:#cc7832;">                            </span><span style="color:#6a8759;">&quot;classpath:FeatureFiles2/smoketest2.feature&quot;</span><span style="color:#cc7832;">,
+    </span><span style="color:#cc7832;">                            </span><span style="color:#6a8759;">&quot;classpath:FeatureFiles3/smoketest3.feature&quot;</span>})
+    <span style="color:#cc7832;">public class </span>TestRunner {
+    
+    }</pre><br><br>
+
+
+                         <h3>Include / Exclude Tests From Feature File</h3>
+
+                         <p>Below screenshot shows Karate Feature File having 3 tests and 2 different types of TAGS :
+                             <font color="red"> <br>@Smoke</font>
+                             <font color="red"> <br>@Regression</font>
+                         </p>
+
+                         <br><img src=".././img/kar4.png" alt="KARATE TAGS" class="img-responsive"><br><br><br>
+
+                         <p>To run only 'Smoke' test @karateOptions can be written as :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>testRunner.com<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>com.intuit.karate.junit4.Karate<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>com.intuit.karate.<span style="color:#bbb529;">KarateOptions</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#bbb529;">@RunWith</span>(Karate.<span style="color:#cc7832;">class</span>)
+    <span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;classpath:FeatureFiles/test.feature&quot; </span><span style="color:#cc7832;">, </span><span style="color:#d0d0ff;">tags </span>= <span style="color:#6a8759;">&quot;@Smoke&quot;</span>)
+    <span style="color:#cc7832;">public class </span>TestRunner {
+    
+    }</pre>
+
+
+    <p>To ignore 'Smoke' test @karateOptions can be written as :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>testRunner.com<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>com.intuit.karate.junit4.Karate<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>com.intuit.karate.<span style="color:#bbb529;">KarateOptions</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#bbb529;">@RunWith</span>(Karate.<span style="color:#cc7832;">class</span>)
+        <span style="color:#bbb529;">@KarateOptions</span>(<span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;classpath:FeatureFiles/test.feature&quot; </span><span style="color:#cc7832;">, </span><span style="color:#d0d0ff;">tags </span>= <span style="color:#6a8759;">&quot;~@Smoke&quot;</span>)
+        <span style="color:#cc7832;">public class </span>TestRunner {
+        
+        }</pre> <br> <br>
+
+        <h3>How to pass parameter to run Karate tests from cmd/terminal as maven project</h3>
+
+        <p>If we want to run only 'Smoke' tests then code can be written as : </p>
+
+        <p> Open cmd/terminal
+            <br> cd 'karate project path'
+            <font color="red"> <strong><br>mvn test -Dkarate.options="--tags @Smoke classpath:FeatureFiles"</strong></font></p>
+
+           <br><img src=".././img/kar5.png" alt="KARATE TAGS" class="img-responsive"><br><br><br>
+
+           <p>And my pom.xml looks like below </p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#e8bf6a;">&lt;?</span><span style="color:#bababa;">xml version=</span><span style="color:#6a8759;">&quot;1.0&quot; </span><span style="color:#bababa;">encoding=</span><span style="color:#6a8759;">&quot;UTF-8&quot;</span><span style="color:#e8bf6a;">?&gt;
+    </span><span style="color:#e8bf6a;">&lt;project </span><span style="color:#bababa;">xmlns=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0&quot;
+    </span><span style="color:#6a8759;">         </span><span style="color:#bababa;">xmlns:</span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">=</span><span style="color:#6a8759;">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    </span><span style="color:#6a8759;">         </span><span style="color:#9876aa;">xsi</span><span style="color:#bababa;">:schemaLocation=</span><span style="color:#6a8759;">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">    &lt;modelVersion&gt;</span>4.0.0<span style="color:#e8bf6a;">&lt;/modelVersion&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>com.maven.Karate<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>com.maven.Karate<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;version&gt;</span>1.0-SNAPSHOT<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;properties&gt;
+    </span><span style="color:#e8bf6a;">        &lt;maven.compiler.source&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.source&gt;
+    </span><span style="color:#e8bf6a;">        &lt;maven.compiler.target&gt;</span>1.7<span style="color:#e8bf6a;">&lt;/maven.compiler.target&gt;
+    </span><span style="color:#e8bf6a;">        &lt;karate.version&gt;</span>0.9.4<span style="color:#e8bf6a;">&lt;/karate.version&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/properties&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;build&gt;
+    </span><span style="color:#e8bf6a;">        &lt;testResources&gt;
+    </span><span style="color:#e8bf6a;">            &lt;testResource&gt;
+    </span><span style="color:#e8bf6a;">                &lt;directory&gt;</span>src/test/java<span style="color:#e8bf6a;">&lt;/directory&gt;
+    </span><span style="color:#e8bf6a;">                &lt;excludes&gt;
+    </span><span style="color:#e8bf6a;">                    &lt;exclude&gt;</span>**/*.java<span style="color:#e8bf6a;">&lt;/exclude&gt;
+    </span><span style="color:#e8bf6a;">                &lt;/excludes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;/testResource&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/testResources&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/build&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;dependencies&gt;
+    </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>com.intuit.karate<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>karate-apache<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>0.9.5<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">        &lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>com.intuit.karate<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>karate-junit4<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">            &lt;version&gt;</span>0.9.5<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/dependency&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/dependencies&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;/project&gt;</span></pre> <br> <br>
+
+
+                        </div>
+                        <!--##################################################################-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="outer">
+            <div class="inner"><a href="../Karate/KarateFeatureFile.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../Karate/KarateBackground.html" class="previous">Next &raquo;</a></div>
+        </div>
+
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

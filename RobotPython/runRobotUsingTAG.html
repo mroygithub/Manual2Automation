@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+   <script data-ad-client="ca-pub-7221125548747047" async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   <!-- Required meta tags -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous">
+      </script>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Run Robot Test Scripts Using TAG | manual2Automation</title>
+   <link rel="icon" href="../img/favicon.png">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="../css/bootstrap.min.css">
+   <!-- animate CSS -->
+   <link rel="stylesheet" href="../css/animate.css">
+   <!-- owl carousel CSS -->
+   <link rel="stylesheet" href="../css/owl.carousel.min.css">
+   <!-- themify CSS -->
+   <link rel="stylesheet" href="../css/themify-icons.css">
+   <!-- flaticon CSS -->
+   <link rel="stylesheet" href="../css/flaticon.css">
+   <!-- font awesome CSS -->
+   <link rel="stylesheet" href="../css/magnific-popup.css">
+   <!-- swiper CSS -->
+   <link rel="stylesheet" href="../css/slick.css">
+   <!-- style CSS -->
+   <link rel="stylesheet" href="../css/style.css">
+
+
+   <script>
+      $(function () {
+         $("#header").load("../headersub.html");
+         $("#footer").load("../footsub.html");
+      });
+   </script>
+
+</head>
+
+<body>
+   <!--::header part start::-->
+   <header class="main_menu home_menu">
+      <div id="header"></div>
+   </header>
+   <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Run Robot Test Scripts Using TAG</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <img class="centerimg" src="../img/robot.jpeg" alt="Python Selenium"
+         style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">Use [Smoke] / [Regression] / [Sanity] TAG .... in Robot Framework</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+                  <div class="blog_details">
+                     <h1>Robot : How To Run Specific Type Of Test Using TAG </h1>
+                    
+                     <p>Consider The Below Code ...</p>
+         <p>
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'JetBrains Mono',monospace;font-size:9.8pt;"><span style="color:#6a8759;">*** Settings ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#8a653b;">Library     </span><span style="color:#9876aa;font-style:italic;">SeleniumLibrary
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Variables ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#6a8759;">*** Test Cases ***
+   </span><span style="color:#6a8759;">
+   </span><span style="color:#cc7832;">Test Case 1
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">[tags]  </span><span style="color:#9876aa;font-style:italic;">Regression
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Log To Console  </span><span style="color:#9876aa;font-style:italic;">Executin Test Case 1
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#cc7832;">Test Case 2
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">[tags]  </span><span style="color:#9876aa;font-style:italic;">Smoke
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Log To Console  </span><span style="color:#9876aa;font-style:italic;">Executin Test Case 2
+   </span><span style="color:#cc7832;">Test Case 3
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">[tags]  </span><span style="color:#9876aa;font-style:italic;">Sanity
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Log To Console  </span><span style="color:#9876aa;font-style:italic;">Executin Test Case 3
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#cc7832;">Test Case 4
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">[tags]  </span><span style="color:#9876aa;font-style:italic;">End To End
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Log To Console  </span><span style="color:#9876aa;font-style:italic;">Executin Test Case 4
+   </span><span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#cc7832;">Test Case 5
+   </span><span style="color:#cc7832;">    </span><span style="color:#ffc66d;">[tags]  </span><span style="color:#9876aa;font-style:italic;">Regression
+   </span><span style="color:#9876aa;font-style:italic;">    </span><span style="color:#ffc66d;">Log To Console  </span><span style="color:#9876aa;font-style:italic;">Executin Test Case 5</span>
+   <span style="color:#9876aa;font-style:italic;">
+   </span><span style="color:#6a8759;">*** Keywords ***</span>
+   
+   </pre>
+                     </p>
+
+                     <p>In above example we can say --
+
+                        <br><strong>[tags]</strong> Keyword To Declate A TAG
+                        <br><strong>Regression , Smoke , Sanity , End To End</strong> 4 different types of TAG ... using in Test Suite
+                        <br><strong>Test Case 1 , Test Case 2 .....Test Case 5</strong> 5 Test Cases with 4 different tags
+                     </p>
+                     
+                     <p>How To Run a All Tests following a Specific TAG In A perticular .robot file?</p>    
+                     <p><strong> robot -d Results -i Regression testScripts/Test.robot</strong></p>  
+                     <p>Explaining above command below --
+
+                        <br><strong>robot</strong> Keyword To Run Robot Test.
+                        <br><strong>-d Results</strong> To Run Test Result In Results Folder.
+                        <br><strong>-i Regression</strong> Run test cases having TAG as 'Regression'. Here 'i' stands for Include
+                        <br><strong>testScripts</strong> Directory having all .robot file.
+                        <br><strong>Test.robot</strong> Run only Test.robot file.
+                        
+                     </p>
+                       
+                     <p>As per this command in Pycharm Console it should execute Test Case 1 and Test Case 5</p>
+                     <p><img src="../img/tagcommand.png" alt="Robot Scripts" class="img-responsive"></p>
+
+
+                     <p>How To Run a All Tests following a Specific TAG present in All .robot files?</p>    
+                     <p><strong> robot -d Results -i Regression testScripts/*.robot</strong></p>  
+                     <p>Explaining above command below --
+
+                        <br><strong>robot</strong> Keyword To Run Robot Test.
+                        <br><strong>-d Results</strong> To Run Test Result In Results Folder.
+                        <br><strong>-i Regression</strong> Run test cases having TAG as 'Regression'. Here 'i' stands for Include
+                        <br><strong>testScripts</strong> Directory name having all .robot file.
+                        <br><strong>*.robot</strong> Run All .robot files present in Directory testScripts
+                        
+                     </p>
+                       
+                     <p>As per this command in Pycharm Console it should execute 'Test Case 1' and 'Test Case 5'
+                        & 'Test Case Other File' all following 'Regression' TAG
+                     </p>
+                     <p><img src="../img/Tag1_.png" alt="Robot Scripts" class="img-responsive"></p>
+                     <p><img src="../img/Tag2_.png" alt="Robot Scripts" class="img-responsive"></p>
+                     
+
+                  </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+         <div class="inner"><a href="../RobotPython/fileuploaddownload.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../RobotPython/handleHTMLTable.html" class="previous">Next &raquo;</a></div>
+      </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+   <!-- footer part start-->
+   <footer class="footer-area">
+      <footer class="site-footer">
+         <div id="footer"></div>
+      </footer>
+   </footer>
+   <!-- footer part end-->
+   <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

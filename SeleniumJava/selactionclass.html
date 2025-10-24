@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium WebDriver Action Class | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: gray;
+                font-size: 25px;
+            }
+
+            img {
+                     border: 1px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Selenium WebDriver Action Class</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/js1.png" alt="Selenium WebDriver Action Class" 
+      style="text-align:center;widows: 400;height:400;border: white;">
+      <h2 style="text-align:center; margin-top: 40px;">Selenium WebDriver Action Class</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <h3>We need Action class for Selenium WebDriver for below reasons:</h3>
+                <p>
+                    <br> <font color="red">Reusability</font>
+                    <br> <font color="red">Code Readability</font>
+                    <br> <font color="red">Less Code Maintenance</font>
+                    <br> <font color="red">Exception Handling</font>
+                </p>    
+
+
+                <h3>isElementDisplayed : Action Class</h3>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        
+        <span style="color:#808080;">// Check For Element Displayed or not
+        </span><span style="color:#808080;">
+        </span><span style="color:#808080;">
+        </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">checkForWebElement</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String elementName)
+        {
+            String elementdisplayed = elementName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not displayed&quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    try</span>{
+        
+                <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+                {
+                    elementdisplayed = elementName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is displayed&quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+        
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+        
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+        </span>}
+        
+        </pre>
+
+        <p>Key Point to Note :
+            <br>1.Try/Catch is used for exception handle
+            <br>2.checkForWebElement method is written in Action class file.
+            <br>3.This method accepts three parameters - Webdriver , web attribute , element Name
+            <br>4.String return type with success/errors.
+        </p>
+
+                    <p><b>How To use it from Test Scripts?</b></p>
+
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        
+        <span style="color:#cc7832;">package </span>SelJava<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>TestScripts <span style="color:#cc7832;">extends </span>ActionClass {
+        
+            <span style="color:#cc7832;">public  </span>WebDriver <span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">null;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+        
+            {
+                TestScripts obj = <span style="color:#cc7832;">new </span>TestScripts()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>obj.googleApplicationValidation()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">googleApplicationValidation</span>()
+            {
+                System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(checkForWebElement(<span style="color:#9876aa;">driver</span><span style="color:#cc7832;">,</span>By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Google Logo&quot;</span>))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+        }</pre>
+        <p><br></p>
+
+
+        <h3>Element.Type()/Text Box : Action Class</h3><br><br>
+
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#808080;">// Type in a Text Box
+    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">typeTextBox</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, </span>String textToType)
+    {
+        String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot; Text Box is not displayed&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    try</span>{
+            <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+            {
+                driver.findElement(by).sendKeys(textToType)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;Text Box is displayed&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+        }
+        <span style="color:#cc7832;">catch </span>(Exception e){}
+        <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span>}
+    
+    </pre>
+
+    <p>Key Point to Note :
+            <br>1.Try/Catch is used for exception handle
+            <br>2.typeTextBox method is written in Action class file.
+            <br>3.This method accepts four parameters - Webdriver , web attribute , element Name , textToType
+            <br>4.String return type with success/errors.
+        </p>
+
+                    <p><b>How To use it from Test Scripts?</b></p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#cc7832;">package </span>SelJava<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">public class </span>TestScripts <span style="color:#cc7832;">extends </span>ActionClass {
+            
+                <span style="color:#cc7832;">public  </span>WebDriver <span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">null;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception
+            
+                {
+                    TestScripts obj = <span style="color:#cc7832;">new </span>TestScripts()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>obj.googleApplicationValidation()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span>}
+            
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">googleApplicationValidation</span>()
+                {
+                    System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(checkForWebElement(<span style="color:#9876aa;">driver</span><span style="color:#cc7832;">,</span>By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Google Logo&quot;</span>))<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(typeTextBox(<span style="color:#9876aa;">driver</span><span style="color:#cc7832;">, </span>By.<span style="font-style:italic;">name</span>(<span style="color:#6a8759;">&quot;q&quot;</span>)<span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;Google Search&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Automation Testing&quot;</span>))<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+            }
+            
+            </pre>
+            <p><br></p>
+
+
+            <h3>Element.Click(): Action Class</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#808080;">// Click using selenium and wait [Explicit]
+    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">clickWithExplicitWait</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, int </span>timeTowait)
+    {
+        String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not clickable&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    try</span>{
+            <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+            {
+                driver.findElement(by).click()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>Thread.<span style="font-style:italic;">sleep</span>(timeTowait)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is clickable &quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+        }
+        <span style="color:#cc7832;">catch </span>(Exception e){}
+        <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span>}
+    
+    
+    <span style="color:#808080;">// Click using selenium and wait [Implicit]
+    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">clickWithImplilicitWait</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, int </span>timeTowait)
+    {
+        String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not clickable&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    try</span>{
+            <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+            {
+                driver.findElement(by).click()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>driver.manage().timeouts().implicitlyWait(timeTowait<span style="color:#cc7832;">,</span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>) <span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is clickable &quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+        }
+        <span style="color:#cc7832;">catch </span>(Exception e){}
+        <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span>}
+    
+    </pre>
+    <p><br></p>
+
+    <h3>Element.SelectDropDown(): Action Class</h3><br><br>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#808080;">// Select A Drop Down
+        </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">selectADropDown</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, </span>String option)
+        {
+            String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not selected&quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    try</span>{
+                WebElement element<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>Select dropdown = <span style="color:#cc7832;">new </span>Select(driver.findElement(by))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        if</span>(dropdown.isMultiple())
+                {
+                    dropdown.selectByVisibleText(option)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is selected &quot;</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+        </span>}
+        
+        </pre>
+        <p><br></p>
+
+        <h3>Action Class With All Required Actions:</h3><br><br>
+
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>SelJava<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebElement<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.support.ui.Select<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>ActionClass {
+    
+        <span style="color:#cc7832;">private </span>WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#808080;">// Check For Element Displayed or not
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">checkForWebElement</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName)
+        {
+            String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not displayed&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try</span>{
+                <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+                {
+                    elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is displayed&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#808080;">// Type a Text Box
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">typeTextBox</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, </span>String textToType)
+        {
+            String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot; Text Box is not displayed&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try</span>{
+                <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+                {
+                    driver.findElement(by).sendKeys(textToType)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;Text Box is displayed&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#808080;">// Click using selenium and wait [Explicit]
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">clickWithExplicitWait</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, int </span>timeTowait)
+        {
+            String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not clickable&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try</span>{
+                <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+                {
+                    driver.findElement(by).click()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>Thread.<span style="font-style:italic;">sleep</span>(timeTowait)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is clickable &quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    
+        <span style="color:#808080;">// Click using selenium and wait [Implicit]
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">clickWithImplilicitWait</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, int </span>timeTowait)
+        {
+            String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not clickable&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try</span>{
+                <span style="color:#cc7832;">if</span>(driver.findElement(by).isDisplayed())
+                {
+                    driver.findElement(by).click()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>driver.manage().timeouts().implicitlyWait(timeTowait<span style="color:#cc7832;">,</span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>) <span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is clickable &quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#808080;">// Select A Drop Down
+    </span><span style="color:#808080;">    </span><span style="color:#cc7832;">public </span>String <span style="color:#ffc66d;">selectADropDown</span>(WebDriver driver <span style="color:#cc7832;">, </span>By by <span style="color:#cc7832;">, </span>String objectName <span style="color:#cc7832;">, </span>String option)
+        {
+            String elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is not selected&quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        try</span>{
+                WebElement element<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>Select dropdown = <span style="color:#cc7832;">new </span>Select(driver.findElement(by))<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            if</span>(dropdown.isMultiple())
+                {
+                    dropdown.selectByVisibleText(option)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">                </span>elementdisplayed = objectName+<span style="color:#6a8759;">&quot; &quot;</span>+<span style="color:#6a8759;">&quot;is selected &quot;</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch </span>(Exception e){}
+            <span style="color:#cc7832;">return </span>elementdisplayed<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    }
+    
+    
+    </pre>
+    <p><br></p>
+
+ 
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../SeleniumJava/firstselcode.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../SeleniumJava/pageobject.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

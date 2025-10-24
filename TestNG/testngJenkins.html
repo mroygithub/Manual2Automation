@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Jenkins | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: plum;
+                font-size: 25px;
+            }
+
+            img {
+            border: 2px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG + Jenkins</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Jenkins Setup" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Jenkins Setup + Parameterization</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <h5>We should have below prerequisite:<br><br>
+                    <br>  <font color="red">#Java / JDK installed in system.</font>
+                    <br>  <font color="red">#Maven Installed in Machine</font>
+                    <br>  <font color="red">#Jenkins Installed in Machine</font>
+                    <br>  <font color="red">#My project in GIT repository</font>
+                 </h5><br>
+                 <p>Do below Jenkins Configuration for Java JDK and Maven path. Go to Jenkins Configuration and set these
+                    two paths as below.</p>
+                 
+                 <p><img src=".././img/ccj1.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+                 <p><img src=".././img/ccj2.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+                 
+
+                <br><br> <p>Create a Maven Jenkins project as below.</p>
+                    <p><img src=".././img/tg19.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+                    <p><img src=".././img/tg20.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+                
+
+                <br><br> <p>Go to Pre Steps ==> Execute Shell , then write below code:<br>
+                    <font color="red">mvn clean test -DsuiteXmlFile=src/main/resources/myTestNG.xml -DAppUrlValue=https://www.google.com -DBrowserName=Chrome -DReleaseName=V0.001 -DEnvironmentName=QAEnvironment </font></p>
+                        <p><img src=".././img/tg22.png" alt="Cucumber Git Jenkins Set Up" class="img-responsive"></p>
+                        <p> Our pom.XML build section is like below :</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#e8bf6a;">&lt;build&gt;
+            </span><span style="color:#e8bf6a;">    &lt;plugins&gt;
+            </span><span style="color:#e8bf6a;">
+            </span><span style="color:#e8bf6a;">        &lt;plugin&gt;
+            </span><span style="color:#e8bf6a;">            &lt;groupId&gt;</span>org.apache.maven.plugins<span style="color:#e8bf6a;">&lt;/groupId&gt;
+            </span><span style="color:#e8bf6a;">            &lt;artifactId&gt;</span>maven-surefire-plugin<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+            </span><span style="color:#e8bf6a;">           &lt;version&gt;</span>3.0.0-M4<span style="color:#e8bf6a;">&lt;/version&gt;
+            </span><span style="color:#e8bf6a;">            &lt;configuration&gt;
+            </span><span style="color:#e8bf6a;">                &lt;systemPropertyVariables&gt;
+            </span><span style="color:#e8bf6a;">                    &lt;AppUrlValue&gt;</span>${AppUrlValue}}<span style="color:#e8bf6a;">&lt;/AppUrlValue&gt;
+            </span><span style="color:#e8bf6a;">                    &lt;BrowserName&gt;</span>${BrowserName}}<span style="color:#e8bf6a;">&lt;/BrowserName&gt;
+            </span><span style="color:#e8bf6a;">                    &lt;ReleaseName&gt;</span>${ReleaseName}}<span style="color:#e8bf6a;">&lt;/ReleaseName&gt;
+            </span><span style="color:#e8bf6a;">                    &lt;EnvironmentName&gt;</span>${EnvironmentName}}<span style="color:#e8bf6a;">&lt;/EnvironmentName&gt;
+            </span><span style="color:#e8bf6a;">                &lt;/systemPropertyVariables&gt;
+            </span><span style="color:#e8bf6a;">                &lt;suiteXmlFiles&gt;
+            </span><span style="color:#e8bf6a;">                    &lt;file&gt;</span>${suiteXmlFile}<span style="color:#e8bf6a;">&lt;/file&gt;
+            </span><span style="color:#e8bf6a;">                &lt;/suiteXmlFiles&gt;
+            </span><span style="color:#e8bf6a;">            &lt;/configuration&gt;
+            </span><span style="color:#e8bf6a;">        &lt;/plugin&gt;
+            </span><span style="color:#e8bf6a;">
+            </span><span style="color:#e8bf6a;">    &lt;/plugins&gt;
+            </span><span style="color:#e8bf6a;">&lt;/build&gt;</span>
+            
+            </pre>
+
+            <p>Where below keys are parameterized : 
+                <br><font color="red">suiteXmlFile</font>, which is written as 
+                <br>-DsuiteXmlFile=src/main/resources/myTestNG.xml
+                <br><font color="red">AppUrlValue</font>, which is written as 
+                <br>-DAppUrlValue=https://www.google.com
+                <br><font color="red">BrowserName</font>, which is written as 
+                <br>-DBrowserName=Chrome
+                <br><font color="red">ReleaseName</font>, which is written as 
+                <br>-DReleaseName=V0.001
+                <br><font color="red">EnvironmentName</font>, which is written as 
+                <br>-DEnvironmentName=QAEnvironment</p>
+
+                <p>Once we run the code in Jenkins -- Getting below report.</p>
+                <p><img src=".././img/tg23.png" alt="Cucumber Git Jenkins Set Up" class="img-responsive"></p>
+
+                <br><br><h3>Make TestNG Jenkins Project Parameterized</h3><br><br>
+
+                <br><br> <p>Create a Maven Jenkins project as below.</p>
+                    <p><img src=".././img/tg19.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+                    <p><img src=".././img/tg20.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <p>Scroll down and check 'This project is parameterized' check box as below </p>
+                    <p><img src=".././img/tg24.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <p>Select Chioce parameter and give name as 'TestNGXML' and fill its choices </p>
+                    <p><img src=".././img/tg25.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <p>Select Chioce parameter and give name as 'Browser' and fill its choices </p>
+                    <p><img src=".././img/tg26.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <p>Select Chioce parameter and give name as 'ApplicationURL' and fill its choices </p>
+                    <p><img src=".././img/tg27.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <br><br> <p>Go to Pre Steps ==> Execute Shell , then write below code:<br>
+                        <font color="red">mvn clean test -DsuiteXmlFile=src/main/resources/$TestNGXML -DAppUrlValue=$ApplicationURL -DBrowserName=$Browser -DReleaseName=V0.001 -DEnvironmentName=QAEnvironment</font></p>
+
+                        <p>Where below keys are parameterized : 
+                                <br><font color="red">suiteXmlFile</font>, which is written as 
+                                <br>-DsuiteXmlFile=src/main/resources/$TestNGXML
+                                <br><font color="red">AppUrlValue</font>, which is written as 
+                                <br>-DAppUrlValue=$ApplicationURL
+                                <br><font color="red">BrowserName</font>, which is written as 
+                                <br>-DBrowserName=$Browser
+                                <br><font color="red">ReleaseName</font>, which is written as 
+                                <br>-DReleaseName=V0.001
+                                <br><font color="red">EnvironmentName</font>, which is written as 
+                                <br>-DEnvironmentName=QAEnvironment
+                                <br>Note : ReleaseName and Environment are hard coded. </p>
+                    <p>Click on apply and save , we will see below screen :</p>
+                    <p><img src=".././img/tg28.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <p>Now Select choices , click on Build button</p>
+                    <p><img src=".././img/tg29.png" alt="Cucumber Jenkins Set Up" class="img-responsive"></p>
+
+                    <p>Once we run the code in Jenkins -- Getting below report.</p>
+                    <p><img src=".././img/tg30.png" alt="Cucumber Git Jenkins Set Up" class="img-responsive"></p>
+ 
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testngpomrun.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngAssertion.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

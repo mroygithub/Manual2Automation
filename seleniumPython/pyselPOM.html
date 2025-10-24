@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Selenium with Pyhton | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>Selenium Python - Create Page Object Model</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--#########################   MENU TABLE   ########################################-->
+
+    <section class="sectionList">
+        <img class="centerimg" src="../img/pysel2.png" alt="Python Selenium"
+            style="text-align:center;widows: 400;height:400">
+        <h2 style="text-align:center; margin-top: 40px;">How To Create Page Object Model Using Python Selenium</h2>
+    </section>
+
+
+    <!-- breadcrumb start-->
+    <!--================Blog Area =================-->
+    <section class="blog_area single-post-area section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 posts-list">
+                    <div class="single-post">
+
+                        <!-- Cucumber prerequisite -->
+
+                        <div class="blog_details">
+                            <h5>Create a Pakage For Page Object</h5>
+                            <p>
+                                Right click on project --> new --> Python Package
+                            </p>
+                            <p><img src="../img/pysel10.png" alt="Python Selenium" class="img-responsive"></p>
+
+                            <p>
+                                Give Pakage name --> Click Enter --> Python Package is created successfully.
+                            </p>
+                            <p><img src="../img/pysel17.png" alt="Python Selenium" class="img-responsive"></p>
+                            <p><img src="../img/pysel18.png" alt="Python Selenium" class="img-responsive"></p>
+                            <p>
+                                Right click on Python Package --> new --> Python File
+                            </p>
+                            <p>
+                                    Give File name --> Click Enter --> Python File is created successfully.
+                                </p>
+                            
+                            <p><img src="../img/pysel19.png" alt="Python Selenium" class="img-responsive"></p>
+                            
+                            <p><img src="../img/pysel20.png" alt="Python Selenium" class="img-responsive"></p>
+                            <p><img src="../img/pysel21.png" alt="Python Selenium" class="img-responsive"></p>
+
+                            <p>
+                                    We have created 2 Python files for page object. One is for Home page and another for Registration page.
+                                </p>
+
+
+        <h5># Create Page Object For Home Page</h5>
+
+        <p><strong> Below code describes page object for 3 Web Elements.</strong>
+           
+            <br> <span
+            style='color: #FF0000;'>class HomePage:</span> as class name
+            <br><span
+            style='color: #FF0000;'>@staticmethod</span> makes static methods in the traditional sense. 
+            <br> <span
+            style='color: #FF0000;'>applicationLogo():</span> As method name and naming convension says it is an logo.
+            <br> All three methods are returning XPATH as String return type.
+        </p>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+                <span style="color:#cc7832;">class </span>HomePage:
+                
+                    <span style="color:#bbb529;">@staticmethod
+                </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">applicationLogo</span>():
+                        <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;//img[@alt=&apos;Webucator Logo&apos;]&quot;
+                </span><span style="color:#6a8759;">
+                </span><span style="color:#6a8759;">    </span><span style="color:#bbb529;">@staticmethod
+                </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">loginLink</span>():
+                        <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;//a[@class=&apos;navbar-brand sign-in&apos;]&quot;
+                </span><span style="color:#6a8759;">
+                </span><span style="color:#6a8759;">    </span><span style="color:#bbb529;">@staticmethod
+                </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">training_option</span>():
+                        <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;// h4[text() = &apos;Training Options&apos;]&quot;</span>
+                
+                </pre>
+
+                <h5># How To Call These 3 Methods From Another Class</h5>
+                <p> From Another Python Package --> Python File first we have to Import Page Object Model Python file as below</p>
+                <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">from </span>PageObjectModel.Home <span style="color:#cc7832;">import </span>HomePage</pre>
+                <p>Here PageObjectModel is POM Package Name , Home is Python File name as Home.py and HomePage is the Class name inside the class.</p>
+                <p><img src="../img/pysel22.png" alt="Python Selenium" class="img-responsive"></p>
+
+                <p>To use 3 Web Element the syntax in ClassName.Methodname as below.
+                    <br><span
+                    style='color: #FF0000;'>HomePage.applicationLogo()</span>
+                    <br><span
+                    style='color: #FF0000;'>HomePage.loginLink()</span>
+                    <br><span
+                    style='color: #FF0000;'>HomePage.training_option()</span>
+                </p>
+
+                <p>We can write below code to check whether all these 3 web element are present in a web page or not as below.</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        self.assertTrue(Driver.is_web_element_displayed(HomePage.applicationLogo()))
+        self.assertTrue(Driver.is_web_element_displayed(HomePage.loginLink()))
+        self.assertTrue(Driver.is_web_element_displayed(HomePage.training_option()))
+    </pre>
+
+                <h5># Create Page Object For Registration Page</h5>
+
+                <p><strong> Below code describes page object for 3 Web Elements.</strong>
+                   
+                    <br> <span
+                    style='color: #FF0000;'>class RegistrationPage:</span> as class name
+                    <br><span
+                    style='color: #FF0000;'>@staticmethod</span> makes static methods in the traditional sense. 
+                    <br> <span
+                    style='color: #FF0000;'>applicationLogo():</span> As method name and naming convension says it is an logo.
+                    <br> All three methods are returning XPATH as String return type.
+                </p>
+                <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+                        <span style="color:#cc7832;">class </span>RegistrationPage:
+                        
+                            <span style="color:#bbb529;">@staticmethod
+                        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">sign_in_page_header</span>():
+                                <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;//h1[text()=&apos;Sign In&apos;]&quot;
+                        </span><span style="color:#6a8759;">
+                        </span><span style="color:#6a8759;">    </span><span style="color:#bbb529;">@staticmethod
+                        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">sign_in_page_title</span>():
+                                <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;//h1[text()=&apos;Sign In&apos;]/../p&quot;
+                        </span><span style="color:#6a8759;">
+                        </span><span style="color:#6a8759;">    </span><span style="color:#bbb529;">@staticmethod
+                        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">submit_log_in</span>():
+                                <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;//button[text()=&apos;Log In&apos;]&quot;
+                        </span><span style="color:#6a8759;">
+                        </span><span style="color:#6a8759;">    </span><span style="color:#bbb529;">@staticmethod
+                        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">def </span><span style="color:#ffc66d;">email_error</span>():
+                                <span style="color:#cc7832;">return </span><span style="color:#6a8759;">&quot;//span[text()=&apos;Please provide your email address.&apos;]&quot;</span>
+                        <span style="color:#6a8759;">
+                        </span><span style="color:#6a8759;">
+                        </span><span style="color:#6a8759;">
+                        </span><span style="color:#6a8759;">
+                        </span></pre>
+
+                        <p>Similarly Registration page elements are also can be calledsame as Home Page.
+                            <br>In Another Class declare <span
+                            style='color: #FF0000;'>from PageObject.RegistrationPage import RegistrationPage</span>
+                            <br>Now Call RegistrationPage elements as below.
+                            <br><span
+                    style='color: #FF0000;'>RegistrationPage.sign_in_page_header()</span>
+                    <br><span
+                    style='color: #FF0000;'>RegistrationPage.sign_in_page_title()</span>
+                    <br><span
+                    style='color: #FF0000;'>RegistrationPage.submit_log_in()</span>
+                    <br><span
+                    style='color: #FF0000;'>RegistrationPage.email_error()</span>
+                        </p>
+            </div>
+
+                        <!-- ################################################################## -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="outer">
+            <div class="inner"><a href="../seleniumPython/pyselAction.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../seleniumPython/pyselDataDriven.html" class="previous">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area end =================-->
+
+    <!-- footer part start-->
+    <!-- footer part start-->
+    <footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="../js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="../js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="../js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.nice-select.min.js"></script>
+    <!-- swiper js -->
+    <script src="../js/slick.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="../js/custom.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+    <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

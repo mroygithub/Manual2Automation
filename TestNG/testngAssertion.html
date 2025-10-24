@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Assertion | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: plum;
+                font-size: 25px;
+            }
+
+            img {
+            border: 2px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG + Assertion</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Assertion" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Assertion</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <br><br><h5>What is Assertion in TestNG?</h5><br><br>
+                  <p>All vadidations during testing are done by Assertions. This is checklist during test flow which says whether
+                      your test is pass or fail.
+                  </p><br>
+
+                  <br><br><h3>Example : Assert.assertTrue(condition)</h3><br><br>
+                  <p>Accepts boolean arguments and checks that a condition is true, If it isn't, throws an AssertionError.</p>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+            <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">public class </span>testNGnew {
+            
+                WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+            </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Example_AssertTrue</span>()
+            
+                {
+            
+                    System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            }
+            
+            </pre>
+            <p><br></p>
+
+            <p>If Assert fails then it throws an error as below with Java Code line number.</p>
+                    <p><img src=".././img/tg31.png" alt="Cucumber Git Jenkins Set Up" class="img-responsive"></p>
+
+
+                    <br><br><h3>Example : Assert.assertTrue(condition, message)</h3><br><br>
+                  <p>Accepts boolean arguments with string message and checks that a condition is true, If it isn't, throws an AssertionError.</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">AfterClass</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGnew {
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Example_AssertTrue</span>()
+    
+        {
+    
+            System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertTrue</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed() <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Logo is displayed&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@AfterClass
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">teardown</span>()
+        {
+            <span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }</pre>
+                    <p><br></p>
+            <p><br></p>
+
+            <p>If Assert fails then it throws an error as below with Java Code line number.</p>
+                    <p><img src=".././img/tg31.png" alt="Cucumber Git Jenkins Set Up" class="img-responsive"></p>
+
+
+
+
+
+                    <br><br><h3>Example : Assert.assertFalse(condition)</h3><br><br>
+                    <p>Accepts boolean arguments and checks that a condition is false, If it isn't, throws an AssertionError.</p>
+  
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">AfterClass</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGnew {
+    
+        <span style="color:#cc7832;">static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Example_AssertTrue</span>()
+    
+        {
+    
+            System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertFalse</span>(<span style="font-style:italic;">googleWrongLogo</span>())<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">googleWrongLogo</span>()
+        {
+    
+            <span style="color:#cc7832;">boolean </span>condition = <span style="color:#cc7832;">false;
+    </span><span style="color:#cc7832;">        try</span>{
+                <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo1&quot;</span>)).isDisplayed())
+                {
+                    condition = <span style="color:#cc7832;">true;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch</span>(Exception e){e.printStackTrace()<span style="color:#cc7832;">;</span>}
+    
+            <span style="color:#cc7832;">return </span>condition<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@AfterClass
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">teardown</span>()
+        {
+            <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }</pre>
+                        <p><br></p>
+              <p><br></p>
+  
+              <p>If Assert fails then it throws an error as below with Java Code line number.</p>
+                      <p><img src=".././img/tg32.png" alt="Cucumber Git Jenkins Set Up" class="img-responsive"></p>
+  
+  
+                      <br><br><h3>Example : Assert.assertFalse(condition, message)</h3><br><br>
+                    <p>Accepts boolean arguments with string message and checks that a condition is false, If it isn't, throws an AssertionError.</p>
+  
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">AfterClass</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGnew {
+    
+        <span style="color:#cc7832;">static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Example_AssertTrue</span>()
+    
+        {
+    
+            System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertFalse</span>(<span style="font-style:italic;">googleWrongLogo</span>() <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Wrong Logo is present&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#cc7832;">public static boolean </span><span style="color:#ffc66d;">googleWrongLogo</span>()
+        {
+    
+            <span style="color:#cc7832;">boolean </span>condition = <span style="color:#cc7832;">false;
+    </span><span style="color:#cc7832;">        try</span>{
+                <span style="color:#cc7832;">if</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo1&quot;</span>)).isDisplayed())
+                {
+                    condition = <span style="color:#cc7832;">true;
+    </span><span style="color:#cc7832;">            </span>}
+            }
+            <span style="color:#cc7832;">catch</span>(Exception e){e.printStackTrace()<span style="color:#cc7832;">;</span>}
+    
+            <span style="color:#cc7832;">return </span>condition<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@AfterClass
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">teardown</span>()
+        {
+            <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+    }</pre>
+                        <p><br></p>
+
+
+
+        <br><br><h3>Example : assertEqual(String actual,String expected)</h3><br><br>
+        <p>Accepts two strings and checks whether they are equel or not, if not it will fail the test.</p>
+  
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;"><span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">AfterClass</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">public class </span>testNGnew {
+            
+                <span style="color:#cc7832;">static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+            </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Example_AssertTrue</span>()
+            
+                {
+            
+                    System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/hellopath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertEquals</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.getTitle() <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Google&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">
+            </span><span style="color:#cc7832;">    </span>}
+            
+            
+                <span style="color:#bbb529;">@AfterClass
+            </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">teardown</span>()
+                {
+                    <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+            </span><span style="color:#cc7832;">    </span>}
+            
+            }</pre>
+            <p><br></p>
+  
+              <p>If assertEquals fails then it throws an error as below with Java Code line number.
+                  Where Expectd is 'Googles' and actual is 'Google'. 
+              </p>
+              <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">Assert.<span style="font-style:italic;">assertEquals</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.getTitle() <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Googles&quot;</span>)<span style="color:#cc7832;">;
+                </span>
+                </pre>
+                <p><br></p>
+                      <p><img src=".././img/tg33.png" alt="TestNG Assertion" class="img-responsive"></p>
+  
+  
+        <br><br><h3>Example :  assertEqual(String actual,String expected, String message)</h3><br><br>
+        <p>It accepts three string arguments and checks whether both are equal, if not it will fail the test and throws the message which we provide.</p>
+  
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+                <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">
+                </span><span style="color:#cc7832;">import </span>org.openqa.selenium.By<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">import </span>org.openqa.selenium.WebDriver<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.ChromeDriver<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">import </span>org.testng.Assert<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">AfterClass</span><span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">Test</span><span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">
+                </span><span style="color:#cc7832;">public class </span>testNGnew {
+                
+                    <span style="color:#cc7832;">static </span>WebDriver <span style="color:#9876aa;font-style:italic;">driver</span><span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">
+                </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+                </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">Example_AssertTrue</span>()
+                
+                    {
+                
+                        System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/path/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;font-style:italic;">driver</span>.get(<span style="color:#6a8759;">&quot;https://www.google.com&quot;</span>)<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">        </span>Assert.<span style="font-style:italic;">assertEquals</span>(<span style="color:#9876aa;font-style:italic;">driver</span>.getTitle() <span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Googles&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;Google title is wrong&quot;</span>)<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Google Application Closed Successfully&quot;</span>)<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">
+                </span><span style="color:#cc7832;">    </span>}
+                
+                    <span style="color:#bbb529;">@AfterClass
+                </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">teardown</span>()
+                    {
+                        <span style="color:#9876aa;font-style:italic;">driver</span>.quit()<span style="color:#cc7832;">;
+                </span><span style="color:#cc7832;">    </span>}
+                
+                }
+                
+                </pre>
+                <p><br></p>
+
+                <p><img src=".././img/tg34.png" alt="TestNG Assertion" class="img-responsive"></p>
+
+
+                 
+ 
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testngJenkins.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngreporting.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

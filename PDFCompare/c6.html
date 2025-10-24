@@ -1,0 +1,70 @@
+<html>
+<body>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>pdfcompare<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.util.ArrayList<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.pdmodel.PDDocument<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.text.PDFTextStripper<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.pdfbox.text.PDFTextStripperByArea<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>ComparePDFVisually {
+        
+            <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">main</span>(String args[]) <span style="color:#cc7832;">throws </span>Exception {
+                ComparePDFVisually obj = <span style="color:#cc7832;">new </span>ComparePDFVisually()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>obj.CompareTwoPDFTextually()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">    </span>}
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">CompareTwoPDFTextually</span>(){
+        
+                ArrayList&lt;String&gt; text_mismatch = <span style="color:#cc7832;">new </span>ArrayList&lt;&gt;()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">        try</span>{
+                    PDDocument documentEx = <span style="color:#cc7832;">null;
+        </span><span style="color:#cc7832;">            </span>PDDocument documentAc = <span style="color:#cc7832;">null;
+        </span><span style="color:#cc7832;">            </span>documentAc = PDDocument.<span style="font-style:italic;">load</span>(<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/MithunPDF/1.pdf&quot;</span>))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span>documentEx = PDDocument.<span style="font-style:italic;">load</span>(<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;/Users/path/Downloads/MithunPDF/2.pdf&quot;</span>))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span>documentAc.getClass()<span style="color:#cc7832;">; </span>documentEx.getClass()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            if</span>( !documentAc.isEncrypted() &amp;&amp; !documentEx.isEncrypted()){
+                        PDFTextStripperByArea stripper = <span style="color:#cc7832;">new </span>PDFTextStripperByArea()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                </span>stripper.setSortByPosition( <span style="color:#cc7832;">true </span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                </span>PDFTextStripper Tstripper = <span style="color:#cc7832;">new </span>PDFTextStripper()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                </span>String stActual = Tstripper.getText(documentAc)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                </span>String stExpected = Tstripper.getText(documentEx)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                </span>String[] LineBreak = stActual.split(<span style="color:#6a8759;">&quot;</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">r?</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">n&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">                for</span>(<span style="color:#cc7832;">int </span>i=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;</span>i&lt;LineBreak.<span style="color:#9876aa;">length</span><span style="color:#cc7832;">;</span>i++)
+                        {
+                            <span style="color:#cc7832;">if</span>(LineBreak[i] !=<span style="color:#cc7832;">null</span>)
+                            {
+                                String[] WordBreak = LineBreak[i].split(<span style="color:#6a8759;">&quot; &quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                        for</span>(<span style="color:#cc7832;">int </span>j=<span style="color:#6897bb;">0</span><span style="color:#cc7832;">;</span>j&lt;WordBreak.<span style="color:#9876aa;">length</span><span style="color:#cc7832;">;</span>j++)
+                                {
+                                    <span style="color:#cc7832;">if</span>(!stExpected.contains(WordBreak[j]))
+                                    {
+                                        text_mismatch.add(WordBreak[j])<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                                </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This Word is not available ==&gt;&quot;</span>+WordBreak[j])<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                            </span>}
+                                    <span style="color:#cc7832;">else
+        </span><span style="color:#cc7832;">                            </span>{
+                                        <span style="color:#808080;">///System.out.println(&quot;This Word is available&quot;);
+        </span><span style="color:#808080;">                            </span>}
+                                }
+                            }
+                        }
+        
+                    }
+                }<span style="color:#cc7832;">catch</span>(Exception e){
+                    e.printStackTrace()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+            }
+        
+        
+        
+        }</pre>
+</body>
+</html>

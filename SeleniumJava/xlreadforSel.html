@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Read XL for Selenium | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+        <style>
+            h3{
+                color: gray;
+                font-size: 25px;
+            }
+
+            img {
+                     border: 1px solid black;
+                }   
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>XL Test DataTable For Selenium</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/js1.png" alt="XML Test DataTable For Selenium" 
+      style="text-align:center;widows: 400;height:400;border: white;">
+      <h2 style="text-align:center; margin-top: 40px;">XL Test DataTable For Selenium</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+
+        <div class="blog_details">
+
+                <h3>We can use XL file as test data table for Selenium to store input data as below.</h3>
+                <br><br><h4><strong>Sample Excel is:"Practise.xlsx"</strong> </h4>
+
+                <br><img src="../img/sv002.png" alt="Excel Read For Selenium" class="responsive"><br>
+
+                <p>We are going to use POI Jar to read above Excel , we can add dependency as below :</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#808080;">&lt;!-- https://mvnrepository.com/artifact/org.apache.poi/poi --&gt;
+    </span><span style="color:#e8bf6a;">&lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>org.apache.poi<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>poi<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;version&gt;</span>3.11<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">&lt;/dependency&gt;</span>
+    <span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;dependency&gt;
+    </span><span style="color:#e8bf6a;">    &lt;groupId&gt;</span>org.apache.poi<span style="color:#e8bf6a;">&lt;/groupId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;artifactId&gt;</span>poi-ooxml<span style="color:#e8bf6a;">&lt;/artifactId&gt;
+    </span><span style="color:#e8bf6a;">    &lt;version&gt;</span>3.11<span style="color:#e8bf6a;">&lt;/version&gt;
+    </span><span style="color:#e8bf6a;">&lt;/dependency&gt;</span>
+    </pre>
+<p><br></p>
+
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        
+        <span style="color:#cc7832;">package </span>SelJava<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>java.io.File<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.io.FileInputStream<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>java.util.Iterator<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.poi.ss.usermodel.Cell<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.poi.ss.usermodel.Row<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.poi.xssf.usermodel.XSSFSheet<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">import </span>org.apache.poi.xssf.usermodel.XSSFWorkbook<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>ReadXL {
+        
+            <span style="color:#cc7832;">public static void </span><span style="color:#ffc66d;">main</span>(String[] args) {
+        <span style="color:#808080;">// </span><span style="color:#a8c023;font-style:italic;">TODO Auto-generated method stub
+        </span><span style="color:#a8c023;font-style:italic;">
+        </span><span style="color:#a8c023;font-style:italic;">        </span><span style="color:#cc7832;">try </span>{
+                    FileInputStream file = <span style="color:#cc7832;">new </span>FileInputStream(<span style="color:#cc7832;">new </span>File(<span style="color:#6a8759;">&quot;C:</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Users</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">userid</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Desktop</span><span style="color:#cc7832;">\\</span><span style="color:#6a8759;">Practise.xlsx&quot;</span>))<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Create Workbook instance holding reference to .xlsx file
+        </span><span style="color:#808080;">            </span>XSSFWorkbook workbook = <span style="color:#cc7832;">new </span>XSSFWorkbook(file)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Get first/desired sheet from the workbook
+        </span><span style="color:#808080;">            </span>XSSFSheet sheet = workbook.getSheetAt(<span style="color:#6897bb;">0</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// Iterate through each rows one by one
+        </span><span style="color:#808080;">            </span>Iterator&lt;Row&gt; rowIterator = sheet.iterator()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            while </span>(rowIterator.hasNext()) {
+                        Row row = rowIterator.next()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">            </span><span style="color:#808080;">// For each row, iterate through all the columns
+        </span><span style="color:#808080;">                </span>Iterator&lt;Cell&gt; cellIterator = row.cellIterator()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                while </span>(cellIterator.hasNext()) {
+                            Cell cell = cellIterator.next()<span style="color:#cc7832;">;</span><span style="color:#808080;">// Check the cell type and format accordingly
+        </span><span style="color:#808080;">                    </span><span style="color:#cc7832;">switch </span>(cell.getCellType()) {
+                                <span style="color:#cc7832;">case </span>Cell.<span style="color:#9876aa;font-style:italic;">CELL_TYPE_NUMERIC</span>:
+                                    System.<span style="color:#9876aa;font-style:italic;">out</span>.print(cell.getNumericCellValue()+<span style="color:#6a8759;">&quot;|&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                            break;
+        </span><span style="color:#cc7832;">                        case </span>Cell.<span style="color:#9876aa;font-style:italic;">CELL_TYPE_STRING</span>:
+                                    System.<span style="color:#9876aa;font-style:italic;">out</span>.print(cell.getStringCellValue()+<span style="color:#6a8759;">&quot;|&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">                            break;
+        </span><span style="color:#cc7832;">                    </span>}
+        
+                        }
+                    }
+                    file.close()<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#cc7832;">catch</span>(Exception e)
+                { e.printStackTrace()<span style="color:#cc7832;">;</span>}
+        
+            }
+        }
+        
+        </pre>
+        <p><br></p>
+        <p><br></p>
+
+        <p>The Test Output can be driven as below :</p>
+        
+        <br><img src="../img/sv003.png" alt="Excel Read For Selenium" class="responsive"><br>
+
+
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../SeleniumJava/xmlsel.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../SeleniumJava/reportingForSelenium.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

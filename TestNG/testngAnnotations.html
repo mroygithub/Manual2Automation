@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG Annotation | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+    <style>
+            h5{
+             color: Blue;
+             font-family: "Times New Roman", Times, serif;
+             font-size: 25px;
+             word-wrap: break-word;
+             }
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG Annotation</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Annotation" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Annotation</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+                  <div class="blog_details">
+                        <h5>Different Types of Annotations present in TestNG</h5>
+                        <p><strong><font color="#FF0000">@BeforeSuite</font></strong></p>
+                        <p>@BeforeSuite executes before any other test/annotation/module. This annotation plays an importatnt 
+                            role to set up environments/select input datatable / select execution browser / create report path etc.
+                        </p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+        <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.testng.annotations.<span style="color:#bbb529;">BeforeSuite</span><span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>testNGClass {
+        
+        
+            <span style="color:#bbb529;">@BeforeSuite
+        </span><span style="color:#bbb529;">    
+        </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void  </span><span style="color:#ffc66d;">setup</span>()
+            {
+                <span style="color:#808080;">// Select Chrome as execution Browsers....
+        </span><span style="color:#808080;">    </span>}
+        
+        
+        }
+        
+        </pre>
+
+        <p><strong><font color="#FF0000">@BeforeClass</font></strong></p>
+                        <p>@BeforeClass : The annotated method will be run before the first test method in the current class is invoked.
+                        </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+                                                      
+        <span style="color:#bbb529;">@BeforeClass
+    </span><span style="color:#bbb529;">
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed first&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        }</pre><br><br>
+
+        <p>Test Result is given below:</p>
+        <br><img src="../img/tg4.png" alt="@BeforeClass annotation" class="responsive"><br><br><br>
+
+
+
+        <p><strong><font color="#FF0000">@BeforeTest</font></strong></p>
+                        <p>@BeforeTest: The annotated method will be run before any @Test method belonging to the class.
+                        </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+                                                      
+        <span style="color:#bbb529;">@BeforeTest
+    </span><span style="color:#bbb529;">
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed first&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        }</pre>
+
+        <p>Test Result is given below:</p>
+        <br><img src="../img/tg4.png" alt="@BeforeTest annotation" class="responsive"><br><br><br>
+
+
+        <p><strong><font color="#FF0000">@BeforeMethod</font></strong></p>
+                        <p>@BeforeMethod: This annotation method will be run before each @Test method belonging to the class.
+                        </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+                                                      
+        <span style="color:#bbb529;">@BeforeMethod
+    </span><span style="color:#bbb529;">
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed first&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        }</pre>
+
+        <p>Test Result is given below:</p>
+        <br><img src="../img/tg5.png" alt="@BeforeTest annotation" class="responsive"><br><br><br>
+
+
+
+        <p><strong><font color="#FF0000">@BeforeGroups</font></strong></p>
+        <p>@BeforeGroups: This annotation method will be run only once before all the test methods belonging to a specified group.
+        </p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+        
+    
+            <span style="color:#bbb529;">@BeforeGroups</span>(<span style="color:#6a8759;">&quot;Examples&quot;</span>)
+        
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed for Groups&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+        }
+    </pre>
+
+<p>Test Result is given below:</p>
+<br><img src="../img/tg6.png" alt="@BeforeGroups annotation" class="responsive"><br><br><br>
+
+<p><strong><font color="#FF0000">@AfterSuite</font></strong></p>
+                        <p>@AfterSuite executes after all other test/annotation/module. This annotation plays an importatnt 
+                            role to create final test report/closing application etc.
+                        </p>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>testNGClass {
+        
+        
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+                {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed for Groups&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#bbb529;">@Test
+        </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+                {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+                {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+        
+                <span style="color:#bbb529;">@AfterSuite
+        </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">executionDone</span>(){
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Execution is Completed...&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+        
+            }
+        </pre>
+
+        <p>Test Result is given below:</p>
+        <br><img src="../img/tg7.png" alt="@AfterSuite annotation" class="responsive"><br><br><br>
+
+        <p><strong><font color="#FF0000">@AfterClass</font></strong></p>
+                        <p>@AfterClass : The annotated method will be run after all the test methods of a current class have been trigerred.
+                        </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+    
+    
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed for Groups&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+            <span style="color:#bbb529;">@AfterClass
+    </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">executionDone</span>(){
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Execution is Completed...&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+        }
+    </pre>
+                    
+            <p>Test Result is given below:</p>
+            <br><img src="../img/tg7.png" alt="@AfterClass annotation" class="responsive"><br><br><br>
+
+
+
+            <p><strong><font color="#FF0000">@AfterTest</font></strong></p>
+            <p>@AfterTest : The annotated method will be run after all the @test methods of a current class have been trigerred.
+            </p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+<span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">public class </span>testNGClass {
+
+
+<span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+{
+    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed for Groups&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+<span style="color:#bbb529;">@Test
+</span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+{
+    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+<span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+<span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+{
+    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+<span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+<span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+
+<span style="color:#bbb529;">@AfterTest
+</span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">executionDone</span>(){
+    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Execution is Completed...&quot;</span>)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>}
+
+}
+</pre>
+        
+<p>Test Result is given below:</p>
+<br><img src="../img/tg7.png" alt="@AfterTest annotation" class="responsive"><br><br><br>
+
+
+        <p><strong><font color="#FF0000">@AfterMethod</font></strong></p>
+                        <p>@AfterMethod: This annotation method will be run after each @Test method belonging to the class.
+                        </p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+    
+    
+    
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">before_class</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;This method is executed for Groups&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+            {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+            <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+            <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+            <span style="color:#bbb529;">@AfterMethod
+    </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">executionDone</span>(){
+                System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Execution is Completed...&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>}
+    
+        }</pre>
+
+        <p>Test Result is given below:</p>
+        <br><img src="../img/tg8.png" alt="@AfterMethod annotation" class="responsive"><br><br><br>
+
+
+
+        <p><strong><font color="#FF0000">@AfterGroups</font></strong></p>
+        <p>@AfterGroups: This annotation method will be run only once after all the test methods belonging to a specified group.
+        </p>
+
+        <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">
+        </span><span style="color:#cc7832;">public class </span>testNGClass {
+        
+        
+                <span style="color:#bbb529;">@AfterGroups</span>(<span style="color:#6a8759;">&quot;Examples&quot;</span>)
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">executionDone</span>(){
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Execution is starting for Examples Groups ...&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+        
+                <span style="color:#bbb529;">@Test
+        </span><span style="color:#bbb529;">        </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin1</span>()
+                {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case1&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin2</span>()
+                {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case2&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+                <span style="color:#bbb529;">@Test</span>(<span style="color:#d0d0ff;">groups </span>= <span style="color:#6a8759;">&quot;Examples&quot;</span>)
+                <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testexecutoin3</span>() {
+                    System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Test Case3&quot;</span>)<span style="color:#cc7832;">;
+        </span><span style="color:#cc7832;">        </span>}
+        
+        
+        
+            }
+        </pre>
+
+<p>Test Result is given below:</p>
+<br><img src="../img/tg9.png" alt="@AfterGroups annotation" class="responsive"><br><br><br><br>
+
+
+
+                       
+
+
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="outer">
+            <div class="inner"><a href="../TestNG/testngSetup.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngClassXml.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TestNG pass parameters | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    </style>
+
+    <style>
+            
+        </style>
+
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>TestNG Parameters Through XML</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!--#########################   MENU TABLE   ########################################-->
+
+   <section class="sectionList">
+      <br><br><img class="centerimg" src="../img/tg2.png" alt="TestNG Parameters Through XML" style="text-align:center;widows: 400;height:400">
+      <h2 style="text-align:center; margin-top: 40px;">TestNG Parameters Through XML</h2>
+   </section>
+
+
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                  <!-- Cucumber prerequisite -->
+
+        <div class="blog_details">
+            <h5>Pass application url using testng.xml[Test level parameter]</h5>
+            <p>TestNG.xml will be written as below:</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;Suite1&quot; </span><span style="color:#bababa;">verbose=</span><span style="color:#6a8759;">&quot;1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;url&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;https://www.google.com&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot; </span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+</pre><br>
+    <p>TestNG class file will be written as below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+    
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@BeforeClass
+    </span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;url&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">beforeClass</span>(String url)
+        {
+            System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chromepath/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(url)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testMyApplication</span>()
+        {
+            <span style="color:#808080;">// To validate &#39;Google&#39; Logo
+    </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())
+            {System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Wikipedia Logo is available&quot;</span>)<span style="color:#cc7832;">;</span>}
+        }
+    
+        <span style="color:#bbb529;">@AfterClass
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">afterClass</span>()
+        {
+            <span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// To Close the Application....
+    </span><span style="color:#808080;">    </span>}
+    }
+    
+    
+    
+    </pre><br><br>
+
+    <p>Parameter name 'url' is case sensative and should be
+        same both on xml and class file.
+    </p>
+
+
+    <h5>Pass multiple test level parameters using testng.xml</h5>
+            <p>TestNG.xml will be written as below:</p>
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;Suite1&quot; </span><span style="color:#bababa;">verbose=</span><span style="color:#6a8759;">&quot;1&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">
+    </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation&quot; </span><span style="color:#e8bf6a;">&gt;
+    </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;url&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;https://www.google.com&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+    </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;user&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;user1&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+    </span><span style="color:#e8bf6a;">        &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;pass&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;pass1&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+    </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+    </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot; </span><span style="color:#e8bf6a;">/&gt;
+    </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+    </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+    </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+    </span>
+</pre><br>
+    <p>TestNG class file will be written as below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+    <span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">import </span>sun.security.util.Password<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">public class </span>testNGClass {
+    
+    
+        WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">
+    </span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@BeforeClass
+    </span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;url&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">beforeClass</span>(String url)
+        {
+            System. <span style="font-style:italic;">setProperty</span>(<span style="color:#6a8759;">&quot;webdriver.chrome.driver&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;/Users/chromepah/Downloads/chromedriver2&quot;</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver </span>= <span style="color:#cc7832;">new </span>ChromeDriver()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().window().maximize()<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.get(url)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#9876aa;">driver</span>.manage().timeouts().pageLoadTimeout(<span style="color:#6897bb;">40</span><span style="color:#cc7832;">, </span>TimeUnit.<span style="color:#9876aa;font-style:italic;">SECONDS</span>)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">    </span>}
+    
+        <span style="color:#bbb529;">@Test
+    </span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;user&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;pass&quot;</span>})
+        <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testMyApplication</span>(String username <span style="color:#cc7832;">, </span>String password)
+        {
+            System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ username)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ password)<span style="color:#cc7832;">;
+    </span><span style="color:#cc7832;">        </span><span style="color:#808080;">// To validate &#39;Google&#39; Logo
+    </span><span style="color:#808080;">        </span><span style="color:#cc7832;">if</span>(<span style="color:#9876aa;">driver</span>.findElement(By.<span style="font-style:italic;">id</span>(<span style="color:#6a8759;">&quot;hplogo&quot;</span>)).isDisplayed())
+            {System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Wikipedia Logo is available&quot;</span>)<span style="color:#cc7832;">;</span>}
+        }
+    
+        <span style="color:#bbb529;">@AfterClass
+    </span><span style="color:#bbb529;">    </span><span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">afterClass</span>()
+        {
+            <span style="color:#9876aa;">driver</span>.quit()<span style="color:#cc7832;">; </span><span style="color:#808080;">// To Close the Application....
+    </span><span style="color:#808080;">    </span>}
+    }
+    
+    
+    
+    </pre>
+        
+        <br><br>
+
+        <h5>Pass multiple suite level parameters using testng.xml</h5>
+        <p>Suite level parameter is useful when same parameters are being used by multiple tests.
+
+            TestNG.xml will be written as below:</p>
+
+    <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+        <span style="color:#e8bf6a;">&lt;!DOCTYPE </span><span style="color:#bababa;">suite </span><span style="color:#e8bf6a;">SYSTEM </span><span style="color:#6a8759;">&quot;https://testng.org/testng-1.0.dtd&quot; </span><span style="color:#e8bf6a;">&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">&lt;suite </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;Suite1&quot; </span><span style="color:#bababa;">verbose=</span><span style="color:#6a8759;">&quot;1&quot; </span><span style="color:#e8bf6a;">&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">    &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;url&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;https://www.google.com&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">    &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;user&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;user1&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">    &lt;parameter </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;pass&quot; </span><span style="color:#bababa;">value=</span><span style="color:#6a8759;">&quot;pass1&quot;</span><span style="color:#e8bf6a;">&gt;&lt;/parameter&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">    &lt;test </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;manual2Automation&quot; </span><span style="color:#e8bf6a;">&gt;
+        </span><span style="color:#e8bf6a;">
+        </span><span style="color:#e8bf6a;">        &lt;classes&gt;
+        </span><span style="color:#e8bf6a;">            &lt;class </span><span style="color:#bababa;">name=</span><span style="color:#6a8759;">&quot;TestNGPKG.testNGClass&quot; </span><span style="color:#e8bf6a;">/&gt;
+        </span><span style="color:#e8bf6a;">        &lt;/classes&gt;
+        </span><span style="color:#e8bf6a;">    &lt;/test&gt;
+        </span><span style="color:#e8bf6a;">&lt;/suite&gt;
+        </span>
+    </pre>
+
+    <p>TestNG class file will be written as below:</p>
+
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+<span style="color:#cc7832;">package </span>TestNGPKG<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">import </span>org.testng.annotations.*<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.openqa.selenium.*<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>org.openqa.selenium.chrome.*<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">import </span>sun.security.util.Password<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">import </span>java.util.concurrent.TimeUnit<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">public class </span>testNGClass {
+
+
+    WebDriver <span style="color:#9876aa;">driver</span><span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span><span style="color:#bbb529;">@Test
+</span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;url&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;user&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;pass&quot;</span>})
+    <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_1</span>(String applicationurl <span style="color:#cc7832;">, </span>String username <span style="color:#cc7832;">, </span>String password)
+    {
+        System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ applicationurl)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ username)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ password)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span>}
+    <span style="color:#bbb529;">@Test
+</span><span style="color:#bbb529;">    @Parameters</span>({<span style="color:#6a8759;">&quot;url&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;user&quot;</span><span style="color:#cc7832;">,</span><span style="color:#6a8759;">&quot;pass&quot;</span>})
+    <span style="color:#cc7832;">public void </span><span style="color:#ffc66d;">testcase_2</span>(String applicationurl <span style="color:#cc7832;">,</span>String username <span style="color:#cc7832;">, </span>String password)
+    {
+        System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ applicationurl)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ username)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">        </span>System.<span style="color:#9876aa;font-style:italic;">out</span>.println(<span style="color:#6a8759;">&quot;Application user id :&quot;</span>+ password)<span style="color:#cc7832;">;
+</span><span style="color:#cc7832;">
+</span><span style="color:#cc7832;">    </span>}
+
+}
+
+</pre>
+        </div>
+
+                  <!-- ################################################################## -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+      <br><br><div id="outer">
+        <div class="inner"><a href="../TestNG/testngClassXml.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../TestNG/testngParallel.html" class="previous">Next &raquo;</a></div>
+         </div>
+   </section>
+   <!--================Blog Area end =================-->
+
+   <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

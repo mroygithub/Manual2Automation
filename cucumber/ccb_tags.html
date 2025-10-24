@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cucumber TAGS | manual2Automation</title>
+    <link rel="icon" href="../img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        .buttonbtnnew {
+            background-color: blueviolet;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: right;
+         width: 83px;
+         padding: 5px;
+      }
+        .left {
+          float: left;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Cucumber TAGS</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+      <img class="centerimg" src="../img/cmm1.png" alt="Cucumber TAGS" style="text-align:center;widows: 400;height:400">
+      <img class="centerimg" src="../img/ccm001.png" alt="Cucumber TAGS" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Cucumber Parameterization</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                    <!-- Cucumber Test Run By Tag-->
+
+
+                    
+                  <div class="blog_details">
+                     <p>In Cucumber, tags are used to associate a test like smoke, regression, prog etc. with a specific scenario.
+                        <br>  @: It is a symbol used to declare a tag.
+                        <br> Smoke/Regression/Production: It is the name of a specific test.
+                     </p><br>
+                     <strong><p>Change in feature file would be like below.</p></strong>
+   
+                     <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+   
+   <span style="color:#cc7832;font-weight:bold;">Feature: </span>Scenarios to validate five applications and Title
+                           
+                           
+      <span style="color:#bbb529;">@Smoke
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>validate five application titles
+         <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with given url as &quot;https://www.google.com&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>application and feature file expected title is &quot;Google&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>User close the application
+   
+   
+      <span style="color:#bbb529;">@Smoke @Regression
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>validate five application titles
+         <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with given url as &quot;https://www.facebook.com&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>application and feature file expected title is &quot;Facebook &ndash; log in or sign up&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>User close the application
+   
+   
+      <span style="color:#bbb529;">@Regression
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>validate five application titles
+         <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with given url as &quot;https://www.linkedin.com&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>application and feature file expected title is &quot;LinkedIn&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>User close the application
+   
+   
+   
+      <span style="color:#bbb529;">@Smoke
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>validate five application titles
+         <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with given url as &quot;https://www.microsoft.com&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>application and feature file expected title is &quot;Microsoft - Official Home Page&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>User close the application
+   
+   
+      <span style="color:#bbb529;">@Smoke
+   </span><span style="color:#bbb529;">  </span><span style="color:#cc7832;font-weight:bold;">Scenario: </span>validate five application titles
+         <span style="color:#cc7832;font-weight:bold;">Given </span>user launch application with given url as &quot;https://manual2automation.com&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>application and feature file expected title is &quot;Automation Testing tools : selenium WebDriver, API , Rest Assured , Appium&quot;
+         <span style="color:#cc7832;font-weight:bold;">Then </span>User close the application
+   
+   
+   </pre>
+   
+   
+   
+   <p>If we are planning to execute only 'Smoke' test then , testRunner will be like :</p>
+   
+   <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+      
+      <span style="color:#cc7832;">package </span>testRunner<span style="color:#cc7832;">;
+   
+         </span><span style="color:#cc7832;">
+         </span><span style="color:#cc7832;">import </span>io.cucumber.junit.<span style="color:#bbb529;">CucumberOptions</span><span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">import </span>io.cucumber.junit.Cucumber<span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">
+         </span><span style="color:#cc7832;">
+         </span><span style="color:#bbb529;">@RunWith</span>(Cucumber.<span style="color:#cc7832;">class</span>)
+         <span style="color:#bbb529;">@CucumberOptions</span>(
+         
+               <span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;src/test/Feature&quot;</span><span style="color:#cc7832;">, </span><span style="color:#d0d0ff;">glue </span>= <span style="color:#6a8759;">&quot;stepDefinition&quot;</span><span style="color:#cc7832;">,
+         </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">plugin </span>= { <span style="color:#6a8759;">&quot;pretty&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;html:target/cucumber-reports&quot; </span>}<span style="color:#cc7832;">,
+         </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">tags</span>={<span style="color:#6a8759;">&quot;@Smoke&quot;</span>})
+         
+         
+         
+         <span style="color:#cc7832;">public class </span>TestRunner {
+         
+         
+         }</pre>
+   
+   <p>This will execute only 'Smoke' scenario , not regression.</p>
+   <br><img src=".././img/ccm003.png" alt="Cucumber TAGS" class="img-responsive">
+   
+   <p><font color="red">'OR' Condition inside @Tag</font></p>
+      <p>Below feature file will execute scenario where it will find Tag as either 'Smoke' or 'Regression'</p>
+   
+      <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+         
+      <span style="color:#cc7832;">package </span>testRunner<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#cc7832;">import </span>io.cucumber.junit.<span style="color:#bbb529;">CucumberOptions</span><span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>io.cucumber.junit.Cucumber<span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#cc7832;">
+      </span><span style="color:#bbb529;">@RunWith</span>(Cucumber.<span style="color:#cc7832;">class</span>)
+      <span style="color:#bbb529;">@CucumberOptions</span>(
+      
+               <span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;src/test/Feature&quot;</span><span style="color:#cc7832;">, </span><span style="color:#d0d0ff;">glue </span>= <span style="color:#6a8759;">&quot;stepDefinition&quot;</span><span style="color:#cc7832;">,
+      </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">plugin </span>= { <span style="color:#6a8759;">&quot;pretty&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;html:target/cucumber-reports&quot; </span>}<span style="color:#cc7832;">,
+      </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">tags</span>={<span style="color:#6a8759;">&quot;@Smoke , @Regression&quot;</span>})
+      
+      
+      
+      <span style="color:#cc7832;">public class </span>TestRunner {
+      
+      
+      }</pre>
+   
+         <p><font color="red">'AND' Condition inside @Tag</font></p>
+            <p>Below feature file will execute scenario where it will find both 'Smoke' and 'Regression'</p>
+            <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">
+               
+      <span style="color:#cc7832;">package </span>testRunner<span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">
+         </span><span style="color:#cc7832;">import </span>io.cucumber.junit.<span style="color:#bbb529;">CucumberOptions</span><span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">import </span>io.cucumber.junit.Cucumber<span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">import </span>org.junit.runner.<span style="color:#bbb529;">RunWith</span><span style="color:#cc7832;">;
+         </span><span style="color:#cc7832;">
+         </span><span style="color:#cc7832;">
+         </span><span style="color:#bbb529;">@RunWith</span>(Cucumber.<span style="color:#cc7832;">class</span>)
+         <span style="color:#bbb529;">@CucumberOptions</span>(
+         
+                  <span style="color:#d0d0ff;">features </span>= <span style="color:#6a8759;">&quot;src/test/Feature&quot;</span><span style="color:#cc7832;">, </span><span style="color:#d0d0ff;">glue </span>= <span style="color:#6a8759;">&quot;stepDefinition&quot;</span><span style="color:#cc7832;">,
+         </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">plugin </span>= { <span style="color:#6a8759;">&quot;pretty&quot;</span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;html:target/cucumber-reports&quot; </span>}<span style="color:#cc7832;">,
+         </span><span style="color:#cc7832;">        </span><span style="color:#d0d0ff;">tags</span>={<span style="color:#6a8759;">&quot;@Smoke&quot; </span><span style="color:#cc7832;">, </span><span style="color:#6a8759;">&quot;@Regression&quot;</span>})
+         
+         
+         
+         <span style="color:#cc7832;">public class </span>TestRunner {
+         
+         
+         }</pre>
+                  </div>
+   
+                  <!--##################################################################-->
+
+               </div>
+            </div>
+         </div>  
+      </div>
+
+      <div id="outer">
+            <div class="inner"><a href="../cucumber/ccb_parameter.html" class="previous">&laquo; Previous</a></div>
+            <div class="inner"><a href="../cucumber/ccb_hooks.html" class="previous">Next &raquo;</a></div>
+      </div>
+      
+      
+     
+   </section>
+   <!--================Blog Area end =================-->
+
+  <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+      <footer class="site-footer">
+          <div id="footer"></div>
+      </footer>
+  </footer>
+  <!-- footer part end-->
+  <!-- footer part end-->
+
+   <!-- jquery plugins here-->
+   <!-- jquery -->
+   <script src="../js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="../js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="../js/bootstrap.min.js"></script>
+   <!-- easing js -->
+   <script src="../js/jquery.magnific-popup.js"></script>
+   <!-- swiper js -->
+   <script src="../js/swiper.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/masonry.pkgd.js"></script>
+   <!-- particles js -->
+   <script src="../js/owl.carousel.min.js"></script>
+   <script src="../js/jquery.nice-select.min.js"></script>
+   <!-- swiper js -->
+   <script src="../js/slick.min.js"></script>
+   <script src="../js/jquery.counterup.min.js"></script>
+   <script src="../js/waypoints.min.js"></script>
+   <!-- custom js -->
+   <script src="../js/custom.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+   <script src="../js/newjavascriptsfile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <script data-ad-client="ca-pub-7221125548747047" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+        </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Karate Jenkins Set Up| manual2Automation</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="../css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="../css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="../css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+            p {
+                color: black;
+                font-size: 20px;
+                word-wrap: break-word;
+                font-family: "Times New Roman", Times, serif;
+            }
+    
+            h5 {
+                color: Blue;
+                font-family: "Times New Roman", Times, serif;
+                font-size: 25px;
+                word-wrap: break-word;
+            }
+    
+            h3 {
+                color: plum;
+                font-size: 25px;
+            }
+        </style>
+
+    <script>
+        $(function () {
+            $("#header").load("../headersub.html");
+            $("#footer").load("../footsub.html");
+        });
+    </script>
+      <style>
+      .right {
+         float: right;
+         width: 83px;
+         padding: 5px;
+      }
+        .left {
+          float: left;
+          width: 120px;
+          padding: 6px;
+        }
+       </style>
+
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div id="header"></div>
+    </header>
+    <!-- Header part end-->
+
+   <!-- breadcrumb start-->
+   <section class="breadcrumb breadcrumb_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner text-center">
+                  <div class="breadcrumb_iner_item">
+                     <h2>Karate Jenkins Set Up</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+  <!--#########################   MENU TABLE   ########################################-->
+
+<section class="sectionList">
+       <br> <img class="centerimg" src="../img/kr2.png" alt="Karate maven run" style="text-align:center;widows: 400;height:400">
+     <h2 style="text-align:center; margin-top: 40px;">Karate Jenkins Set Up</h2>
+   </section>  
+
+ 
+   <!-- breadcrumb start-->
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section_padding">
+      <div class="container">       
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+
+                    <!-- Run Cucumber using Jenkins -->
+
+
+              
+               <div class="blog_details">
+                  <h5>We should have below prerequisite:<br><br>
+                     <br>  <font color="red">#Java / JDK installed in system.</font>
+                     <br>  <font color="red">#Maven Installed in Machine</font>
+                     <br>  <font color="red">#Jenkins Installed in Machine</font>
+                     <br>  <font color="red">#My project in GIT repository</font>
+                  </h5><br>
+                  <p>Do below Jenkins Configuration for Java JDK and Maven path. Go to Jenkins Configuration and set these
+                     two paths as below.
+                  
+                  <br><img src=".././img/ccj1.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                  <br><img src=".././img/ccj2.png" alt="Cucumber Jenkins Set Up" class="img-responsive">
+                  </p>
+
+                 <br><br> <p>Create a Maven Jenkins project for karate as below.
+                     <br><img src=".././img/kar30.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                 </p>
+                        
+               <p>Click on 'This project is parameterized check box' ,Set feafure files and Tags as choice 
+                  parameter.
+
+                  <br><img src=".././img/kar32.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                  <br><img src=".././img/kar33.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                  </p>
+
+                  <p> Now to upload you project into public GIT , you need to -
+                      <br>#Create a new account into GIT
+                      <br>#Create a project repository for karate in GIT
+                      <br>#Upload your local code with below command --
+                      <pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;">===============================
+                            echo &quot;# SeleniumCucumber&quot; &gt;&gt; README.md
+                            git init
+                            git add README.md
+                            git commit -m &quot;first commit&quot;
+                            git remote add origin https://github.com/YouruserID/YourProjectName.git
+                            git push -u origin master
+                            
+                            ==========================================</pre>                  
+
+                  <p>Set to your GIT url as below with GIT credentials.
+                        <br><img src=".././img/kar34.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                     </p>
+                     
+
+                     <p>Go to Pre Build --> execute cell and write below command
+                           <br><img src=".././img/kar35.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                           <br># Note here '$FeatureFiles' is parameterized where FeatureFile is
+                           Chioce parameter feature file name.
+                           <br>How to run it from Jenkins?Below Jenkins run will execute only 'test.feature' file.
+                           <br><img src=".././img/kar36.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                     </p>
+
+                     <p><font color="red">How to pass both 'feature file' and 'TAG' as parameter?</font>
+                           <br><img src=".././img/kar35.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                           <br># Note here '$FeatureFiles' & '$TAGs' are parameterized where FeatureFile is
+                           Chioce parameter feature file name and '$TAG' is tag name from Chioce parameter.
+                           <br>How to run it from Jenkins?Below Jenkins run will execute only 'test.feature' file
+                           having @Smoke tags.
+                           <br><img src=".././img/kar37.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                           <br> Jenkins Test Report will be like below:
+                           <br><img src=".././img/kar41.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                           <br><img src=".././img/kar38.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                           <br><img src=".././img/kar39.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                           <br> By Default the Jenkins parameterized section would be look like below:
+                           <br><img src=".././img/kar40.png" alt="Karate Jenkins Set Up" class="img-responsive">
+                     </p>
+   
+               </div>
+               <!--##################################################################-->
+
+               </div>
+            </div>
+         </div>  
+      </div>
+
+      <div id="outer">
+         <div class="inner"><a href="../Karate/karatePOM.html" class="previous">&laquo; Previous</a></div>
+         <div class="inner"><a href="../Karate.html" class="previous">Next &raquo;</a></div>
+      </div>
+      
+     
+   </section>
+   <!--================Blog Area end =================-->
+
+  <!-- footer part start-->
+ <!-- footer part start-->
+<footer class="footer-area">
+        <footer class="site-footer">
+            <div id="footer"></div>
+        </footer>
+    </footer>
+    <!-- footer part end-->
+    <!-- footer part end-->
+  
+     <!-- jquery plugins here-->
+     <!-- jquery -->
+     <script src="../js/jquery-1.12.1.min.js"></script>
+     <!-- popper js -->
+     <script src="../js/popper.min.js"></script>
+     <!-- bootstrap js -->
+     <script src="../js/bootstrap.min.js"></script>
+     <!-- easing js -->
+     <script src="../js/jquery.magnific-popup.js"></script>
+     <!-- swiper js -->
+     <script src="../js/swiper.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/masonry.pkgd.js"></script>
+     <!-- particles js -->
+     <script src="../js/owl.carousel.min.js"></script>
+     <script src="../js/jquery.nice-select.min.js"></script>
+     <!-- swiper js -->
+     <script src="../js/slick.min.js"></script>
+     <script src="../js/jquery.counterup.min.js"></script>
+     <script src="../js/waypoints.min.js"></script>
+     <!-- custom js -->
+     <script src="../js/custom.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+     <script src="../js/newjavascriptsfile.js"></script>
+  </body>
+  
+  </html>
